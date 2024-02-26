@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  angular:
+    container_name: luto-parental
+    restart: always
+    tty: true
+
+    image: angular
+    build: .
+    volumes:
+      - .:/usr/local/app
+    ports:
+      - "4300:4200"
+      # - "80:80"
+    command: ng serve --host 0.0.0.0 --poll 1000
+
+
