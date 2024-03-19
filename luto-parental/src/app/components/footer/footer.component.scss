@@ -1,0 +1,117 @@
+// =================== FOOTER SECTION ===================
+
+.section-footer {
+  margin: 5%;
+}
+
+.container-footer{
+  background: var(--color-strong-green);
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5% 5% 0;
+}
+
+// =================== LOGO AREA ===================
+.footer-logo{
+  margin: 4% 0;
+}
+
+.footer-logo h2{
+  font-family: "Sora", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.logo-area{
+  margin: 2%;
+}
+
+.logo-area h2{
+  margin: 0 0 2%
+}
+
+.subtitle{
+  font-family: "Sora", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  width: 70%;
+}
+
+  // =================== SOCIAL MEDIA ===================
+
+  .social-list{
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  .social-links {
+    background-color: var(--color-strong-pink);
+    border-radius: 50px;
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 24px;
+    height: 45px;
+    margin: 1%;
+    text-align: center;
+    opacity: 66%;
+    width: 45px;
+  }
+
+  .social-links:hover{
+    background-color: var(--color-light-pink);
+    color: var(--color-strong-blue);
+    opacity: 100%;
+  }
+
+  .icon{
+    margin: 20% 0;
+    text-align: center;
+  }
+
+
+// =================== INFO FOOTER AREA ===================
+
+.footer-info{
+  margin: 6% 2% 0;
+}
+
+.info-container{
+  display: flex;
+}
+
+.footer-menu{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.info-title{
+  color: var(--color-ice-white);
+  font-family: "Sora", sans-serif;
+  font-weight: 500;
+}
+
+.footer-links{
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  margin: 8% 0;
+}
+
+.footer-links:hover{
+  color: var(--color-light-pink);
+}
+
+
+// =================== COPYRIGHT AREA ===================
+
+.copyrights{
+  font-family: "Open Sans", sans-serif;
+  margin: 2% 0;
+  text-align: center;
+}
+
+
+

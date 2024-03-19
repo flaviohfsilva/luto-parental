@@ -1,5 +1,5 @@
 # Instalação do node com a sua imagem oficial
-FROM node:latest as angular
+FROM node as angular
 
 # Pasta onde vai armazenar os dados
 WORKDIR /usr/local/app

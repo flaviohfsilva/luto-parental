@@ -1,0 +1,135 @@
+// =================== NEWSLATTER ===================
+.container-news{
+  background-color: var(--color-light-pink);
+  display: flex;
+  justify-content: space-around;
+}
+
+// =================== TEXT AREA ===================
+.text-area{
+  margin: 4% 0;
+}
+
+.title{
+  font-family: "Sora", sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+  margin: 0 0 5%;
+}
+
+.subtitle{
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+
+// =================== FORM AREA ===================
+.form-news{
+  margin: 3% 0;
+  height: 220px;
+}
+
+.btn-area{
+  display: flex;
+  flex-direction: column;
+  margin: 8% 0;
+}
+
+.nome, .email{
+  all: unset;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-pink);
+  border-radius: 4px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 20px;
+  padding: 12px;
+  width: 400px;
+}
+
+.nome:focus-visible, .email:focus-visible{
+  border-color: var(--color-strong-green);
+}
+
+.nome {
+  margin: 0 0 5% 0;
+}
+
+  // =================== TERMOS AREA ===================
+  .termos-section{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .termos-area{
+    margin: 2% 0;
+  }
+
+  .termos-privacidade{
+    color: #5E5E5E;
+    display: flex;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    margin: 2% 0;
+  }
+
+  .termos{
+    cursor: pointer;
+    color: var(--colot-black);
+    font-style: italic;
+    font-size: 12px;
+    text-decoration: underline;
+  }
+
+  .termos:hover{
+    color: #60748D;
+  }
+
+  .check{
+    cursor: pointer;
+    border: 3px solid #60748D;
+    margin: 0 0 10%;
+  }
+
+  // =================== BUTTON AREA ===================
+  .btn{
+    overflow: hidden;
+    position: relative;
+    transition: .5 ease-in;
+  }
+
+  .btn::before{
+    background-color: var(--color-strong-green);
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    transition: .8s ease-in;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .btn-enviar{
+    background: none;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    margin: 5% 0;
+    padding: 10px;
+    width: 25%;
+    z-index: 0;
+  }
+
+  .btn-enviar::before{
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+  }
+
+  .btn-enviar:hover{
+    border: 1px solid var(--color-strong-green);
+    color: var(--color-white);
+  }
+
+  .btn-enviar:hover::before{
+    height: 180%;
+  }

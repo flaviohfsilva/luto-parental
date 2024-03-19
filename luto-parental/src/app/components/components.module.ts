@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarModule } from './navbar/navbar.module';
 import { FooterModule } from './footer/footer.module';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
+import { NewslatterModule } from './newslatter/newslatter.module';
+
 
 
 
 @NgModule({
-  declarations: [
-    NavbarComponent,
-    FooterComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule,
   ],
   exports: [
+    NavbarModule,
+    FooterModule,
+    NewslatterModule
   ]
 })
 export class ComponentsModule { }

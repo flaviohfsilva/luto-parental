@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+
+  /* ============ Cores principais ============ */
+  --color-strong-pink: #D9B2A9;
+  --background-color: #F4EEED;
+  --color-light-pink: #F2DBD5;
+  --color-strong-green: #A5A68F;
+
+  /* ============ Cores secundárias  ============ */
+  --color-white: #FFFF;
+  --color-ice-white: #F6F6F6;
+  --color-light-green: #EAEBD4;
+  --color-strong-blue: #60748D;
+  --color-text: #0000;
+
+}
+
+::selection{
+  background: var(--color-strong-pink);
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: #F4EEED;
+}
+
