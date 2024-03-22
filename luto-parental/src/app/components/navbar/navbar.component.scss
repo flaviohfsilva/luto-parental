@@ -4,8 +4,8 @@
 
 .top-container{
   display: flex;
-  justify-content: space-around;
-  padding: 5px;
+  // justify-content: space-evenly;
+  margin: 0 5%;
 }
 
 // =================== SOCIAL MEDIA ===================
@@ -27,7 +27,7 @@
   margin: 5%;
   text-align: center;
   opacity: 66%;
-  width: 55px;
+  width: 60px;
 }
 
 .social-links:hover{
@@ -44,12 +44,14 @@
 // =================== TOP INFO ===================
 
 .top-info{
+  margin: 0 20%;
   width: 24%;
 }
 
 .top-info-menu{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  font-size: clamp(12px, 14px, 16px);
   list-style: none;
   margin: 5% 0;
 }
@@ -63,4 +65,26 @@
 
 .top-info-links:hover{
   color: var(--color-strong-pink);
+}
+
+.nav-menu{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 3%;
+  list-style: none;
+  border-bottom: 2px solid var(--color-strong-pink);
+}
+
+.nav-links{
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.nav-links:hover{
+  color: var(--color-strong-pink);
+}
+
+@media screen and (max-width: 767px) {
+
+
 }

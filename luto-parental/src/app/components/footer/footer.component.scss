@@ -113,5 +113,31 @@
   text-align: center;
 }
 
+@media screen and (max-width: 767px) {
+  .container-footer{
+    flex-wrap: wrap;
+  }
+
+  .subtitle{
+    width: 90%;
+  }
+
+  .footer-logo{
+    align-items: center;
+    justify-content: center;
+    padding: 5% 0;
+  }
+
+  .footer-info{
+    padding: 5% 2%;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .copyrights{
+    margin: 5% 0;
+  }
+}
 
 

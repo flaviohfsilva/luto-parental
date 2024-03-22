@@ -28,7 +28,7 @@
   height: 220px;
 }
 
-.btn-area{
+.form-area{
   display: flex;
   flex-direction: column;
   margin: 8% 0;
@@ -132,4 +132,25 @@
 
   .btn-enviar:hover::before{
     height: 180%;
+  }
+
+  @media screen and (max-width: 767px) {
+    .newslatter{
+      margin: 0 0 18%;
+    }
+    .container-news {
+      flex-wrap: wrap;
+    }
+
+    .text-area{
+      margin: 15% 0;
+    }
+
+    .nome, .email{
+      width: 300px;
+    }
+
+    .form-area{
+      margin: 0;
+    }
   }
