@@ -73,16 +73,18 @@
 
 // =================== INFO FOOTER AREA ===================
 
-.footer-info{
-  margin: 6% 2% 0;
+.footer-itens{
+  display: flex;
+  justify-content: space-evenly;
+  width: 55%;
+  margin: 6% 0 0;
 }
 
-.info-container{
-  display: flex;
+.footer-info{
+  margin: 0 3% 0;
 }
 
 .footer-menu{
-  display: flex;
   flex-direction: column;
   list-style: none;
 }
@@ -110,6 +112,7 @@
 .copyrights{
   font-family: "Open Sans", sans-serif;
   margin: 2% 0;
+  padding: 1% 0 3%;
   text-align: center;
 }
 
@@ -128,8 +131,14 @@
     padding: 5% 0;
   }
 
+  .footer-itens{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
   .footer-info{
-    padding: 5% 2%;
+    padding: 5% 0;
     margin: 0;
     align-items: center;
     justify-content: center;

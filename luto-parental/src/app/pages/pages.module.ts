@@ -5,12 +5,14 @@ import { PageRoutingModule } from './pages-routing-module';
 import { FooterModule } from "../components/footer/footer.module";
 import { NavbarModule } from '../components/navbar/navbar.module';
 import { NewslatterModule } from '../components/newslatter/newslatter.module';
+import { CompartilharHistoriaComponent } from '../components/compartilhar-historia/compartilhar-historia.component';
 
 
 
 @NgModule({
     declarations: [
-        LandingPageComponent
+        LandingPageComponent,
+        CompartilharHistoriaComponent
     ],
     imports: [
         CommonModule,
