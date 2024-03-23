@@ -1,0 +1,40 @@
+.compartilhar-historia-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.title{
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+}
+
+.subtitle{
+  font-family: "Open Sans", sans-serif;
+  margin: 5% 0;
+}
+
+.btn-enviar-historia{
+    background-color: var(--color-strong-pink);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: "Open Sans", sans-serif;
+    margin: 5% 0;
+    padding: 12px 40px;
+    text-transform: uppercase;
+}
+
+.btn-enviar-historia:hover{
+  transform: translateY(-2px);
+  transition: .2s ease-in;
+
+}
+
+
+@media screen and (max-width: 767px){
+    .compartilhar-historia-container{
+        flex-wrap: wrap;
+        margin: 5%;
+    }
+}
+    

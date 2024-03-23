@@ -4,12 +4,15 @@ import { NavbarModule } from './navbar/navbar.module';
 import { FooterModule } from './footer/footer.module';
 import { NewslatterModule } from './newslatter/newslatter.module';
 import { AngularMaterialModule } from '../angular-material.module';
+import { CompartilharHistoriaComponent } from './compartilhar-historia/compartilhar-historia.component';
 
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CompartilharHistoriaComponent
+  ],
   imports: [
     CommonModule,
     AngularMaterialModule
