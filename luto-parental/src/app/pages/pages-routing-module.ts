@@ -5,7 +5,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 // Vai ficar todas as rotas das páginas do nosso site
 const routes: Routes = [
 
-  {path: '', component: LandingPageComponent},
+  { path: '', component: LandingPageComponent },
 
 ];
 
