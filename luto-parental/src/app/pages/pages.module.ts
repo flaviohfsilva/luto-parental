@@ -7,7 +7,6 @@ import { NavbarModule } from '../components/navbar/navbar.module';
 import { NewslatterModule } from '../components/newslatter/newslatter.module';
 import { CompartilharHistoriaComponent } from '../components/compartilhar-historia/compartilhar-historia.component';
 import { VerNoticiasArtigosComponent } from '../components/ver-noticias-artigos/ver-noticias-artigos.component';
-import { ComponentsModule } from '../components/components.module';
 
 
 
@@ -20,7 +19,9 @@ import { ComponentsModule } from '../components/components.module';
     imports: [
         CommonModule,
         PageRoutingModule,
-        ComponentsModule,
+        NavbarModule,
+        FooterModule,
+        NewslatterModule,
     ]
 })
 export class PagesModule { }
