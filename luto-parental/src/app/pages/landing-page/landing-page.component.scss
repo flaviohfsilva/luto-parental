@@ -5,26 +5,30 @@ h2{
   font-size: 24px;
 }
 .como-podemos-ajudar{
-  display: flex;
+  padding: 2%;
 }
 
 .ajudar-container{
   display: flex;
-  margin: 0 5% 5% ;
+  margin: 0 5% 5%;
   justify-content: space-between;
 }
 
 .title{
-  margin: 14% 0 0 0;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  margin: 20% 0 0 0;
 }
 
 .subtitle{
+  font-family: "Open Sans", sans-serif;
   margin: 5% 0;
-  width: 56%;
+  text-align: justify;
+  width: 65%;
 }
 
 .ajuda-img{
-  width: 45%;
+  width: 55%;
 }
 
 .btn-ajuda{
@@ -165,6 +169,13 @@ h2{
     // grid-template-columns: repeat(1, 1fr);
   }
 
+  .ajuda-img{
+    width: 100%;
+  }
+
+  .subtitle{
+    width: 95%;
+  }
   // =================== MURAL DE HISTÓRIAS AREA ===================
   .mural-container{
     flex-wrap: wrap;

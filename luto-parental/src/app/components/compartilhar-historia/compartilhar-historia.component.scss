@@ -1,21 +1,29 @@
+.compartilhar-historia{
+  padding: 0 5%;
+}
+
 .compartilhar-historia-container {
     display: flex;
-    justify-content: space-evenly;
+    // justify-content: space-around;
+    margin: 0 5%;
 }
 
 .title{
   font-family: "Sora", sans-serif;
   font-weight: 700;
-  margin: 35% 0 0 0;
+  margin: 11% 0 0 0;
+  width: 50%;
 }
 
 .subtitle{
   font-family: "Open Sans", sans-serif;
+  text-align: justify;
   margin: 5% 0;
+  width: 50%;
 }
 
 .compartilhar-historia-img{
-  width: 45%;
+  width: 50%;
 }
 
 .btn-enviar-historia{
@@ -45,6 +53,20 @@
 
     .compartilhar-historia-img{
       width: 100%;
+      margin: 5%;
+    }
+
+    .title{
+      margin: 25% 5% 0;
+      width: 100%;
+    }
+
+    .subtitle{
+      margin: 5%;
+      width: 85%;
+    }
+
+    .btn-enviar-historia{
       margin: 5%;
     }
 }
