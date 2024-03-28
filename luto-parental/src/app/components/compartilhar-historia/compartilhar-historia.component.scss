@@ -1,16 +1,21 @@
 .compartilhar-historia-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .title{
   font-family: "Sora", sans-serif;
   font-weight: 700;
+  margin: 35% 0 0 0;
 }
 
 .subtitle{
   font-family: "Open Sans", sans-serif;
   margin: 5% 0;
+}
+
+.compartilhar-historia-img{
+  width: 45%;
 }
 
 .btn-enviar-historia{
@@ -19,6 +24,7 @@
     border-radius: 30px;
     cursor: pointer;
     font-family: "Open Sans", sans-serif;
+    font-size: 14px;
     margin: 5% 0;
     padding: 12px 40px;
     text-transform: uppercase;
@@ -34,7 +40,11 @@
 @media screen and (max-width: 767px){
     .compartilhar-historia-container{
         flex-wrap: wrap;
-        margin: 5%;
+        margin: 8%;
+    }
+
+    .compartilhar-historia-img{
+      width: 100%;
+      margin: 5%;
     }
 }
-    

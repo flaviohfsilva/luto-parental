@@ -1,0 +1,177 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+// =================== COMO PODEMOS AJUDAR AREA ===================
+h2{
+  font-size: 24px;
+}
+.como-podemos-ajudar{
+  display: flex;
+}
+
+.ajudar-container{
+  display: flex;
+  margin: 0 5% 5% ;
+  justify-content: space-between;
+}
+
+.title{
+  margin: 14% 0 0 0;
+}
+
+.subtitle{
+  margin: 5% 0;
+  width: 56%;
+}
+
+.ajuda-img{
+  width: 45%;
+}
+
+.btn-ajuda{
+  background-color: var(--color-strong-green);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: var(--color-white);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  padding: 10px 40px;
+  text-transform: uppercase;
+}
+
+.btn-ajuda:hover{
+  transform: translateY(-2px);
+  transition: .2s ease-in;
+}
+
+
+
+// =================== MURAL DE HISTÓRIAS AREA ===================
+.mural-historia{
+  background-color: var(--color-strong-pink);
+  margin: 5% 0;
+  opacity: 90%;
+  padding: 5% 0;
+}
+
+.mural-container{
+  display: flex;
+}
+
+.title-historia{
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+}
+
+  // ======== CARD AREA ========
+  // .card-shadow{
+  //   background: var(--color-strong-green);
+  //   border-radius: 50px;
+  //   border-end-end-radius: 25px;
+  //   height: 300px;
+  //   margin: 5%;
+  //   position: absolute;
+  //   width: 320px;
+  // }
+
+  .card{
+    background: var(--color-white);
+    border-radius: 50px;
+    border-end-end-radius: 25px;
+    height: 280px;
+    margin: 5%;
+    position: relative;
+    width: 320px;
+  }
+
+  .card-content{
+    padding: 10px;
+  }
+
+  .card-img{
+    width: 19%;
+  }
+  // ======== TEXT AREA CARD ========
+  .card-info{
+    margin: 15% 5%;
+  }
+
+  .title-card{
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    // width: 80%;
+  }
+
+  .subtitle-card{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    text-align: justify;
+    margin: 5% 0;
+    width: 95%;
+  }
+
+  // ======== BUTTONS CARDS ========
+  .btn-lerMais{
+    border: 1px solid var(--color-text);
+    border-radius: 50px 50px 25px 50px;
+    height: 19px;
+    padding: 2px 15px;
+    text-decoration: none;
+    width: 85px;
+  }
+
+  .btn-area{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5%;
+  }
+
+  .indicators{
+    border: 1px solid var(--color-strong-blue);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 13px;
+    margin: 0 5px;
+    width: 13px;
+  }
+
+  .btn-ver-historia{
+    background-color: var(--color-strong-green);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: var(--color-white);
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    padding: 10px 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .btn-ver-historia:hover{
+    transform: translateY(-2px);
+    transition: .2s ease-in;
+  }
+
+
+
+@media screen and (max-width: 767px) {
+  // =================== COMO PODEMOS AJUDAR AREA ===================
+  .ajudar-container{
+    flex-wrap: wrap;
+    // grid-template-columns: repeat(1, 1fr);
+  }
+
+  // =================== MURAL DE HISTÓRIAS AREA ===================
+  .mural-container{
+    flex-wrap: wrap;
+  }
+
+  .card{
+    margin: 5% 10%;
+  }
+
+}
