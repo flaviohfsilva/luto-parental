@@ -1,0 +1,94 @@
+.title-area{
+  display: flex;
+  justify-content: space-between;
+  margin: 5%;
+}
+
+.mark-title{
+  color: var(--color-strong-pink);
+}
+
+.btn-ver{
+  background-color: var(--color-strong-pink);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: var(--color-text);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 8px 40px;
+  text-transform: uppercase;
+}
+
+.card-content{
+  display: flex;
+}
+
+.cards-area{
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+}
+.card-container{
+  display: flex;
+  margin: 2% 5%;
+}
+
+.card-text{
+  background: var(--color-white);
+  border-bottom-right-radius: 26px;
+  border-bottom-left-radius: 26px;
+  border-left: 2px solid var(--color-strong-pink);
+  width: 38%;
+  padding: 1%;
+}
+
+.card-cabecalho{
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin: 0 0 4% 0;
+}
+
+.tags{
+  background-color: var(--color-strong-pink);
+  border-radius: 5px;
+  color: var(--color-text);
+  padding: 3px;
+  text-decoration: none;
+}
+
+.card-text{
+  text-align: justify;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card-img{
+  width: 38%;
+}
+
+.subtitle{
+  margin: 2% 0;
+  font-size: 14px;
+  padding: 1%;
+}
+
+.btn-lerMais{
+  color: var(--color-text);
+  display: flex;
+  font-size: 12px;
+  justify-content: end;
+  // margin: 5% 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn-text{
+  text-decoration: underline;
+}
+
+.icon-arrow{
+  font-size: 12px;
+}
