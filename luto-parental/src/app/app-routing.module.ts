@@ -6,17 +6,14 @@ import { NoticiasComponent } from './pages/noticias/noticias.component';
 const routes: Routes = [
   // Vai ser responsável por carregar as rotas das páginas.
   {
-    path: 'page',
+    path: '',
     loadChildren: () =>
       import('./pages/pages.module').then((m) => m.PagesModule),
   },
 
   // Direciona para nossa tela principal, a Landing Page.
   { path: 'home', component: LandingPageComponent },
-  {
-    path: 'noticias',
-    component: NoticiasComponent,
-  },
+
   // Redireciona para a Landing Page caso tenha algum erro.
   {
     path: '**',

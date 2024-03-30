@@ -7,6 +7,10 @@ import { NavbarModule } from '../components/navbar/navbar.module';
 import { NewslatterModule } from '../components/newslatter/newslatter.module';
 import { CompartilharHistoriaComponent } from '../components/compartilhar-historia/compartilhar-historia.component';
 import { VerNoticiasArtigosComponent } from '../components/ver-noticias-artigos/ver-noticias-artigos.component';
+import { NoticiasComponent } from './noticias/noticias.component';
+import { DireitosComponent } from './direitos/direitos.component';
+import { DepoimentosComponent } from './depoimentos/depoimentos.component';
+
 
 
 
@@ -14,7 +18,10 @@ import { VerNoticiasArtigosComponent } from '../components/ver-noticias-artigos/
     declarations: [
         LandingPageComponent,
         CompartilharHistoriaComponent,
-        VerNoticiasArtigosComponent
+        VerNoticiasArtigosComponent,
+        NoticiasComponent,
+        DireitosComponent,
+        DepoimentosComponent
     ],
     imports: [
         CommonModule,
