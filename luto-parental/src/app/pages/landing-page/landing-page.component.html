@@ -4,6 +4,56 @@
 
 <main class="home-page">
 
+  <!--  =================== CAROUSEL AREA ===================  -->
+  <section class="carousel-home" *ngIf="carouselAutomatic">
+
+    <!--  =================== CAROUSEL IMG ===================  -->
+    <div *ngIf="images && images.length > 0" class="carousel-container">
+      <img class="img-carousel" *ngFor="let image of images; let i = index"
+      [src]="image.imgSrc" [alt]="image.imgAlt"
+      [ngClass]="{'image-active': selectedIndex === i}"
+      >
+
+      <!--  =================== CAROUSEL TEXTS ===================  -->
+      <div *ngIf="textCarousel" class="info-area">
+        <div *ngFor="let text of images; let i = index"
+        class="text-area"
+        [ngClass]="{'text-active': selectedIndex === i}"
+        >
+          <h1 class="title-carousel">{{text.title}}</h1>
+          <p class="subtitle-carousel">{{text.subtitle}}</p>
+        </div>
+      </div>
+
+      <a class="btn-saibaMais">Saiba Mais</a>
+
+
+      <!--  =================== CAROUSEL SLIDERS ===================  -->
+      <div *ngIf="sliders" class="sliders-carousel">
+        <span *ngFor="let dot of images; let i = index"
+        class="dot-slider"
+        [ngClass]="{'active-dot': selectedIndex === i}"
+        (click)="passarSliderCarousel(i)"
+        >
+      </span>
+      </div>
+
+      <!--  =================== CAROUSEL BTN-VOLTAR ===================  -->
+      <!-- <button *ngIf="controls" class="btn-carousel btn-voltar">
+        <span (click)="voltarCarousel()" class="material-symbols-outlined icon-prev">
+          arrow_back_ios
+          </span>
+      </button> -->
+
+      <!--  =================== CAROUSEL BTN-AVANÇAR ===================  -->
+      <!-- <button *ngIf="controls" class="btn-carousel btn-avancar">
+        <span (click)="avancarCarousel()" class="material-symbols-outlined icon-prev">
+          arrow_forward_ios
+          </span>
+      </button> -->
+    </div>
+  </section>
+
    <!--  =================== COMO PODEMOS AJUDAR AREA ===================  -->
    <section class="como-podemos-ajudar">
     <div class="ajudar-container">

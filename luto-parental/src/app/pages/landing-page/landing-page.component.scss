@@ -1,5 +1,136 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+// =================== CAROUSEL AREA ===================
+.carousel-container{
+  display: flex;
+  justify-content: center;
+  margin: 1% 0 5%;
+  position: relative;
+}
+
+.img-carousel{
+  display: none;
+  width: 80%;
+}
+
+.img-carousel.image-active{
+  display: block;
+}
+
+  // =================== TEXT CAROUSEL AREA & BUTTON ===================
+  .info-area{
+    bottom: 0;
+    left: 20%;
+    margin: 0;
+    position: absolute;
+    top: 35%;
+  }
+
+  .text-area{
+    display: none;
+  }
+
+  .title-carousel{
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    width: 40%;
+  }
+
+  .subtitle-carousel{
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+    width: 35%;
+  }
+
+  .text-area.text-active{
+    display: block;
+  }
+
+  .btn-saibaMais{
+    background-color: var(--color-strong-green);
+    border: none;
+    border-radius: 30px;
+    bottom: 25%;
+    cursor: pointer;
+    color: var(--color-white);
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    left: 20%;
+    padding: 10px 40px;
+    position: absolute;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: .2s ease-in;
+  }
+
+  .btn-saibaMais:hover{
+    transform: translateY(-2px);
+  }
+
+  // =================== BUTTON PREV CAROUSEL AREA ===================
+  .btn-carousel{
+    align-items: center;
+    background: none;
+    border: none;
+    bottom: 0;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    top: 0;
+    width: 15px;
+  }
+
+  .icon-prev{
+    background-color: var(--color-white);
+    border-radius: 50%;
+    margin: 0 5%;
+    padding: 5px;
+  }
+
+  .icon-prev:hover{
+    opacity: 0.6;
+  }
+
+  .btn-voltar{
+    left: 15%;
+  }
+
+  .btn-avancar{
+    right: 15%;
+  }
+
+  // =================== SLIDERS CAROUSEL AREA ===================
+  .sliders-carousel{
+    bottom: 2%;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  .dot-slider{
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    margin: 0 2px;
+    width: 20px;
+  }
+
+  .dot-slider:hover{
+    background-color: var(--color-strong-pink);
+    opacity: 66%;
+  }
+
+  .active-dot{
+    background-color: var(--color-strong-pink);
+  }
+
 // =================== COMO PODEMOS AJUDAR AREA ===================
 h2{
   font-size: 24px;
@@ -163,9 +294,43 @@ h2{
 
 
 @media screen and (max-width: 767px) {
+  // =================== CAROUSEL AREA ===================
+  .carousel-container{
+    flex-wrap: wrap;
+    margin: 20% 5%;
+  }
+
+  // .img-carousel{
+  //   width: 580px;
+  //   height: 380px;
+  // }
+
+  .title-carousel{
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .subtitle-carousel{
+    width: 80%;
+    margin: 0 0 10% 0;
+  }
+
+  .info-area{
+    top: 25%;
+  }
+
+  .btn-carousel{
+    display: none;
+  }
+  .dot-slider{
+    width: 10px;
+    height: 10px;
+  }
+
   // =================== COMO PODEMOS AJUDAR AREA ===================
   .ajudar-container{
     flex-wrap: wrap;
+    flex-direction: column-reverse;
     // grid-template-columns: repeat(1, 1fr);
   }
 
