@@ -36,7 +36,7 @@ export class LandingPageComponent {
       {
         imgSrc: '../../../assets/carousel/voce-nao-esta-sozinha.png',
         imgAlt: 'Você não está sozinha',
-        title: 'Você não está sozinha!',
+        title: 'Você não está sozinha! Torne mais leve a dor do luto.',
         subtitle: 'Conte com atendimento emergencial gratuito com psicólogas voluntárias e especializadas em luto parental.'
     },
     {

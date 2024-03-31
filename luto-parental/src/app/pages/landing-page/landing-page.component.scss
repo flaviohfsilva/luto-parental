@@ -1,4 +1,4 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';
+// @import '~bootstrap/dist/css/bootstrap.min.css';
 
 // =================== CAROUSEL AREA ===================
 .carousel-container{
@@ -50,12 +50,13 @@
     background-color: var(--color-strong-green);
     border: none;
     border-radius: 30px;
-    bottom: 25%;
+    bottom: 22%;
     cursor: pointer;
     color: var(--color-white);
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
     left: 20%;
+    // margin: 23% 0;
     padding: 10px 40px;
     position: absolute;
     text-transform: uppercase;
