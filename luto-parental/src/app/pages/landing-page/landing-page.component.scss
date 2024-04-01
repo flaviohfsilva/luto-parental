@@ -1,5 +1,8 @@
 // @import '~bootstrap/dist/css/bootstrap.min.css';
 
+h1{
+  font-size: 30px;
+}
 // =================== CAROUSEL AREA ===================
 .carousel-container{
   display: flex;
@@ -133,9 +136,6 @@
   }
 
 // =================== COMO PODEMOS AJUDAR AREA ===================
-h2{
-  font-size: 24px;
-}
 .como-podemos-ajudar{
   padding: 2%;
 }
@@ -192,6 +192,7 @@ h2{
 
 .mural-container{
   display: flex;
+  justify-content: center;
 }
 
 .title-historia{
@@ -202,15 +203,20 @@ h2{
 }
 
   // ======== CARD AREA ========
-  // .card-shadow{
-  //   background: var(--color-strong-green);
-  //   border-radius: 50px;
-  //   border-end-end-radius: 25px;
-  //   height: 300px;
-  //   margin: 5%;
-  //   position: absolute;
-  //   width: 320px;
-  // }
+  .card-shadow::after {
+    background: var(--color-strong-green);
+    border-radius: 50px;
+    border-end-end-radius: 25px;
+    bottom: 3px;
+    content: "";
+    margin: 0 0 6%;
+    height: 290px;
+    position: absolute;
+    right: 3px;
+    top: 0;
+    width: 325px;
+    z-index: -1;
+  }
 
   .card{
     background: var(--color-white);
@@ -250,15 +256,52 @@ h2{
   }
 
   // ======== BUTTONS CARDS ========
+  .btn{
+    overflow: hidden;
+    position: relative;
+    transition: .5 ease-in-out;
+  }
+
+  .btn::before{
+    background-color: var(--color-strong-green);
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    transition: .8s ease;
+    width: 100%;
+    z-index: -1;
+  }
+
   .btn-lerMais{
+    background: none;
     border: 1px solid var(--color-text);
     border-radius: 50px 50px 25px 50px;
+    color: var(--color-text);
+    font-size: 12px;
     height: 19px;
     padding: 2px 15px;
     text-decoration: none;
+    left: 70%;
     width: 85px;
+    z-index: 0;
   }
 
+  .btn-lerMais::before{
+    bottom: 0;
+    border-radius: 50px 50px 25px 50px;
+  }
+
+  .btn-lerMais:hover{
+    border: 1px solid var(--color-strong-green);
+    color: var(--color-white);
+  }
+
+  .btn-lerMais:hover::before{
+    height: 100%;
+  }
+
+   // ======== BUTTON & SLIDERS  MURAL AREA ========
   .btn-area{
     display: flex;
     justify-content: space-between;
@@ -349,6 +392,10 @@ h2{
 
   .card{
     margin: 5% 10%;
+  }
+
+  .btn-area{
+    margin:8% 0 0 0;
   }
 
 }

@@ -1,3 +1,8 @@
+// =================== NAVBAR SECTION ===================
+.navbar{
+  border-bottom: 2px solid var(--color-strong-pink);
+}
+
 // =================== TOP NAV ===================
 .top-nav{
   background-color: var(--color-strong-green);
@@ -69,10 +74,10 @@
 // =================== NAVBAR AREA ===================
 .nav-menu{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin: 0 7%;
   padding: 3%;
   list-style: none;
-  border-bottom: 2px solid var(--color-strong-pink);
 }
 
 .nav-menu-content{

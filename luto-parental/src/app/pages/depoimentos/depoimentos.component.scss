@@ -1,0 +1,248 @@
+// =================== NAVEGATION PAGES AREA ===================
+.navegation-pages{
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  gap: .2rem;
+  margin: 5%;
+}
+
+.nav-home, .nav-router{
+  cursor: pointer;
+}
+
+.icon{
+  font-size: 14px;
+  transform: translateY(3px);
+}
+
+// =================== DEPOIMENTO TITLE ===================
+.texts-depoimentos{
+  font-family: "Sora", sans-serif;
+  margin: 5% 5%;
+}
+
+.subtitle-depoimentos{
+  margin: 5% 0;
+  width: 50%;
+}
+
+.mark-title{
+  color: var(--color-strong-pink);
+}
+
+// =================== MURAL DE HISTÓRIAS ===================
+.mural-historias{
+  background-color: var(--color-light-pink);
+  margin: 5% 0;
+  opacity: 90%;
+  padding: 3% 0;
+}
+
+.mural-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 5%;
+  padding: 0 5%;
+  justify-content: center;
+  align-items: center;
+}
+
+.filtro-area{
+  display: flex;
+  justify-content: end;
+  border-bottom: 2px solid var(--color-text);
+}
+
+select {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+
+.filtro{
+  background: var(--color-white);
+  border-radius: 8px;
+  padding: 8px;
+  width: 15%;
+  // transform: translateY(-20px);
+  margin: 0 6% 20px;
+}
+  // ======== CARD AREA ========
+  .card-shadow::after {
+    background: var(--color-strong-green);
+    border-radius: 50px;
+    border-end-end-radius: 25px;
+    bottom: 3px;
+    content: "";
+    height: 290px;
+    margin: 0 0 6%;
+    position: absolute;
+    right: 3px;
+    top: 0;
+    width: 325px;
+    z-index: -1;
+  }
+
+  .card{
+    background: var(--color-white);
+    border-radius: 50px;
+    border-end-end-radius: 25px;
+    height: 280px;
+    margin: 5%;
+    position: relative;
+    width: 320px;
+  }
+
+  .card-content{
+    padding: 10px;
+  }
+
+  .card-img{
+    width: 19%;
+  }
+
+  // ======== TEXT AREA CARD ========
+  .card-info{
+    margin: 15% 5%;
+  }
+
+  .title-card{
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    // width: 80%;
+  }
+
+  .subtitle-card{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    text-align: justify;
+    margin: 5% 0;
+    width: 95%;
+  }
+
+
+  // ======== BUTTONS CARDS ========
+  .btn{
+    overflow: hidden;
+    position: relative;
+    transition: .5 ease-in-out;
+  }
+
+  .btn::before{
+    background-color: var(--color-strong-green);
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    transition: .8s ease;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .btn-lerMais{
+    background: none;
+    border: 1px solid var(--color-text);
+    border-radius: 50px 50px 25px 50px;
+    color: var(--color-text);
+    font-size: 12px;
+    height: 19px;
+    padding: 2px 15px;
+    text-decoration: none;
+    left: 70%;
+    width: 85px;
+    z-index: 0;
+  }
+
+  .btn-lerMais::before{
+    bottom: 0;
+    border-radius: 50px 50px 25px 50px;
+  }
+
+  .btn-lerMais:hover{
+    border: 1px solid var(--color-strong-green);
+    color: var(--color-white);
+  }
+
+  .btn-lerMais:hover::before{
+    height: 100%;
+  }
+
+  // =================== PAGINATORS MURAL HISTÓRIA ===================
+  .paginators{
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .btn-voltar, .btn-passar{
+    cursor: pointer;
+    background: var(--color-white);
+    border-radius: 50%;
+    // padding: 5px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .icon-voltar, .icon-avancar{
+    align-items: center;
+    font-size: 18px;
+    transform: translate(7px, 6px);
+  }
+
+  .number-page{
+    background: var(--color-strong-green);
+    color: var(--color-white);
+    padding: 5px 10px;
+    border-radius: 50%;
+  }
+
+// =================== MAPA DAS HISTÓRIAS ===================
+
+.mapa-historias{
+  margin: 0 0 10% 0;
+}
+.texts-mapa{
+  margin: 0 5%;
+  padding: 5%;
+}
+
+.title-mapa{
+  font-family: 'Sora', sans-serif;
+  font-size: 30px;
+  width: 40%;
+}
+
+.subtitle-mapa{
+  font-family: 'Open Sans', sans-serif;
+  margin: 5% 0;
+  text-align: justify;
+  width: 38%;
+}
+
+.mapa-brasil{
+  transform: translateX(250px);
+  width: 55%;
+}
+
+
+@media screen and (max-width: 767px) {
+  .mural-container{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .filtro{
+    width: 50%;
+  }
+
+
+
+}
