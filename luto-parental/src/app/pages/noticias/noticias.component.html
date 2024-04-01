@@ -9,35 +9,35 @@
       Acompanhe sobre as últimas notícias sobre o luto parental, artigos, leis de apoio aos pais aos pais enlutados e
       muito mais.
     </p>
+  </section>
+  <!-- Notícias -->
+  <section class="pagina-noticias__noticias">
     <label>Filtrar por categoria:</label>
     <select>
       <option>teste</option>
     </select>
   </section>
-  <!-- Notícias -->
-  <section class="pagina-noticias__noticias">
-
-  </section>
   <!-- Histórias -->
   <aside class="pagina-noticias__historias">
-    <h2>Veja Histórias reais</h2>
-    <p>Torne mais leve o sofrimento do luto e perceba que você não está sozinho.</p>
-    <button>VEJA TODAS</button>
+    <div class="pagina-noticias__historias__titulo">
+      <div>
+        <h2>Veja <strong style="color: #D9B2A9;">Histórias reais</strong></h2>
+        <p>Torne mais leve o sofrimento do luto e<br>perceba que você não está sozinho.</p>
+      </div>
+      <div>
+        <button class="pagina-noticias__historias__botao">VEJA TODAS</button>
+      </div>
+    </div>
+    <div class="pagina-noticias__historias__cards">
+      <div *ngFor="let historia of historias">
+        <h4>{{ historia.titulo }}</h4>
+        <p>{{ historia.conteudo }}</p>
+        <button>Ler mais</button>
+      </div>
+    </div>
   </aside>
   <!-- Newsletter -->
-  <footer class="pagina-noticias__newsletter">
-    <div>
-      <h2>Receba notícias</h2>
-      <p>Fique por dentro de nossa programação, artigos e notícias.</p>
-    </div>
-    <div>
-      <input placeholder="Nome">
-      <input placeholder="E-mail">
-      <input type="checkbox">
-      <label>Concordo com os Termos de Privacidade.</label>
-      <button>ENVIAR</button>
-    </div>
-  </footer>
+  <app-newslatter></app-newslatter>
 </main>
 <!-- Footer -->
 <app-footer></app-footer>
