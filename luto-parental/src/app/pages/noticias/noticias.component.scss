@@ -1,7 +1,23 @@
 .pagina-noticias {
   font-family: "Open Sans", sans-serif;
 
-  &__introducao {}
+  &__introducao {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5em;
+    padding-left: 9em;
+    padding-bottom: 4em;
+
+    h2 {
+      margin-top: 25px;
+      font-size: 38px;
+    }
+
+    p {
+      margin-top: 50px;
+      font-size: 18px;
+    }
+  }
 
   &__noticias {
     background-color: #F2DBD5;
