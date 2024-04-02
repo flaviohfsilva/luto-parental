@@ -51,6 +51,7 @@
 
 .btn-ver:hover{
   transform: translateY(-2px);
+  transition: .2s ease-in;
 }
 
 .btn-responsivo{
@@ -75,6 +76,7 @@
 
 .btn-ver-responsiva:hover{
   transform: translateY(-2px);
+  transition: .2s ease-in;
 }
 
 // =================== CARD AREA ===================
@@ -148,6 +150,7 @@
 .btn-lerMais:hover{
   color: var(--color-strong-blue);
   transform: translateY(-2px);
+  transition: .2s ease-in;
 }
 
 
@@ -166,21 +169,16 @@
 
   .container-direitos{
     align-items: center;
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 5rem;
-    // padding: 5% 0;
-    transform: translateX(-14px);
+    justify-content: center;
+    padding: 5% 2%;
+    // transform: translateX(-14px);
   }
 
   .subtitle-area{
     width: 90%;
-  }
-  .card-img{
-    width: 70%;
-  }
-
-  .card-info{
-    width: 70%;
   }
 
   .btn-ver{
@@ -189,7 +187,7 @@
 
   .btn-ver-responsiva{
     justify-content: start;
-    margin: 10% 0;
+    margin: 5%;
   }
 
 }

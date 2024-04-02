@@ -193,6 +193,7 @@ h1{
 .mural-container{
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .title-historia{
@@ -200,6 +201,14 @@ h1{
   text-transform: uppercase;
   font-family: "Sora", sans-serif;
   font-weight: 700;
+}
+
+.folhas-bg{
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  transform: translateY(35%);
+  width: 40%;
 }
 
   // ======== CARD AREA ========
@@ -305,7 +314,8 @@ h1{
   .btn-area{
     display: flex;
     justify-content: space-between;
-    margin: 0 5%;
+    margin: 0 8%;
+    position: relative;
   }
 
   .indicators{
@@ -395,7 +405,14 @@ h1{
   }
 
   .btn-area{
-    margin:8% 0 0 0;
+    margin:8% 8% 0 0;
+  }
+
+
+  .folhas-bg{
+    bottom: 30%;
+    transform: translateY(0);
+    width: 100%;
   }
 
 }

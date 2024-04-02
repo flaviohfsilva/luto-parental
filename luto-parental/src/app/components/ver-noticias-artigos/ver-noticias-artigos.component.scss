@@ -1,5 +1,6 @@
 .novas-noticias{
   padding: 5% 0 10%;
+  margin: 5% 0;
 }
 
 .container-noticias{
@@ -41,6 +42,7 @@
 
 .btn-ver:hover{
   transform: translateY(-2px);
+  transition: .2s ease-in;
 }
 
 .btn-responsivo{
@@ -65,6 +67,7 @@
 
 .btn-ver-responsiva:hover{
   transform: translateY(-2px);
+  transition: .2s ease-in;
 }
 
 // =================== CARD AREA ===================
@@ -97,6 +100,7 @@
   background-color: var(--color-strong-pink);
   border-radius: 5px;
   color: var(--color-text);
+  cursor: pointer;
   font-family: 500;
   font-size: 12px;
   padding: 2px;
@@ -138,6 +142,7 @@
 .btn-lerMais:hover{
   color: var(--color-strong-blue);
   transform: translateY(-2px);
+  transition: .2s ease-in;
 }
 
 
@@ -150,23 +155,16 @@
 }
 
 @media screen and (max-width: 767px){
-  // .novas-noticias{
-  //   margin: 0 0 15%;
-  // }
+  .novas-noticias{
+    margin: 8%;
+  }
   .container-noticias{
     align-items: center;
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 5rem;
-    margin: 0;
-    padding: 5% 0;
-  }
-
-  .card-img{
-    width: 84%;
-  }
-
-  .card-info{
-    width: 84%;
+    justify-content: center;
+    padding: 5% 2%;
   }
 
   .btn-ver{
@@ -175,7 +173,7 @@
 
   .btn-ver-responsiva{
     justify-content: start;
-    margin: 5% 0 0 0;
+    margin: 5%;
   }
 
 }

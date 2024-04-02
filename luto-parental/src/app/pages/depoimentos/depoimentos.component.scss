@@ -16,6 +16,10 @@
   transform: translateY(3px);
 }
 
+.active{
+  color: var(--color-strong-pink);
+}
+
 // =================== DEPOIMENTO TITLE ===================
 .texts-depoimentos{
   font-family: "Sora", sans-serif;
@@ -241,6 +245,9 @@ select {
     transform: translateX(-15px);
   }
 
+  .texts-depoimentos{
+    padding: 5% 0 10%;
+  }
   .subtitle-depoimentos{
     width: 90%;
   }
