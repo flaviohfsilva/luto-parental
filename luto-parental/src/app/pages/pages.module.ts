@@ -10,6 +10,7 @@ import { VerNoticiasArtigosComponent } from '../components/ver-noticias-artigos/
 import { NoticiasComponent } from './noticias/noticias.component';
 import { DireitosComponent } from './direitos/direitos.component';
 import { DepoimentosComponent } from './depoimentos/depoimentos.component';
+import { VerDireitosComponent } from '../components/ver-direitos/ver-direitos.component';
 
 
 
@@ -19,6 +20,7 @@ import { DepoimentosComponent } from './depoimentos/depoimentos.component';
         LandingPageComponent,
         CompartilharHistoriaComponent,
         VerNoticiasArtigosComponent,
+        VerDireitosComponent,
         NoticiasComponent,
         DireitosComponent,
         DepoimentosComponent

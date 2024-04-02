@@ -23,6 +23,7 @@
 }
 
 .subtitle-depoimentos{
+  text-align: justify;
   margin: 5% 0;
   width: 50%;
 }
@@ -237,10 +238,31 @@ select {
 @media screen and (max-width: 767px) {
   .mural-container{
     grid-template-columns: repeat(1, 1fr);
+    transform: translateX(-15px);
   }
 
+  .subtitle-depoimentos{
+    width: 90%;
+  }
   .filtro{
     width: 50%;
+  }
+
+  .mapa-historias{
+    margin: 8%;
+  }
+  .title-mapa{
+    width: 105%;
+  }
+
+  .subtitle-mapa{
+    width: 95%;
+  }
+
+  .mapa-brasil{
+    transform: translateX(20px);
+    width: 90%;
+
   }
 
 

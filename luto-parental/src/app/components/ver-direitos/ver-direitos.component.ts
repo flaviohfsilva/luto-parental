@@ -1,12 +1,11 @@
 import { Component, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-compartilhar-historia',
-  templateUrl: './compartilhar-historia.component.html',
-  styleUrls: ['./compartilhar-historia.component.scss']
+  selector: 'app-ver-direitos',
+  templateUrl: './ver-direitos.component.html',
+  styleUrls: ['./ver-direitos.component.scss']
 })
-export class CompartilharHistoriaComponent {
-
+export class VerDireitosComponent {
   btnResponsivo: boolean = false;
 
   constructor() {}
@@ -26,4 +25,5 @@ export class CompartilharHistoriaComponent {
     this.btnResponsivo = window.innerWidth <= 767;
 
   }
+
 }
