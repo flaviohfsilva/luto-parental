@@ -18,6 +18,7 @@
   </section>
   <!-- Notícias -->
   <section class="pagina-noticias__noticias">
+    <!-- <img src="../../../assets/img/page-noticias/lateral-flora.svg"> -->
     <div class="pagina-noticias__noticias__botao">
       <button>
         <label>Filtrar por categoria:</label>
@@ -28,22 +29,22 @@
       </button>
     </div>
     <!-- Card  -->
-    <div>
-      <div>
+    <div class="pagina-noticias__noticias__cards">
+      <section *ngFor="let noticia of noticias">
         <!-- Imagem card  -->
-        <img>
+        <img [src]="'assets/img/page-noticias/' + noticia.imagem + '.svg'" alt="Imagem SVG">
         <!-- Data e tag  -->
-        <div>
-          <p>10/03/2024</p>
-          <p>NOTÍCIA</p>
+        <div class="pagina-noticias__noticias__cards__data-categoria">
+          <p style="font-weight: 500;">{{ noticia.data }}</p>
+          <p style="background-color: #D9B2A9; border-radius: 4px; padding: 0.1em; font-weight: 500;">{{ noticia.categoria }}</p>
         </div>
         <!-- Título card  -->
-        <h3>POLITICA E HUMANIZAÇÃO</h3>
+        <h3>{{ noticia.titulo }}</h3>
         <!-- Conteúdo card  -->
-        <p>blablabla</p>
+        <p style="margin-bottom: 10px;">{{ noticia.texto }}</p>
         <!-- Leia mais  -->
-        <p>LEIA MAIS</p>
-      </div>
+        <a href="">LEIA MAIS ></a>
+      </section>
     </div>
   </section>
   <!-- Histórias -->
