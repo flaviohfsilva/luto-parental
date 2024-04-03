@@ -21,6 +21,25 @@
 
   &__noticias {
     background-color: #F2DBD5;
+    display: flex;
+    justify-content: end;
+
+    &__botao {
+      button {
+        padding: 0.7em;
+      }
+
+      button,
+      select {
+        padding-left: 1em;
+        padding-right: 1em;
+        background-color: #FFFFFF;
+        border: none;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+    }
   }
 
   &__historias {
@@ -69,7 +88,6 @@
         flex-direction: column;
         justify-content: space-evenly;
         font-size: 18px;
-
 
         height: 350px;
         padding: 2em;
