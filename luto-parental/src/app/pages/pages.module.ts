@@ -11,6 +11,7 @@ import { NoticiasComponent } from './noticias/noticias.component';
 import { DireitosComponent } from './direitos/direitos.component';
 import { DepoimentosComponent } from './depoimentos/depoimentos.component';
 import { VerDireitosComponent } from '../components/ver-direitos/ver-direitos.component';
+import { ModalHistoriasComponent } from '../components/modal-historias/modal-historias.component';
 
 
 
@@ -21,6 +22,7 @@ import { VerDireitosComponent } from '../components/ver-direitos/ver-direitos.co
         CompartilharHistoriaComponent,
         VerNoticiasArtigosComponent,
         VerDireitosComponent,
+        ModalHistoriasComponent,
         NoticiasComponent,
         DireitosComponent,
         DepoimentosComponent

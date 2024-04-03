@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { RequestService } from 'src/app/core/request.service';
 
 @Component({
   selector: 'app-ver-noticias-artigos',
@@ -9,7 +10,7 @@ export class VerNoticiasArtigosComponent {
 
   btnResponsivo: boolean = false;
 
-  constructor() {}
+  constructor(private requestService: RequestService ) {}
 
   ngOnInit(){
     this.verificarTamanhoTela();
@@ -24,6 +25,16 @@ export class VerNoticiasArtigosComponent {
   // Vai verificar e ajustar os itens para o tamanho da tela de celular.
   verificarTamanhoTela(){
     this.btnResponsivo = window.innerWidth <= 767;
-
   }
+
+  // mostrarTags(){
+  //   this.requestService.buscarTags().subscribe(
+  //     (tags) => {
+
+  //     },
+  //     (error) => {
+
+  //     }
+  //   );
+  // }
 }
