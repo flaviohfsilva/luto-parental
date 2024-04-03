@@ -10,6 +10,9 @@ import { VerNoticiasArtigosComponent } from '../components/ver-noticias-artigos/
 import { NoticiasComponent } from './noticias/noticias.component';
 import { DireitosComponent } from './direitos/direitos.component';
 import { DepoimentosComponent } from './depoimentos/depoimentos.component';
+import { VerDireitosComponent } from '../components/ver-direitos/ver-direitos.component';
+import { ModalHistoriasComponent } from '../components/modal-historias/modal-historias.component';
+import { ModalHistoriasModule } from '../components/modal-historias/modal-historia.module';
 
 
 
@@ -19,6 +22,7 @@ import { DepoimentosComponent } from './depoimentos/depoimentos.component';
         LandingPageComponent,
         CompartilharHistoriaComponent,
         VerNoticiasArtigosComponent,
+        VerDireitosComponent,
         NoticiasComponent,
         DireitosComponent,
         DepoimentosComponent
@@ -29,6 +33,7 @@ import { DepoimentosComponent } from './depoimentos/depoimentos.component';
         NavbarModule,
         FooterModule,
         NewslatterModule,
+        ModalHistoriasModule
     ]
 })
 export class PagesModule { }

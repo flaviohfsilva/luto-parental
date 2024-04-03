@@ -16,6 +16,10 @@
   transform: translateY(3px);
 }
 
+.active{
+  color: var(--color-strong-pink);
+}
+
 // =================== DEPOIMENTO TITLE ===================
 .texts-depoimentos{
   font-family: "Sora", sans-serif;
@@ -23,6 +27,7 @@
 }
 
 .subtitle-depoimentos{
+  text-align: justify;
   margin: 5% 0;
   width: 50%;
 }
@@ -81,7 +86,9 @@ select {
     border-end-end-radius: 25px;
     bottom: 3px;
     content: "";
-    height: 290px;
+    //Medidas do card sem imagem
+    // height: 290px;
+    height: 400px;
     margin: 0 0 6%;
     position: absolute;
     right: 3px;
@@ -94,7 +101,9 @@ select {
     background: var(--color-white);
     border-radius: 50px;
     border-end-end-radius: 25px;
-    height: 280px;
+    //Medidas do card sem imagem
+    // height: 280px;
+    height: 400px;
     margin: 5%;
     position: relative;
     width: 320px;
@@ -105,12 +114,16 @@ select {
   }
 
   .card-img{
-    width: 19%;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    width: 100%;
   }
 
   // ======== TEXT AREA CARD ========
   .card-info{
-    margin: 15% 5%;
+    //Medidas do card sem imagem
+    // margin: 15% 5%;
+    margin: 5% 0;
   }
 
   .title-card{
@@ -237,10 +250,34 @@ select {
 @media screen and (max-width: 767px) {
   .mural-container{
     grid-template-columns: repeat(1, 1fr);
+    transform: translateX(-15px);
   }
 
+  .texts-depoimentos{
+    padding: 5% 0 10%;
+  }
+  .subtitle-depoimentos{
+    width: 90%;
+  }
   .filtro{
     width: 50%;
+  }
+
+  .mapa-historias{
+    margin: 8%;
+  }
+  .title-mapa{
+    width: 105%;
+  }
+
+  .subtitle-mapa{
+    width: 95%;
+  }
+
+  .mapa-brasil{
+    transform: translateX(20px);
+    width: 90%;
+
   }
 
 
