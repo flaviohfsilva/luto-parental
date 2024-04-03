@@ -1,4 +1,6 @@
 import { Component, HostListener } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ModalHistoriasComponent } from '../modal-historias/modal-historias.component';
 
 @Component({
   selector: 'app-compartilhar-historia',
@@ -9,7 +11,7 @@ export class CompartilharHistoriaComponent {
 
   btnResponsivo: boolean = false;
 
-  constructor() {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit(){
     this.verificarTamanhoTela();
@@ -24,6 +26,15 @@ export class CompartilharHistoriaComponent {
   // Vai verificar e ajustar os itens para o tamanho da tela de celular.
   verificarTamanhoTela(){
     this.btnResponsivo = window.innerWidth <= 767;
+  }
+
+  enviarHistoriaFormulario(){
+    const config: MatDialogConfig = {
+      width: '950px',
+      height: '580px',
+      disableClose: true
+    }
+    const dialog = this.dialog.open(ModalHistoriasComponent, config);
 
   }
 }

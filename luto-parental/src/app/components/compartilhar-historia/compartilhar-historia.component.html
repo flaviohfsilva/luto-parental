@@ -11,11 +11,11 @@
                 e esperança nesse momento.
             </p>
 
-            <button class="btn-enviar-historia">Envie sua história</button>
+            <button class="btn-enviar-historia" (click)="enviarHistoriaFormulario()">Envie sua história</button>
         </div>
 
         <img src="../../../assets/mulher-lendo.png" alt="Compartilhar História" class="compartilhar-historia-img">
-        <button *ngIf="btnResponsivo" class="btn-enviar-historia-responsivo">Envie sua história</button>
+        <button *ngIf="btnResponsivo" class="btn-enviar-historia-responsivo" (click)="enviarHistoriaFormulario()">Envie sua história</button>
     </div>
 
 </section>

@@ -156,7 +156,7 @@
 
 @media screen and (max-width: 767px){
   .novas-noticias{
-    margin: 8%;
+    margin: 5%;
   }
   .container-noticias{
     align-items: center;
@@ -164,8 +164,9 @@
     flex-wrap: wrap;
     gap: 5rem;
     justify-content: center;
-    padding: 5% 2%;
+    margin: 0;
   }
+
 
   .btn-ver{
     display: none;
@@ -173,7 +174,7 @@
 
   .btn-ver-responsiva{
     justify-content: start;
-    margin: 5%;
+    margin: 10% 0;
   }
 
 }

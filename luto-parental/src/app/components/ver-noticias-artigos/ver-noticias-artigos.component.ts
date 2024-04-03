@@ -10,7 +10,9 @@ export class VerNoticiasArtigosComponent {
 
   btnResponsivo: boolean = false;
 
-  constructor(private requestService: RequestService ) {}
+  constructor(
+    // private requestService: RequestService
+    ) {}
 
   ngOnInit(){
     this.verificarTamanhoTela();

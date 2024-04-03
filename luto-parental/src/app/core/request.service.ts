@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment.development';
 
 
 
-const API = environment.apiUrl;
+// const API = environment.apiUrl;
 @Injectable({
   providedIn: 'root'
 })
@@ -16,12 +16,12 @@ export class RequestService {
   constructor(private httpClient: HttpClient) { }
 
 
-  buscarTags(){
-    return this.httpClient.get(`${API}/tags/buscarTodas`);
-  }
+  // buscarTags(){
+  //   return this.httpClient.get(`${API}/tags/buscarTodas`);
+  // }
 
-  buscarEstados(){
-    return this.httpClient.get(`${API}/estados/buscarTodos`);
-  }
+  // buscarEstados(){
+  //   return this.httpClient.get(`${API}/estados/buscarTodos`);
+  // }
 
 }

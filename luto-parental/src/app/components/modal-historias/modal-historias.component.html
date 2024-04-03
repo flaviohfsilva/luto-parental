@@ -1,1 +1,91 @@
-<p>modal-historias works!</p>
+<!--  =================== MODAL AREA ===================  -->
+<section class="modal-historia">
+  <!--  =================== MODAL CONTAINER ===================  -->
+  <div class="modal-historia-container">
+    <!--  =================== NAV MODAL ===================  -->
+    <div class="title-area">
+      <h1 class="title">Envie a sua <span class="mark-title">História</span></h1>
+
+      <span class="material-symbols-outlined icon-close" (click)="fecharModal()">
+        close
+      </span>
+    </div>
+
+    <!--  =================== FORM MODAL ===================  -->
+    <form action="" class="form-historia" [formGroup]="historiaForm" (ngSubmit)="enviar(historiaForm)" #formDir="ngForm">
+      <!--  =================== FORM CONTAINER ===================  -->
+      <div class="form-container">
+
+        <!--  =================== INPUT CONTENT FORM ===================  -->
+        <div class="input-content">
+            <!--  =================== INPUT FIELD 1 ===================  -->
+            <div class="input-field">
+              <label for="nome">Nome</label>
+              <input class="form-input" type="text" id="nome" placeholder="Qual o seu nome?" formControlName="nome">
+            </div>
+
+            <!--  =================== INPUT FIELD 2 ===================  -->
+            <div class="input-field">
+              <label for="">Estado *</label>
+              <input class="form-input" type="text" placeholder="Qual o seu estado?" formControlName="estado"  [ngClass]="{'border-erro': estado.invalid && estado.touched}" required>
+
+              <!--  =================== VALIDATION INPUT ===================  -->
+              <div class="error-validation" *ngIf="estado.invalid && estado.touched">
+                <p *ngIf="estado.errors?.['required']"> Por favor, selecione o seu estado.</p>
+              </div>
+            </div>
+
+            <!--  =================== INPUT FIELD 3 ===================  -->
+            <div class="input-field">
+              <label for="">Gênero *</label>
+              <input class="form-input" type="text" placeholder="Qual o seu gênero?" formControlName="genero" [ngClass]="{'border-erro': genero.invalid && genero.touched}" required>
+
+              <!--  =================== VALIDATION INPUT ===================  -->
+              <div class="error-validation" *ngIf="genero.invalid && genero.touched">
+                <p *ngIf="genero.errors?.['required']"> Por favor, selecione o seu genero.</p>
+              </div>
+            </div>
+          </div>
+
+          <!--  =================== INPUT FIELD 4 ===================  -->
+          <div class="input-field">
+            <label for="">Título (opcional)</label>
+            <input class="form-input" type="text">
+          </div>
+
+          <!--  =================== INPUT FIELD 5 ===================  -->
+          <div class="input-field">
+            <label for="">Texto *</label>
+            <textarea class="form-input" name="" id="" cols="30" rows="10" formControlName="texto" [ngClass]="{'border-erro': texto.invalid && texto.touched}" required></textarea>
+
+            <!--  =================== VALIDATION INPUT ===================  -->
+            <div class="error-validation" *ngIf="texto.invalid && texto.touched">
+              <p *ngIf="texto.errors?.['required']"> Por favor, conte a sua história.</p>
+            </div>
+          </div>
+
+          <!--  =================== INPUT FIELD 6 ===================  -->
+          <div class="input-imgs">
+            <div class="input-field">
+              <label for="">Foto destaque (opcional)</label>
+              <div class="form-input-img" for="">
+                <span class="material-symbols-outlined icon">
+                  add_link
+                  </span>
+                  <input type="file">
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-enviar"
+            type="button"
+            [formaction]="historiaForm"
+            (click)="enviar(historiaForm)"
+            [disabled]="!formPreenchido()"
+          >
+            Enviar
+          </button>
+      </div>
+    </form>
+  </div>
+</section>

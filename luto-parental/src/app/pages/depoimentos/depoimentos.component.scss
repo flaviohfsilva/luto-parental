@@ -86,7 +86,9 @@ select {
     border-end-end-radius: 25px;
     bottom: 3px;
     content: "";
-    height: 290px;
+    //Medidas do card sem imagem
+    // height: 290px;
+    height: 400px;
     margin: 0 0 6%;
     position: absolute;
     right: 3px;
@@ -99,7 +101,9 @@ select {
     background: var(--color-white);
     border-radius: 50px;
     border-end-end-radius: 25px;
-    height: 280px;
+    //Medidas do card sem imagem
+    // height: 280px;
+    height: 400px;
     margin: 5%;
     position: relative;
     width: 320px;
@@ -110,12 +114,16 @@ select {
   }
 
   .card-img{
-    width: 19%;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    width: 100%;
   }
 
   // ======== TEXT AREA CARD ========
   .card-info{
-    margin: 15% 5%;
+    //Medidas do card sem imagem
+    // margin: 15% 5%;
+    margin: 5% 0;
   }
 
   .title-card{
