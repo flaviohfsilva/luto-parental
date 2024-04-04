@@ -26,6 +26,8 @@
     flex-wrap: nowrap;
     align-items: flex-end;
     padding: 5em;
+    padding-left: 15em;
+    padding-right: 15em;
 
 
     &__botao {
@@ -36,6 +38,7 @@
       }
 
       label {
+        font-size: 15.5px;
         font-weight: 600;
       }
 
@@ -57,10 +60,12 @@
       justify-content: space-evenly;
       // padding: 5em;
       row-gap: 40px;
+      gap: 80px;
 
       section {
         width: 352px;
-        border: 8px  black; box-shadow: 0 0 12px rgba(0, 0, 0, 0.438);
+        border: 8px black;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.438);
         border-radius: 18px;
         background-color: #F6F6F6;
         font-size: 14px;
@@ -126,6 +131,7 @@
       margin-top: 100px;
       display: flex;
       flex-wrap: nowrap;
+      justify-content: center;
       align-items: center;
       gap: 40px;
 
@@ -161,6 +167,80 @@
           cursor: pointer;
         }
       }
+    }
+  }
+}
+
+// Responsividade tela histórias
+@media screen and (min-width: 1025px) and (max-width: 1260px) {
+  .pagina-noticias__historias__cards {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1185px) {
+  .pagina-noticias__historias__cards {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pagina-noticias__historias__botao {
+    margin-top: 30px;
+  }
+
+  .pagina-noticias__noticias {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0;
+    padding-bottom: 5em;
+    padding-top: 5em;
+  }
+
+  .pagina-noticias__noticias__cards {
+    gap: 40px;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 635px) {
+  .pagina-noticias__historias {
+    padding: 5em;
+  }
+
+  .pagina-noticias__historias__botao {
+    margin-top: 30px;
+  }
+
+  .pagina-noticias__historias__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  .pagina-noticias__introducao {
+    padding-left: 2em;
+  }
+
+  .pagina-noticias__noticias {
+    display: flex;
+    padding: 0;
+    padding-bottom: 3em;
+    padding-top: 3em;
+    flex-direction: column;
+    align-items: flex-end;
+
+    button {
+      margin-right: 10px;
     }
   }
 }
