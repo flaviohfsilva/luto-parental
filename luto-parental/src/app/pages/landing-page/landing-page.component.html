@@ -84,61 +84,14 @@
     <div class="mural-container">
       <img src="../../../assets/folhas-bg.png" alt="" class="folhas-bg">
 
-      <div class="card-shadow card">
+      <div class="card-shadow card" *ngFor="let historia of historias">
         <div class="card-content">
 
-          <img src="../../../assets/image 2.png" alt="" class="card-img">
+          <!-- <img src="../../../assets/image 2.png" alt="" class="card-img"> -->
 
           <div class="card-info">
-            <h3 class="title-card">Meu sonho de ser mãe e as tentativas pela maternidade</h3>
-            <p class="subtitle-card">
-              Desde sempre sonhava em ser
-              mãe, mas as tentativas frustadas
-              me deixam bastante triste. A cada
-              tentativa que dá errado é um
-              aperto em meu coração e a
-              incerteza de que meu sonho...
-            </p>
-            <a href="" class="btn btn-lerMais">Ler mais</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="card-shadow card">
-        <div class="card-content">
-
-          <img src="../../../assets/image 2.png" alt="" class="card-img">
-
-          <div class="card-info">
-            <h3 class="title-card">Meu sonho de ser mãe e as tentativas pela maternidade</h3>
-            <p class="subtitle-card">
-              Desde sempre sonhava em ser
-              mãe, mas as tentativas frustadas
-              me deixam bastante triste. A cada
-              tentativa que dá errado é um
-              aperto em meu coração e a
-              incerteza de que meu sonho...
-            </p>
-            <a href="" class="btn btn-lerMais">Ler mais</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-shadow card">
-        <div class="card-content">
-
-          <img src="../../../assets/image 2.png" alt="" class="card-img">
-
-          <div class="card-info">
-            <h3 class="title-card">Meu sonho de ser mãe e as tentativas pela maternidade</h3>
-            <p class="subtitle-card">
-              Desde sempre sonhava em ser
-              mãe, mas as tentativas frustadas
-              me deixam bastante triste. A cada
-              tentativa que dá errado é um
-              aperto em meu coração e a
-              incerteza de que meu sonho...
-            </p>
+            <h3 class="title-card">{{ historia.titulo }}</h3>
+            <p class="subtitle-card">{{ historia.texto }}</p>
             <a href="" class="btn btn-lerMais">Ler mais</a>
           </div>
         </div>
@@ -147,7 +100,10 @@
     </div>
     <div class="btn-area">
       <div class="sliders-container">
-        <span class="indicators"></span>
+        <span *ngFor="let indicator of historias; let i;"
+        class="indicators"
+        >
+      </span>
       </div>
 
       <a class="btn-ver-historia" routerLink="/depoimentos">Veja Todas</a>

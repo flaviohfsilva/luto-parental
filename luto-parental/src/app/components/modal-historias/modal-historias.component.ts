@@ -1,6 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { RequestService } from 'src/app/core/request.service';
+import { Estados, Historia } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-modal-historias',
@@ -10,12 +12,14 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 export class ModalHistoriasComponent {
 
   historiaForm!: FormGroup;
-  // historia: Historia[];
+  estados: Estados[] = [];
+  historia!: Historia;
 
   constructor(
     private dialog: MatDialog,
     private dialogRef: MatDialogRef<ModalHistoriasComponent>,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private requestService: RequestService
   ) {
   this.dialogRef.afterOpened().subscribe(() => {
     setTimeout(() => {
@@ -34,6 +38,7 @@ ngOnInit(){
     texto: ['', [Validators.required]],
     historiaImg: [''],
   })
+  this.mostrarEstados();
 }
 
 // ================= Verifica se o formulário foi preenchido =================
@@ -52,21 +57,21 @@ fecharModal(){
 enviar(formHistorias: FormGroup){
 
   // Chama a função para transformar a imagem selecionada do usuário para bytes
-  // const imagemBinaria = this.transformarImagemEmBinario(formHistorias.get('historiaImg')?.value);
+  const imagemBinaria = this.transformarImagemEmBinario(formHistorias.get('historiaImg')?.value);
 
   // Armazena o valor dos bytes no campo do form
-  // this.historiaForm.get('historiaImg')?.setValue(imagemBinaria);
+  this.historiaForm.get('historiaImg')?.setValue(imagemBinaria);
 
-  // this.requestService.enviarHistoria(this.historiaForm.value).subscribe(
-  //   (historiaForm) => {
-  //     this.historia = historiaForm;
-  //     console.log('História enviada com sucesso!', this.historia)
-  //     this.fecharModal()
-  //   },
-  //   (error) => {
-  //     console.log('Erro ao enviar histórico', error)
-  //   }
-  // )
+  this.requestService.enviarHistorias(this.historiaForm.value).subscribe(
+    (historiaForm) => {
+      this.historia = historiaForm;
+      console.log('História enviada com sucesso!', this.historia)
+      this.fecharModal()
+    },
+    (error) => {
+      console.log('Erro ao enviar histórico', error)
+    }
+  )
 }
 
 // ================= Transforma imagem em binário =================
@@ -102,6 +107,17 @@ transformarImagemEmBinario(imagem: File) {
   render.readAsDataURL(imagem);
 }
 
+mostrarEstados(){
+  this.requestService.buscarEstados().subscribe(
+    (estado) => {
+      this.estados = estado;
+      console.log('Estados', this.estados);
+    },
+    (error) => {
+      console.log('Erro ao buscar estados', error)
+    }
+  )
+}
 
   // ================= Pega os campos do formulário =================
   get nome(){

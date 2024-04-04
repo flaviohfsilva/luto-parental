@@ -51,9 +51,9 @@
 
         <div class="card-info" style="border-left: 2px solid var(--color-strong-blue); border-bottom: 2px solid var(--color-strong-blue);">
 
-          <div class="card-cabecalho">
+          <div class="card-cabecalho" *ngFor=" let tags of tag">
               <p class="data">27/11/2023</p>
-              <a href="" class="tags" style="background-color: var(--color-strong-blue); color: #f6f6f6;">Artigo</a>
+              <a href="" class="tags" style="background-color: var(--color-strong-blue); color: #f6f6f6;">{{ tags.nome }}</a>
           </div>
 
           <h3 class="title-card">Meu sonho de ser mãe e as tentativas pela maternidade</h3>

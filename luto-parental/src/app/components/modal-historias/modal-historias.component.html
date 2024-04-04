@@ -28,6 +28,10 @@
             <div class="input-field">
               <label for="">Estado *</label>
               <input class="form-input" type="text" placeholder="Qual o seu estado?" formControlName="estado"  [ngClass]="{'border-erro': estado.invalid && estado.touched}" required>
+              <!-- <select class="form-input" type="text" placeholder="Qual o seu estado?" formControlName="estado"  [ngClass]="{'border-erro': estado.invalid && estado.touched}" required name="" id="">
+                <option value="" selected disabled></option>
+                <option value="" *ngFor="let estado of estados">{{ estado.nome }}</option>
+              </select> -->
 
               <!--  =================== VALIDATION INPUT ===================  -->
               <div class="error-validation" *ngIf="estado.invalid && estado.touched">
@@ -72,7 +76,7 @@
                 <span class="material-symbols-outlined icon">
                   add_link
                   </span>
-                  <input type="file">
+                  <input type="file" formControlName="historiaImg">
               </div>
             </div>
           </div>
