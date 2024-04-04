@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, tap } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
-import { Estados, Historia, Tag } from '../interfaces';
+import { Estados, Historia, Noticia, Tag } from '../interfaces';
 
 
 
@@ -31,5 +31,13 @@ export class RequestService {
 
   buscarHistorias(): Observable<Historia[]>{
     return this.httpClient.get<Historia[]>(`${API}/depoimentos/buscarTodos`);
+  }
+
+  consultarPaginacaoHistorias(id:number, pagina:number){
+    return this.httpClient.get(`${API}/depoimentos/buscarPaginas?id=${id}&&pagina=${pagina}`);
+  }
+
+  buscarNoticias(): Observable<Noticia[]>{
+    return this.httpClient.get<Noticia[]>(`${API}/noticias/buscarTodas`)
   }
 }

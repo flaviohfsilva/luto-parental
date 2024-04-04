@@ -23,11 +23,34 @@ export interface Historia {
   titulo: string | null;
   texto: string;
   genero: string;
-  estado: number,
+  idEstado: number;
+  estados: Estados[];
   // img: File | null;
 }
 
+export interface DadosPaginaHistoria {
+  id: number;
+  erro: boolean;
+  msg: string;
+  paginaAtual: number;
+  dados: Historia[];
+  avancarPagina: boolean;
+  voltarPagina: boolean
+}
+
+export interface Noticia {
+  id: number;
+  titulo: string;
+  texto: string;
+  idTag: number;
+  idTipoInformacao: number;
+  dataHora: Date;
+  tag: Tag[];
+  img: string;
+}
+
 export interface NoticiasArtigosImg {
+  id: number;
   imgSrc: string;
   imgAlt: string;
 }

@@ -27,11 +27,11 @@
             <!--  =================== INPUT FIELD 2 ===================  -->
             <div class="input-field">
               <label for="">Estado *</label>
-              <input class="form-input" type="text" placeholder="Qual o seu estado?" formControlName="estado"  [ngClass]="{'border-erro': estado.invalid && estado.touched}" required>
-              <!-- <select class="form-input" type="text" placeholder="Qual o seu estado?" formControlName="estado"  [ngClass]="{'border-erro': estado.invalid && estado.touched}" required name="" id="">
+              <!-- <input class="form-input" type="text" placeholder="Qual o seu estado?" formControlName="estado"  [ngClass]="{'border-erro': estado.invalid && estado.touched}" required> -->
+              <select class="form-input" [(ngModel)]="estadoSelecionado"  (change)="mapearEstados(estadoSelecionado)" type="text" placeholder="Qual o seu estado?" formControlName="estado"  [ngClass]="{'border-erro': estado.invalid && estado.touched}" required name="estados" id="">
                 <option value="" selected disabled></option>
-                <option value="" *ngFor="let estado of estados">{{ estado.nome }}</option>
-              </select> -->
+                <option [value]="estado.nome" *ngFor="let estado of estados">{{ estado.nome }}</option>
+              </select>
 
               <!--  =================== VALIDATION INPUT ===================  -->
               <div class="error-validation" *ngIf="estado.invalid && estado.touched">
@@ -54,7 +54,7 @@
           <!--  =================== INPUT FIELD 4 ===================  -->
           <div class="input-field">
             <label for="">Título (opcional)</label>
-            <input class="form-input" type="text">
+            <input class="form-input" type="text" formControlName="titulo">
           </div>
 
           <!--  =================== INPUT FIELD 5 ===================  -->
@@ -69,7 +69,7 @@
           </div>
 
           <!--  =================== INPUT FIELD 6 ===================  -->
-          <div class="input-imgs">
+          <!-- <div class="input-imgs">
             <div class="input-field">
               <label for="">Foto destaque (opcional)</label>
               <div class="form-input-img" for="">
@@ -79,7 +79,7 @@
                   <input type="file" formControlName="historiaImg">
               </div>
             </div>
-          </div>
+          </div> -->
 
           <button class="btn btn-enviar"
             type="button"

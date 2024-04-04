@@ -1,6 +1,6 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { RequestService } from 'src/app/core/request.service';
-import { NoticiasArtigosImg, Tag } from 'src/app/interfaces';
+import { Noticia, NoticiasArtigosImg, Tag } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-ver-noticias-artigos',
@@ -10,7 +10,8 @@ import { NoticiasArtigosImg, Tag } from 'src/app/interfaces';
 export class VerNoticiasArtigosComponent {
 
   btnResponsivo: boolean = false;
-  tag: Tag[] = [];
+  @Input() tag: Tag[] = [];
+  @Input() noticia: Noticia[] = [];
 
   constructor(
     private requestService: RequestService
@@ -18,7 +19,6 @@ export class VerNoticiasArtigosComponent {
 
   ngOnInit(){
     this.verificarTamanhoTela();
-    this.mostrarTags();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -32,30 +32,69 @@ export class VerNoticiasArtigosComponent {
     this.btnResponsivo = window.innerWidth <= 767;
   }
 
-  mostrarTags(){
-    this.requestService.buscarTags().subscribe(
-      (tags) => {
-        this.tag = tags;
-        console.log('Tags: ', this.tag);
-      },
-      (error) => {
-        console.log('Erro: ', error)
-      }
-    );
-  }
-
   images: NoticiasArtigosImg[] = [
     {
-      imgSrc: '../../../assets/noticias-artigos/image 2.png',
+      id: 1,
+      imgSrc: '../../../assets/noticias-artigos/política-humanizacao-luto-parental.png',
       imgAlt: 'Você não está sozinha',
   },
   {
+    id: 2,
     imgSrc: '../../../assets/noticias-artigos/psicologia-argumento.png',
     imgAlt: 'Mãe de natimorto deve ter direitos',
   },
   {
+    id: 3,
     imgSrc: '../../../assets/noticias-artigos/silencio-lutoparental-empresas.png',
     imgAlt: 'Silêncio das empresas ao Luto Parental',
   }
 ]
+
+pegarNomeTag(idTag:number) {
+  const tags = this.tag.find(tag => tag.id == idTag);
+  const nomeTag = tags?.nome;
+
+  // Retorna o nome das tags de cada notícia.
+  return nomeTag;
+}
+
+estiloCardNoticia(idTag: number){
+  const tags = this.tag.find(tag => tag.id == idTag);
+  const tagId = tags?.id;
+
+  const noticias = 1;
+  const artigos = 2;
+
+  switch (tagId) {
+    case noticias:
+      return 'noticia-border';
+    case artigos:
+      return 'artigo-border';
+    default:
+      return '';
+  }
+}
+
+estiloTags(idTag: number) {
+  const tags = this.tag.find(tag => tag.id == idTag);
+  const tagId = tags?.id;
+
+  const noticias = 1;
+  const artigos = 2;
+
+  switch (idTag) {
+    case noticias:
+      return 'tag-noticia';
+    case artigos:
+      return 'tag-artigo';
+    default:
+      return 'tag-noticia';
+  }
+}
+
+mostrarImagensNoticia(idNoticia: number){
+  const imagem = this.images.find(item => item.id === idNoticia);
+  return imagem ? imagem.imgSrc : '';
+}
+
 }

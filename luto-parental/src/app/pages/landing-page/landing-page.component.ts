@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { RequestService } from 'src/app/core/request.service';
-import { CarouselHome, Historia } from 'src/app/interfaces';
+import { CarouselHome, Historia, Noticia, Tag } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-landing-page',
@@ -16,13 +16,17 @@ export class LandingPageComponent {
   carouselAutomatic: boolean = true;
   textCarousel: boolean = true;
   historias: Historia[] = [];
+  tag: Tag[] = [];
+  noticia: Noticia[] = [];
 
   constructor(private requestService: RequestService) {}
 
   ngOnInit() {
     this.verificarTamanhoTela();
     this.mostrarHistorias();
-    
+    this.mostrarNoticias();
+    this.mostrarTags();
+
     if(this.carouselAutomatic){
       this.carouselAutomatico();
     }
@@ -103,6 +107,30 @@ export class LandingPageComponent {
       },
       (error) => {
         console.log('Erro ao buscar histórias', error)
+      }
+    )
+  }
+
+  mostrarTags(){
+    this.requestService.buscarTags().subscribe(
+      (tags) => {
+        this.tag = tags;
+        console.log('Tags: ', this.tag);
+      },
+      (error) => {
+        console.log('Erro: ', error)
+      }
+    );
+  }
+
+  mostrarNoticias(){
+    this.requestService.buscarNoticias().subscribe(
+      (noticias) => {
+        this.noticia = noticias;
+        console.log('Notícias', this.noticia)
+      },
+      (error) => {
+        console.log( 'Erro ao mostrar notícias', error)
       }
     )
   }

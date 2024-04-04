@@ -13,6 +13,7 @@ export class ModalHistoriasComponent {
 
   historiaForm!: FormGroup;
   estados: Estados[] = [];
+  estadoSelecionado: string = '';
   historia!: Historia;
 
   constructor(
@@ -57,10 +58,14 @@ fecharModal(){
 enviar(formHistorias: FormGroup){
 
   // Chama a função para transformar a imagem selecionada do usuário para bytes
-  const imagemBinaria = this.transformarImagemEmBinario(formHistorias.get('historiaImg')?.value);
+  // const imagemBinaria = this.transformarImagemEmBinario(formHistorias.get('historiaImg')?.value);
 
   // Armazena o valor dos bytes no campo do form
-  this.historiaForm.get('historiaImg')?.setValue(imagemBinaria);
+  // this.historiaForm.get('historiaImg')?.setValue(imagemBinaria);
+
+  const estadoSelecionado = formHistorias.get('estado')?.value;
+  const idEstado = this.mapearEstados(estadoSelecionado);
+  formHistorias.get('estado')?.setValue(idEstado);
 
   this.requestService.enviarHistorias(this.historiaForm.value).subscribe(
     (historiaForm) => {
@@ -117,6 +122,15 @@ mostrarEstados(){
       console.log('Erro ao buscar estados', error)
     }
   )
+}
+
+mapearEstados(estado: string){
+  const estadoSelecionado = this.estados.find(estados => estados.nome === estado);
+
+  if(estado) {
+    const idEstado = estadoSelecionado?.id;
+    console.log('ID do estado seleciondado: ', idEstado);
+  }
 }
 
   // ================= Pega os campos do formulário =================

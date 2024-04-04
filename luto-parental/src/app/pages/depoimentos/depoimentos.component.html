@@ -48,17 +48,17 @@
       </div>
 
       <div class="paginators">
-        <a class="btn-voltar">
+        <button (click)="carregarProximaPagina(false)" class="btn-voltar" [disabled]="!this.dadosDaPaginaAtual.voltarPagina">
           <span class="material-symbols-outlined icon-voltar">
             arrow_back_ios
           </span>
-        </a>
-        <span class="number-page">1</span>
-        <a class="btn-passar">
+        </button>
+        <span class="number-page">{{this.paginaAtual}}</span>
+        <button (click)="carregarProximaPagina(true)" class="btn-passar" [disabled]="!this.dadosDaPaginaAtual.avancarPagina">
           <span class="material-symbols-outlined icon-avancar">
             arrow_forward_ios
           </span>
-        </a>
+        </button>
       </div>
     </section>
 
