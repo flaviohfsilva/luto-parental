@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     padding-top: 5em;
-    padding-left: 9em;
+    padding-left: 16em;
     padding-bottom: 4em;
 
     h2 {
@@ -54,6 +54,10 @@
       }
     }
 
+    &__background {
+      position: absolute; left: 0; width: 35%;
+    }
+
     &__cards {
       display: flex;
       flex-wrap: wrap;
@@ -99,6 +103,7 @@
 
   &__historias {
     padding: 10em;
+    padding-left: 16em;
     background-color: #F4EEED;
 
     &__titulo {
@@ -180,6 +185,10 @@
     flex-wrap: nowrap;
     gap: 40px;
   }
+
+  .pagina-noticias__historias {
+    padding-left: 0;
+  }
 }
 
 @media screen and (min-width: 640px) and (max-width: 1185px) {
@@ -188,8 +197,17 @@
     flex-direction: column;
   }
 
+
+  .pagina-noticias__historias {
+    padding: 2em;
+  }
+
   .pagina-noticias__historias__botao {
     margin-top: 30px;
+  }
+
+  .pagina-noticias__introducao {
+    padding-left: 2em;
   }
 
   .pagina-noticias__noticias {
@@ -209,7 +227,7 @@
 
 @media screen and (min-width: 375px) and (max-width: 635px) {
   .pagina-noticias__historias {
-    padding: 5em;
+    padding: 2em;
   }
 
   .pagina-noticias__historias__botao {
