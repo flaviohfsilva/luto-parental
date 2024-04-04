@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { RequestService } from 'src/app/core/request.service';
-import { Tag } from 'src/app/interfaces';
+import { NoticiasArtigosImg, Tag } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-ver-noticias-artigos',
@@ -46,16 +46,16 @@ export class VerNoticiasArtigosComponent {
 
   images: NoticiasArtigosImg[] = [
     {
-      imgSrc: '../../../assets/carousel/voce-nao-esta-sozinha.png',
+      imgSrc: '../../../assets/noticias-artigos/image 2.png',
       imgAlt: 'Você não está sozinha',
-      title: 'Você não está sozinha! Torne mais leve a dor do luto.',
-      subtitle: 'Conte com atendimento emergencial gratuito com psicólogas voluntárias e especializadas em luto parental.'
   },
   {
-    imgSrc: '../../../assets/carousel/mae-natimorto.png',
+    imgSrc: '../../../assets/noticias-artigos/psicologia-argumento.png',
     imgAlt: 'Mãe de natimorto deve ter direitos',
-    title: 'Mãe de natimorto deve ter direito a ala separada na maternidade.',
-    subtitle: 'Mães de natimortos tem direito a acomodação em ala ou leitos separados das demais gestantes.'
+  },
+  {
+    imgSrc: '../../../assets/noticias-artigos/silencio-lutoparental-empresas.png',
+    imgAlt: 'Silêncio das empresas ao Luto Parental',
   }
 ]
 }
