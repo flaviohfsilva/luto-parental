@@ -11,6 +11,7 @@ import { NoticiasComponent } from './noticias/noticias.component';
 import { DireitosComponent } from './direitos/direitos.component';
 import { AssistenciasComponent } from './assistencias/assistencias.component';
 import { PlantoesPsicologicosComponent } from './plantoes-psicologicos/plantoes-psicologicos.component';
+import { SobreComponent } from './sobre/sobre.component';
 
 
 
@@ -20,10 +21,11 @@ import { PlantoesPsicologicosComponent } from './plantoes-psicologicos/plantoes-
         CompartilharHistoriaComponent,
         DepoimentosComponent,
         NoticiasComponent,
-        DireitosComponent,
-        AssistenciasComponent,
-        PlantoesPsicologicosComponent
-    ],
+          DireitosComponent,
+          AssistenciasComponent,
+        PlantoesPsicologicosComponent,
+        SobreComponent
+      ],
     imports: [
         CommonModule,
         PageRoutingModule,
