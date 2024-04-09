@@ -199,6 +199,7 @@ select {
   .btn-voltar, .btn-passar{
     cursor: pointer;
     background: var(--color-white);
+    border: none;
     border-radius: 50%;
     // padding: 5px;
     width: 30px;
@@ -246,6 +247,19 @@ select {
   width: 55%;
 }
 
+svg {
+  transform: translateX(250px);
+}
+
+svg path {
+  fill: var(--color-strong-pink);
+}
+
+svg path:hover{
+  cursor: pointer;
+  fill: var(--color-light-pink);
+}
+
 
 @media screen and (max-width: 767px) {
   .mural-container{
@@ -274,10 +288,11 @@ select {
     width: 95%;
   }
 
-  .mapa-brasil{
-    transform: translateX(20px);
-    width: 90%;
 
+  svg {
+    transform: translateX(20px);
+    width: 300px;
+    height: 300px;
   }
 
 

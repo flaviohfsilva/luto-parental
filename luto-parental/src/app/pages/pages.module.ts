@@ -33,7 +33,7 @@ import { ModalHistoriasModule } from '../components/modal-historias/modal-histor
         NavbarModule,
         FooterModule,
         NewslatterModule,
-        ModalHistoriasModule
+        ModalHistoriasModule,
     ]
 })
 export class PagesModule { }

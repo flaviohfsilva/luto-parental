@@ -30,6 +30,23 @@
   gap: 2rem;
   margin: 3% 0;
 }
+
+  // =================== FORM AREA INFORMAÇÕES ===================
+
+  .info-historia{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    margin: 5% 0;
+  }
+
+  .autorizar-postagem{
+    // display: flex;
+    gap: .2rem;
+  }
+
+  .info-envio{
+    margin: 2% 0;
+  }
   // =================== FORM INPUTS ===================
   .input-content{
     display: flex;
@@ -175,6 +192,13 @@
 
     .btn-enviar{
       width: 60%;
+    }
+
+    .info-historia{
+      text-align: justify;
+    }
+    .autorizar-postagem{
+      margin: 0 0 8% 0;
     }
 
   }

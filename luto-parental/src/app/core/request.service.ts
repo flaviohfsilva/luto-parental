@@ -33,8 +33,8 @@ export class RequestService {
     return this.httpClient.get<Historia[]>(`${API}/depoimentos/buscarTodos`);
   }
 
-  consultarPaginacaoHistorias(id:number, pagina:number){
-    return this.httpClient.get(`${API}/depoimentos/buscarPaginas?id=${id}&&pagina=${pagina}`);
+  consultarPaginacaoHistorias(excluido:string, pagina:number){
+    return this.httpClient.get(`${API}/depoimentos/buscarPaginas?excluido=${excluido}&&pagina=${pagina}`);
   }
 
   buscarNoticias(): Observable<Noticia[]>{

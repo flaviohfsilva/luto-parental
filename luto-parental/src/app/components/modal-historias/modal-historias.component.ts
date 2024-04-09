@@ -130,7 +130,9 @@ mapearEstados(estado: string){
   if(estado) {
     const idEstado = estadoSelecionado?.id;
     console.log('ID do estado seleciondado: ', idEstado);
+    return idEstado;
   }
+  return null;
 }
 
   // ================= Pega os campos do formulário =================

@@ -28,12 +28,11 @@ export interface Historia {
   // img: File | null;
 }
 
-export interface DadosPaginaHistoria {
-  id: number;
+export interface StatusPaginaHistoria {
   erro: boolean;
   msg: string;
   paginaAtual: number;
-  dados: Historia[];
+  dados: {}[];
   avancarPagina: boolean;
   voltarPagina: boolean
 }
