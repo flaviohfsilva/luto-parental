@@ -208,7 +208,7 @@ h1{
   left: 0;
   position: absolute;
   transform: translateY(32%);
-  width: 50%;
+  width: 40%;
 }
 
   // ======== CARD AREA ========
@@ -322,8 +322,9 @@ h1{
   .btn-area{
     display: flex;
     justify-content: space-between;
-    margin: 0 8%;
+    margin: 0 12%;
     position: relative;
+    justify-content: end;
   }
 
   .indicators{

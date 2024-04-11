@@ -14,6 +14,7 @@ export class ModalHistoriasComponent {
   historiaForm!: FormGroup;
   estados: Estados[] = [];
   estadoSelecionado: string = '';
+  arquivoSelecionado: File | undefined;
   historia!: Historia;
 
   constructor(
@@ -78,6 +79,11 @@ enviar(formHistorias: FormGroup){
     }
   )
 }
+
+onFileSelected(event: any) {
+  this.arquivoSelecionado = event.target.files[0];
+}
+
 
 // ================= Transforma imagem em binário =================
 transformarImagemEmBinario(imagem: File) {

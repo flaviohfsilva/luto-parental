@@ -6,20 +6,20 @@
       <span class="mark-title">notícias e artigos</span>
     </h1>
 
-    <a href="#" class="btn-ver">Veja todas</a>
+    <a routerLink="/noticias" class="btn-ver">Veja todas</a>
   </div>
 
   <div class="container-noticias">
     <!--  =================== CARD NOTÍCIAS ===================  -->
-    <div class="card" *ngFor="let noticias of noticia">
+    <div class="card" *ngFor="let noticias of noticia | slice:0:3">
       <div class="card-content">
 
         <img [src]="mostrarImagensNoticia(noticias.id)" class="card-img">
 
-        <div class="card-info" [ngClass]="estiloCardNoticia(noticias.id)">
+        <div class="card-info" [ngClass]="estiloCardNoticia(noticias.idTag)">
 
           <div class="card-cabecalho">
-              <p class="data"></p>
+              <p class="data">{{noticias.dataHora | date: 'dd/MM/yyyy'}}</p>
               <p [ngClass]="estiloTags(noticias.idTag)">{{pegarNomeTag(noticias.idTag)}}</p>
           </div>
 
@@ -43,7 +43,7 @@
 
   <!--  =================== BUTTON VER NOTÍCIAS RESPONSIVO  ===================  -->
   <div class="btn-responsivo" *ngIf="btnResponsivo">
-    <a href="#" class="btn-ver-responsiva">Veja todas</a>
+    <a routerLink="/noticias" class="btn-ver-responsiva">Veja todas</a>
   </div>
 
 </section>

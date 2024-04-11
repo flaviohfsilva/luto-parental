@@ -28,7 +28,12 @@
       <!--  =================== FILTRO BUTTON ===================  -->
       <div class="filtro-area">
         <select class="filtro" name="" id="">
-          <option selected disabled>Filtrar por: </option>
+          <option selected disabled>Filtrar por:</option>
+          <option *ngFor="let categoria of categorias"
+          [value]="categoria.categoria"
+          >
+          {{categoria.categoria}}
+        </option>
         </select>
       </div>
       <div class="mural-container" *ngIf="dadosDaPaginaAtual">

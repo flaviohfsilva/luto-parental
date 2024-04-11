@@ -59,13 +59,14 @@ export class DepoimentosComponent {
     )
   }
 
-
-  // this.tabelaInstanciada = value;
-  // this.instanciarTabela(this.tabelaInstanciada.dados);
-  // this.tabelaInstanciada.dados = this.dadosDaPaginaAtual;
-// this.tabelaInstanciada = value;
-  // this.instanciarTabela(this.tabelaInstanciada.dados);
-  // this.tabelaInstanciada.dados = this.dadosDaPaginaAtual;
+  public categorias = [
+    {
+      categoria: 'Mais Recentes',
+    },
+    {
+      categoria: 'Mais Antigos'
+    }
+  ];
 
   carregarDadosPaginados(excluido: string){
     this.requestService.consultarPaginacaoHistorias(excluido, this.paginaAtual).subscribe(

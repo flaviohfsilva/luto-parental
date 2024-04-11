@@ -84,7 +84,7 @@
     <div class="mural-container">
       <img src="../../../assets/folhas-bg.png" alt="" class="folhas-bg">
 
-      <div class="card-shadow card" *ngFor="let historia of historias">
+      <div class="card-shadow card" *ngFor="let historia of historias | slice:0:3">
         <div class="card-content">
 
           <!-- <img src="../../../assets/image 2.png" alt="" class="card-img"> -->
@@ -99,12 +99,12 @@
 
     </div>
     <div class="btn-area">
-      <div class="sliders-container">
-        <span *ngFor="let indicator of historias; let i;"
+      <!-- <div class="sliders-container">
+        <span *ngFor="let indicator of historias | slice: 0:3; let i;"
         class="indicators"
         >
       </span>
-      </div>
+      </div> -->
 
       <a class="btn-ver-historia" routerLink="/depoimentos">Veja Todas</a>
     </div>

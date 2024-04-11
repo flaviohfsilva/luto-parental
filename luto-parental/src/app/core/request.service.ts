@@ -40,4 +40,9 @@ export class RequestService {
   buscarNoticias(): Observable<Noticia[]>{
     return this.httpClient.get<Noticia[]>(`${API}/noticias/buscarTodas`)
   }
+
+  consultarPaginacaoNoticias(excluido:string, pagina:number){
+    return this.httpClient.get(`${API}/noticias/buscarPaginas?excluido=${excluido}&&pagina=${pagina}`);
+  }
+
 }
