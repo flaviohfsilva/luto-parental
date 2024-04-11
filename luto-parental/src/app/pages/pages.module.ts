@@ -13,6 +13,7 @@ import { DepoimentosComponent } from './depoimentos/depoimentos.component';
 import { VerDireitosComponent } from '../components/ver-direitos/ver-direitos.component';
 import { ModalHistoriasComponent } from '../components/modal-historias/modal-historias.component';
 import { ModalHistoriasModule } from '../components/modal-historias/modal-historia.module';
+import { VerHistoriasComponent } from '../components/ver-historias/ver-historias.component';
 
 
 
@@ -23,6 +24,7 @@ import { ModalHistoriasModule } from '../components/modal-historias/modal-histor
         CompartilharHistoriaComponent,
         VerNoticiasArtigosComponent,
         VerDireitosComponent,
+        VerHistoriasComponent,
         NoticiasComponent,
         DireitosComponent,
         DepoimentosComponent
@@ -33,7 +35,7 @@ import { ModalHistoriasModule } from '../components/modal-historias/modal-histor
         NavbarModule,
         FooterModule,
         NewslatterModule,
-        ModalHistoriasModule
+        ModalHistoriasModule,
     ]
 })
 export class PagesModule { }

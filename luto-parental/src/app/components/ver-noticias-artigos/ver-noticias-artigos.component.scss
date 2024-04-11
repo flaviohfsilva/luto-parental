@@ -70,6 +70,42 @@
   transition: .2s ease-in;
 }
 
+// =================== TAGS AREA && BORDER CARD AREA ===================
+.tag-noticia{
+  background-color: var(--color-strong-pink);
+  border-radius: 5px;
+  color: var(--color-text);
+  cursor: pointer;
+  font-family: 500;
+  font-size: 12px;
+  padding: 2px;
+  opacity: 66%;
+  text-decoration: none;
+}
+
+.tag-artigo{
+  background-color: var(--color-strong-blue);
+  border-radius: 5px;
+  color: var(--color-text);
+  cursor: pointer;
+  color: var(--color-white);
+  font-family: 500;
+  font-size: 12px;
+  padding: 2px;
+  opacity: 66%;
+  text-decoration: none;
+}
+
+.noticia-border{
+  border-left: 2px solid var(--color-strong-pink);
+  border-bottom: 2px solid var(--color-strong-pink);
+}
+
+.artigo-border{
+  border-left: 2px solid var(--color-strong-blue);
+  border-bottom: 2px solid var(--color-strong-blue);
+}
+
 // =================== CARD AREA ===================
 .card{
   border-radius: 50px;
@@ -96,18 +132,6 @@
   margin: 2% 0 4% 0;
 }
 
-.tags{
-  background-color: var(--color-strong-pink);
-  border-radius: 5px;
-  color: var(--color-text);
-  cursor: pointer;
-  font-family: 500;
-  font-size: 12px;
-  padding: 2px;
-  opacity: 66%;
-  text-decoration: none;
-}
-
 .card-text{
   text-align: justify;
   font-family: 'Open Sans', sans-serif;
@@ -119,7 +143,7 @@
 
 .title-card{
   font-family: 'Sora', sans-serif;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .subtitle-card{
@@ -174,7 +198,7 @@
 
   .btn-ver-responsiva{
     justify-content: start;
-    margin: 10% 0;
+    margin: 15% 0;
   }
 
 }

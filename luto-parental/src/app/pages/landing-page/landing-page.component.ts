@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
-import { CarouselHome } from 'src/app/interfaces';
+import { RequestService } from 'src/app/core/request.service';
+import { CarouselHome, Historia, Noticia, Tag } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-landing-page',
@@ -14,11 +15,17 @@ export class LandingPageComponent {
   carouselImages: boolean = false;
   carouselAutomatic: boolean = true;
   textCarousel: boolean = true;
+  historias: Historia[] = [];
+  tag: Tag[] = [];
+  noticia: Noticia[] = [];
 
-  constructor() {}
+  constructor(private requestService: RequestService) {}
 
   ngOnInit() {
     this.verificarTamanhoTela();
+    this.mostrarHistorias();
+    this.mostrarNoticias();
+    this.mostrarTags();
 
     if(this.carouselAutomatic){
       this.carouselAutomatico();
@@ -90,6 +97,42 @@ export class LandingPageComponent {
         }
       ]
     }
+  }
+
+  mostrarHistorias(){
+    this.requestService.buscarHistorias().subscribe(
+      (depoimentos) => {
+        this.historias = depoimentos;
+        console.log('Histórias', this.historias);
+      },
+      (error) => {
+        console.log('Erro ao buscar histórias', error)
+      }
+    )
+  }
+
+  mostrarTags(){
+    this.requestService.buscarTags().subscribe(
+      (tags) => {
+        this.tag = tags;
+        console.log('Tags: ', this.tag);
+      },
+      (error) => {
+        console.log('Erro: ', error)
+      }
+    );
+  }
+
+  mostrarNoticias(){
+    this.requestService.buscarNoticias().subscribe(
+      (noticias) => {
+        this.noticia = noticias;
+        console.log('Notícias', this.noticia)
+      },
+      (error) => {
+        console.log( 'Erro ao mostrar notícias', error)
+      }
+    )
   }
 
 

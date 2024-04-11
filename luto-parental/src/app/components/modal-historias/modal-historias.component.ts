@@ -1,6 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { RequestService } from 'src/app/core/request.service';
+import { Estados, Historia } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-modal-historias',
@@ -10,12 +12,16 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 export class ModalHistoriasComponent {
 
   historiaForm!: FormGroup;
-  // historia: Historia[];
+  estados: Estados[] = [];
+  estadoSelecionado: string = '';
+  arquivoSelecionado: File | undefined;
+  historia!: Historia;
 
   constructor(
     private dialog: MatDialog,
     private dialogRef: MatDialogRef<ModalHistoriasComponent>,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private requestService: RequestService
   ) {
   this.dialogRef.afterOpened().subscribe(() => {
     setTimeout(() => {
@@ -34,6 +40,7 @@ ngOnInit(){
     texto: ['', [Validators.required]],
     historiaImg: [''],
   })
+  this.mostrarEstados();
 }
 
 // ================= Verifica se o formulário foi preenchido =================
@@ -57,17 +64,26 @@ enviar(formHistorias: FormGroup){
   // Armazena o valor dos bytes no campo do form
   // this.historiaForm.get('historiaImg')?.setValue(imagemBinaria);
 
-  // this.requestService.enviarHistoria(this.historiaForm.value).subscribe(
-  //   (historiaForm) => {
-  //     this.historia = historiaForm;
-  //     console.log('História enviada com sucesso!', this.historia)
-  //     this.fecharModal()
-  //   },
-  //   (error) => {
-  //     console.log('Erro ao enviar histórico', error)
-  //   }
-  // )
+  const estadoSelecionado = formHistorias.get('estado')?.value;
+  const idEstado = this.mapearEstados(estadoSelecionado);
+  formHistorias.get('estado')?.setValue(idEstado);
+
+  this.requestService.enviarHistorias(this.historiaForm.value).subscribe(
+    (historiaForm) => {
+      this.historia = historiaForm;
+      console.log('História enviada com sucesso!', this.historia)
+      this.fecharModal()
+    },
+    (error) => {
+      console.log('Erro ao enviar histórico', error)
+    }
+  )
 }
+
+onFileSelected(event: any) {
+  this.arquivoSelecionado = event.target.files[0];
+}
+
 
 // ================= Transforma imagem em binário =================
 transformarImagemEmBinario(imagem: File) {
@@ -102,6 +118,28 @@ transformarImagemEmBinario(imagem: File) {
   render.readAsDataURL(imagem);
 }
 
+mostrarEstados(){
+  this.requestService.buscarEstados().subscribe(
+    (estado) => {
+      this.estados = estado;
+      console.log('Estados', this.estados);
+    },
+    (error) => {
+      console.log('Erro ao buscar estados', error)
+    }
+  )
+}
+
+mapearEstados(estado: string){
+  const estadoSelecionado = this.estados.find(estados => estados.nome === estado);
+
+  if(estado) {
+    const idEstado = estadoSelecionado?.id;
+    console.log('ID do estado seleciondado: ', idEstado);
+    return idEstado;
+  }
+  return null;
+}
 
   // ================= Pega os campos do formulário =================
   get nome(){

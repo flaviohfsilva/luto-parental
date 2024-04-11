@@ -66,6 +66,7 @@ select {
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
+  position: relative;
   margin: 0;
   padding: 0;
 }
@@ -87,8 +88,8 @@ select {
     bottom: 3px;
     content: "";
     //Medidas do card sem imagem
-    // height: 290px;
-    height: 400px;
+    height: 290px;
+    // height: 400px;
     margin: 0 0 6%;
     position: absolute;
     right: 3px;
@@ -102,8 +103,8 @@ select {
     border-radius: 50px;
     border-end-end-radius: 25px;
     //Medidas do card sem imagem
-    // height: 280px;
-    height: 400px;
+    height: 280px;
+    // height: 400px;
     margin: 5%;
     position: relative;
     width: 320px;
@@ -122,8 +123,8 @@ select {
   // ======== TEXT AREA CARD ========
   .card-info{
     //Medidas do card sem imagem
-    // margin: 15% 5%;
-    margin: 5% 0;
+    margin: 15% 5%;
+    // margin: 5% 0;
   }
 
   .title-card{
@@ -199,6 +200,7 @@ select {
   .btn-voltar, .btn-passar{
     cursor: pointer;
     background: var(--color-white);
+    border: none;
     border-radius: 50%;
     // padding: 5px;
     width: 30px;
@@ -208,7 +210,7 @@ select {
   .icon-voltar, .icon-avancar{
     align-items: center;
     font-size: 18px;
-    transform: translate(7px, 6px);
+    transform: translate(2px, 2px);
   }
 
   .number-page{
@@ -246,6 +248,19 @@ select {
   width: 55%;
 }
 
+svg {
+  transform: translateX(250px);
+}
+
+svg path {
+  fill: var(--color-strong-pink);
+}
+
+svg path:hover{
+  cursor: pointer;
+  fill: var(--color-light-pink);
+}
+
 
 @media screen and (max-width: 767px) {
   .mural-container{
@@ -274,10 +289,11 @@ select {
     width: 95%;
   }
 
-  .mapa-brasil{
-    transform: translateX(20px);
-    width: 90%;
 
+  svg {
+    transform: translateX(20px);
+    width: 300px;
+    height: 300px;
   }
 
 
