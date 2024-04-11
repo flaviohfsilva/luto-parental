@@ -1,0 +1,49 @@
+<!--  =================== VER NOTÍCIAS SECTION ===================  -->
+<section class="novas-noticias">
+  <!--  =================== TITLE VER NOTÍCIAS ===================  -->
+  <div class="title-area">
+    <h1 class="title">Veja mais
+      <span class="mark-title">notícias e artigos</span>
+    </h1>
+
+    <a routerLink="/noticias" class="btn-ver">Veja todas</a>
+  </div>
+
+  <div class="container-noticias">
+    <!--  =================== CARD NOTÍCIAS ===================  -->
+    <div class="card" *ngFor="let noticias of noticia | slice:0:3">
+      <div class="card-content">
+
+        <img [src]="mostrarImagensNoticia(noticias.id)" class="card-img">
+
+        <div class="card-info" [ngClass]="estiloCardNoticia(noticias.idTag)">
+
+          <div class="card-cabecalho">
+              <p class="data">{{noticias.dataHora | date: 'dd/MM/yyyy'}}</p>
+              <p [ngClass]="estiloTags(noticias.idTag)">{{pegarNomeTag(noticias.idTag)}}</p>
+          </div>
+
+          <h3 class="title-card">{{noticias.titulo}}</h3>
+          <p class="subtitle-card">
+          {{noticias.texto}}
+          </p>
+
+          <a href="" class="btn-lerMais">
+            <p class="btn-text">Leia mais</p>
+            <span class="icon-arrow material-symbols-outlined">
+              arrow_forward_ios
+            </span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--  =================== BUTTON VER NOTÍCIAS RESPONSIVO  ===================  -->
+  <div class="btn-responsivo" *ngIf="btnResponsivo">
+    <a routerLink="/noticias" class="btn-ver-responsiva">Veja todas</a>
+  </div>
+
+</section>

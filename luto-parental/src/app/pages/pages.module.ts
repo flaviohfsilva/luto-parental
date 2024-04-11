@@ -6,7 +6,7 @@ import { FooterModule } from "../components/footer/footer.module";
 import { NavbarModule } from '../components/navbar/navbar.module';
 import { NewslatterModule } from '../components/newslatter/newslatter.module';
 import { CompartilharHistoriaComponent } from '../components/compartilhar-historia/compartilhar-historia.component';
-import { DepoimentosComponent } from './depoimentos/depoimentos.component';
+import { VerNoticiasArtigosComponent } from '../components/ver-noticias-artigos/ver-noticias-artigos.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { DireitosComponent } from './direitos/direitos.component';
 import { DepoimentosComponent } from './depoimentos/depoimentos.component';
@@ -14,6 +14,8 @@ import { VerDireitosComponent } from '../components/ver-direitos/ver-direitos.co
 import { ModalHistoriasComponent } from '../components/modal-historias/modal-historias.component';
 import { ModalHistoriasModule } from '../components/modal-historias/modal-historia.module';
 import { SobreComponent } from './sobre/sobre.component';
+import { VerHistoriasComponent } from '../components/ver-historias/ver-historias.component';
+
 
 
 
@@ -22,7 +24,9 @@ import { SobreComponent } from './sobre/sobre.component';
     declarations: [
         LandingPageComponent,
         CompartilharHistoriaComponent,
-        DepoimentosComponent,
+        VerNoticiasArtigosComponent,
+        VerDireitosComponent,
+        VerHistoriasComponent,
         NoticiasComponent,
         DireitosComponent,
         DepoimentosComponent,
@@ -33,7 +37,8 @@ import { SobreComponent } from './sobre/sobre.component';
         PageRoutingModule,
         NavbarModule,
         FooterModule,
-        NewslatterModule
+        NewslatterModule,
+        ModalHistoriasModule,
     ]
 })
 export class PagesModule { }

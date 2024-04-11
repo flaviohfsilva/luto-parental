@@ -1,47 +1,17 @@
+// =================== NAVBAR SECTION ===================
+.navbar{
+  border-bottom: 2px solid var(--color-strong-pink);
+}
+
+// =================== TOP NAV ===================
 .top-nav{
   background-color: var(--color-strong-green);
 }
 
 .top-container{
   display: flex;
-  // justify-content: space-evenly;
-  margin: 0 5%;
+  margin: 0 6%;
 }
-
-// =================== SOCIAL MEDIA ===================
-
-.social-list{
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.social-links {
-  background-color: var(--color-strong-pink);
-  border-radius: 50px;
-  color: var(--color-white);
-  cursor: pointer;
-  font-size: 24px;
-  height: 40px;
-  margin: 5%;
-  text-align: center;
-  opacity: 66%;
-  width: 60px;
-}
-
-.social-links:hover{
-  background-color: var(--color-light-pink);
-  color: var(--color-strong-blue);
-  opacity: 100%;
-}
-
-.icon{
-  margin: 20% 0;
-  text-align: center;
-}
-
-// =================== TOP INFO ===================
 
 .top-info{
   margin: 0 20%;
@@ -67,24 +37,147 @@
   color: var(--color-strong-pink);
 }
 
+  // =================== NAV SOCIAL MEDIA AREA ===================
+
+  .social-list{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .social-links {
+    background-color: var(--color-strong-pink);
+    border-radius: 50px;
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 24px;
+    height: 40px;
+    margin: 5%;
+    text-align: center;
+    opacity: 66%;
+    width: 60px;
+  }
+
+  .social-links:hover{
+    background-color: var(--color-light-pink);
+    color: var(--color-strong-blue);
+    opacity: 100%;
+  }
+
+  .icon{
+    margin: 20% 0;
+    text-align: center;
+  }
+
+
+// =================== NAVBAR AREA ===================
 .nav-menu{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin: 0 7%;
   padding: 3%;
   list-style: none;
-  border-bottom: 2px solid var(--color-strong-pink);
+}
+
+.nav-menu-content{
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
 }
 
 .nav-links{
   cursor: pointer;
+  color: var(--color-text);
+  font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
+  text-decoration: none;
+}
+
+.menu-links{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3.5rem;
 }
 
 .nav-links:hover{
   color: var(--color-strong-pink);
 }
 
+.btn-toggle{
+  background: none;
+  border: none;
+  display: none;
+  font-size: 20px;
+}
+
+.active{
+  color: var(--color-strong-pink);
+}
+
+// =================== RESPONSIVIDADE DA NAVBAR ===================
 @media screen and (max-width: 767px) {
 
-  
+  .nav-menu, .nav-menu-content{
+    flex-direction: column;
+    margin: 2% 0;
+  }
+
+  .menu-links{
+    flex-direction: column;
+  }
+
+
+  .top-container{
+    justify-content: space-evenly;
+  }
+
+  .top-info{
+    display: none;
+  }
+
+  .logo-area{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 5% 0;
+  }
+
+  .btn-toggle{
+    display: block;
+  }
+
+  .btn-toggle:hover{
+    color: var(--color-strong-pink);
+  }
+}
+
+
+// =================== ANIMAÇÕES DA NAVBAR ===================
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes text-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
 }

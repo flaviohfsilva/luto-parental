@@ -1,0 +1,204 @@
+.novas-noticias{
+  padding: 5% 0 10%;
+  margin: 5% 0;
+}
+
+.container-noticias{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 5% 3%;
+}
+
+.title-area{
+  display: flex;
+  font-family: 'Sora', sans-serif;
+  justify-content: space-between;
+  margin: 5%;
+}
+
+.title{
+  font-size: 30px;
+}
+
+.mark-title{
+  color: var(--color-strong-pink);
+  font-size: 30px;
+}
+
+.btn-ver{
+  background-color: var(--color-strong-pink);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: var(--color-text);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  padding: 8px 40px;
+  text-transform: uppercase;
+}
+
+.btn-ver:hover{
+  transform: translateY(-2px);
+  transition: .2s ease-in;
+}
+
+.btn-responsivo{
+  display: flex;
+  justify-content: end;
+  margin: 5% 8%;
+}
+
+.btn-ver-responsiva{
+  background-color: var(--color-strong-pink);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: var(--color-text);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  padding: 8px 40px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn-ver-responsiva:hover{
+  transform: translateY(-2px);
+  transition: .2s ease-in;
+}
+
+// =================== TAGS AREA && BORDER CARD AREA ===================
+.tag-noticia{
+  background-color: var(--color-strong-pink);
+  border-radius: 5px;
+  color: var(--color-text);
+  cursor: pointer;
+  font-family: 500;
+  font-size: 12px;
+  padding: 2px;
+  opacity: 66%;
+  text-decoration: none;
+}
+
+.tag-artigo{
+  background-color: var(--color-strong-blue);
+  border-radius: 5px;
+  color: var(--color-text);
+  cursor: pointer;
+  color: var(--color-white);
+  font-family: 500;
+  font-size: 12px;
+  padding: 2px;
+  opacity: 66%;
+  text-decoration: none;
+}
+
+.noticia-border{
+  border-left: 2px solid var(--color-strong-pink);
+  border-bottom: 2px solid var(--color-strong-pink);
+}
+
+.artigo-border{
+  border-left: 2px solid var(--color-strong-blue);
+  border-bottom: 2px solid var(--color-strong-blue);
+}
+
+// =================== CARD AREA ===================
+.card{
+  border-radius: 50px;
+  border-end-end-radius: 25px;
+  height: 380px;
+  margin: 5%;
+  position: relative;
+  width: 420px;
+}
+
+.card-info{
+  background-color: var(--color-white);
+  border-bottom-right-radius: 26px;
+  border-bottom-left-radius: 26px;
+  padding: 4%;
+  transform: translateY(-4px);
+}
+
+.card-cabecalho{
+  display: flex;
+  font-size: 16px;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin: 2% 0 4% 0;
+}
+
+.card-text{
+  text-align: justify;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card-img{
+  width: 100%;
+}
+
+.title-card{
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+}
+
+.subtitle-card{
+  margin: 2% 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.btn-lerMais{
+  color: var(--color-text);
+  display: flex;
+  font-size: 12px;
+  justify-content: end;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .1s ease-in-out;
+}
+
+.btn-lerMais:hover{
+  color: var(--color-strong-blue);
+  transform: translateY(-2px);
+  transition: .2s ease-in;
+}
+
+
+.btn-text{
+  text-decoration: underline;
+}
+
+.icon-arrow{
+  font-size: 12px;
+}
+
+@media screen and (max-width: 767px){
+  .novas-noticias{
+    margin: 5%;
+  }
+  .container-noticias{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
+    margin: 0;
+  }
+
+
+  .btn-ver{
+    display: none;
+  }
+
+  .btn-ver-responsiva{
+    justify-content: start;
+    margin: 15% 0;
+  }
+
+}

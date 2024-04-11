@@ -1,0 +1,428 @@
+// @import '~bootstrap/dist/css/bootstrap.min.css';
+
+h1{
+  font-size: 30px;
+}
+// =================== CAROUSEL AREA ===================
+.carousel-container{
+  display: flex;
+  justify-content: center;
+  margin: 1% 0 5%;
+  position: relative;
+}
+
+.img-carousel{
+  display: none;
+  width: 80%;
+}
+
+.img-carousel.image-active{
+  display: block;
+}
+
+  // =================== TEXT CAROUSEL AREA & BUTTON ===================
+  .info-area{
+    bottom: 0;
+    left: 20%;
+    margin: 0;
+    position: absolute;
+    top: 35%;
+  }
+
+  .text-area{
+    display: none;
+  }
+
+  .title-carousel{
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    width: 40%;
+  }
+
+  .subtitle-carousel{
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+    width: 35%;
+  }
+
+  .text-area.text-active{
+    display: block;
+  }
+
+  .btn-saibaMais{
+    background-color: var(--color-strong-green);
+    border: none;
+    border-radius: 30px;
+    bottom: 22%;
+    cursor: pointer;
+    color: var(--color-white);
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    left: 20%;
+    // margin: 23% 0;
+    padding: 10px 40px;
+    position: absolute;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: .2s ease-in;
+  }
+
+  .btn-saibaMais:hover{
+    transform: translateY(-2px);
+  }
+
+  // =================== BUTTON PREV CAROUSEL AREA ===================
+  .btn-carousel{
+    align-items: center;
+    background: none;
+    border: none;
+    bottom: 0;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    top: 0;
+    width: 15px;
+  }
+
+  .icon-prev{
+    background-color: var(--color-white);
+    border-radius: 50%;
+    margin: 0 5%;
+    padding: 5px;
+  }
+
+  .icon-prev:hover{
+    opacity: 0.6;
+  }
+
+  .btn-voltar{
+    left: 15%;
+  }
+
+  .btn-avancar{
+    right: 15%;
+  }
+
+  // =================== SLIDERS CAROUSEL AREA ===================
+  .sliders-carousel{
+    bottom: 2%;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  .dot-slider{
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    margin: 0 2px;
+    width: 20px;
+  }
+
+  .dot-slider:hover{
+    background-color: var(--color-strong-pink);
+    opacity: 66%;
+  }
+
+  .active-dot{
+    background-color: var(--color-strong-pink);
+  }
+
+// =================== COMO PODEMOS AJUDAR AREA ===================
+.como-podemos-ajudar{
+  padding: 2%;
+}
+
+.ajudar-container{
+  display: flex;
+  margin: 0 5% 5%;
+  justify-content: space-between;
+}
+
+.title{
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  margin: 20% 0 0 0;
+}
+
+.subtitle{
+  font-family: "Open Sans", sans-serif;
+  margin: 5% 0;
+  text-align: justify;
+  width: 65%;
+}
+
+.ajuda-img{
+  width: 55%;
+}
+
+.btn-ajuda{
+  background-color: var(--color-strong-green);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: var(--color-white);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  padding: 10px 40px;
+  text-transform: uppercase;
+}
+
+.btn-ajuda:hover{
+  transform: translateY(-2px);
+  transition: .2s ease-in;
+}
+
+
+
+// =================== MURAL DE HISTÓRIAS AREA ===================
+.mural-historia{
+  background-color: var(--color-strong-pink);
+  margin: 5% 0;
+  opacity: 90%;
+  padding: 5% 0;
+}
+
+.mural-container{
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.title-historia{
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+}
+
+.folhas-bg{
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  transform: translateY(32%);
+  width: 40%;
+}
+
+  // ======== CARD AREA ========
+  .card-shadow::after {
+    background: var(--color-strong-green);
+    border-radius: 50px;
+    border-end-end-radius: 25px;
+    bottom: 3px;
+    content: "";
+    //Medidas do card sem imagem
+    height: 290px;
+    // height: 400px;
+    margin: 0 0 6%;
+    position: absolute;
+    right: 3px;
+    top: 0;
+    width: 325px;
+    z-index: -1;
+  }
+
+  .card{
+    background: var(--color-white);
+    border-radius: 50px;
+    border-end-end-radius: 25px;
+    //Medidas do card sem imagem
+    height: 280px;
+    // height: 400px;
+    margin: 5%;
+    position: relative;
+    width: 320px;
+  }
+
+  .card-content{
+    padding: 10px;
+  }
+
+  .card-img{
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    width: 100%;
+  }
+  // ======== TEXT AREA CARD ========
+  .card-info{
+    //Medidas do card sem imagem
+    margin: 15% 5%;
+    // margin: 5% 0;
+  }
+
+  .title-card{
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    // width: 80%;
+  }
+
+  .subtitle-card{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    text-align: justify;
+    margin: 5% 0;
+    width: 95%;
+  }
+
+  // ======== BUTTONS CARDS ========
+  .btn{
+    overflow: hidden;
+    position: relative;
+    transition: .5 ease-in-out;
+  }
+
+  .btn::before{
+    background-color: var(--color-strong-green);
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    transition: .8s ease;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .btn-lerMais{
+    background: none;
+    border: 1px solid var(--color-text);
+    border-radius: 50px 50px 25px 50px;
+    color: var(--color-text);
+    font-size: 12px;
+    height: 19px;
+    padding: 2px 15px;
+    text-decoration: none;
+    left: 70%;
+    width: 85px;
+    z-index: 0;
+  }
+
+  .btn-lerMais::before{
+    bottom: 0;
+    border-radius: 50px 50px 25px 50px;
+  }
+
+  .btn-lerMais:hover{
+    border: 1px solid var(--color-strong-green);
+    color: var(--color-white);
+  }
+
+  .btn-lerMais:hover::before{
+    height: 100%;
+  }
+
+   // ======== BUTTON & SLIDERS  MURAL AREA ========
+  .btn-area{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 12%;
+    position: relative;
+    justify-content: end;
+  }
+
+  .indicators{
+    border: 1px solid var(--color-strong-blue);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 13px;
+    margin: 0 5px;
+    width: 13px;
+  }
+
+  .btn-ver-historia{
+    background-color: var(--color-strong-green);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: var(--color-white);
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    padding: 10px 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .btn-ver-historia:hover{
+    transform: translateY(-2px);
+    transition: .2s ease-in;
+  }
+
+
+
+@media screen and (max-width: 767px) {
+  // =================== CAROUSEL AREA ===================
+  .carousel-container{
+    flex-wrap: wrap;
+    margin: 20% 5%;
+  }
+
+  // .img-carousel{
+  //   width: 580px;
+  //   height: 380px;
+  // }
+
+  .title-carousel{
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .subtitle-carousel{
+    width: 80%;
+    margin: 0 0 10% 0;
+  }
+
+  .info-area{
+    top: 25%;
+  }
+
+  .btn-carousel{
+    display: none;
+  }
+  .dot-slider{
+    width: 10px;
+    height: 10px;
+  }
+
+  // =================== COMO PODEMOS AJUDAR AREA ===================
+  .ajudar-container{
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    // grid-template-columns: repeat(1, 1fr);
+  }
+
+  .ajuda-img{
+    width: 100%;
+  }
+
+  .subtitle{
+    width: 95%;
+  }
+  // =================== MURAL DE HISTÓRIAS AREA ===================
+  .mural-container{
+    flex-wrap: wrap;
+  }
+
+  .card{
+    margin: 5% 10%;
+  }
+
+  .btn-area{
+    margin:8% 8% 0 0;
+  }
+
+
+  .folhas-bg{
+    bottom: 30%;
+    // bottom: 48%;
+    transform: translateY(0);
+    width: 100%;
+  }
+
+}

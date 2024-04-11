@@ -1,1 +1,102 @@
-<p>noticias works!</p>
+<!-- Navbar -->
+<app-navbar></app-navbar>
+<!-- Conteúdo central  -->
+<main class="pagina-noticias">
+  <!-- Introdução -->
+  <section class="pagina-noticias__introducao">
+    <div style="display: flex">
+      <div style="cursor: pointer;" routerLink="/home">Home</div>
+      <div style="margin-left: 5px">></div>
+      <div style="color: #d9b2a9; margin-left: 5px; cursor: pointer;" routerLink="/noticias">Notícias</div>
+    </div>
+    <h2>Quadro de <strong style="color: #d9b2a9">notícias</strong></h2>
+    <p style="width: 30%;">
+      Acompanhe sobre as últimas notícias sobre o luto parental, artigos, leis
+      de apoio aos pais aos pais enlutados e muito mais.
+    </p>
+  </section>
+  <!-- Notícias -->
+  <section class="pagina-noticias__noticias" style="position: relative;">
+
+    <div class="pagina-noticias__container">
+
+      <div class="pagina-noticias__noticias__botao">
+        <button>
+          <label>Filtrar por categoria:</label>
+          <select>
+            <option value="#"></option>
+            <option *ngFor="let categoria of categorias" [value]="categoria.categoria">
+              {{ categoria.categoria }}
+            </option>
+          </select>
+        </button>
+      </div>
+
+      <div class="line-separator" style="border: 1px solid var(--color-text); width: 100%;"></div>
+
+      <!-- Imagem de fundo  -->
+      <img class="pagina-noticias__noticias__background" src="../../../assets/img/page-noticias/lateral-flora.svg"/>
+
+      <!-- Card  -->
+      <div class="pagina-noticias__noticias__cards">
+        <section class="pagina-noticias__cards-content" *ngFor="let noticia of dadosDaPaginaAtual">
+          <img [src]="'assets/img/page-noticias/' + noticia.img + '.svg'" alt="Imagem SVG" />
+          <!-- Imagem card  -->
+
+          <div class="pagina-noticias__noticias__cards__card-info" [ngClass]="estiloCardNoticia(noticia.idTag)">
+
+            <!-- Data e tag  -->
+            <div class="pagina-noticias__noticias__cards__data-categoria">
+              <p style="font-weight: 500; font-size: 14px;">{{ noticia.dataHora }}</p>
+              <p [ngClass]="estiloTags(noticia.idTag)"
+                style="border-radius: 4px; padding: 0.1em; font-weight: 500">
+                {{ pegarNomeTag(noticia.idTag) }}
+              </p>
+            </div>
+
+            <!-- Título card  -->
+            <h3>{{ noticia.titulo }}</h3>
+            <!-- Conteúdo card  -->
+            <p style="margin-bottom: 10px">{{ noticia.texto }}</p>
+
+            <!-- Leia mais  -->
+            <a class="btn-lerMais">
+              <p class="btn-text">Leia mais</p>
+              <span class="icon-arrow material-symbols-outlined">
+                arrow_forward_ios
+              </span>
+            </a>
+          </div>
+
+
+
+
+        </section>
+      </div>
+
+
+      <div class="paginators">
+        <button (click)="carregarProximaPagina(false)" class="btn-voltar" [disabled]="!voltarPagina">
+          <span class="material-symbols-outlined icon-voltar">
+            arrow_back_ios
+          </span>
+        </button>
+        <span class="number-page">{{this.paginaAtual}}</span>
+        <button (click)="carregarProximaPagina(true)" class="btn-passar" [disabled]="!avancarPagina">
+          <span class="material-symbols-outlined icon-avancar">
+            arrow_forward_ios
+          </span>
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Histórias -->
+  <app-ver-historias></app-ver-historias>
+  
+  <!-- Newsletter -->
+  <app-newslatter></app-newslatter>
+</main>
+<!-- Footer -->
+<app-footer></app-footer>
