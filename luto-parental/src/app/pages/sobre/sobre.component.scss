@@ -1,0 +1,184 @@
+
+.navegation-pages{
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  gap: .2rem;
+  margin: 5%;
+}
+
+.nav-home, .nav-router{
+  cursor: pointer;
+}
+.nav-router{
+  color: var(--color-strong-pink);
+}
+.icon{
+  font-size: 14px;
+  transform: translateY(3px);
+}
+// Estilização de texto
+.mark{
+  color: var(--color-strong-pink);
+}
+title{
+  font-size: 18px;
+}
+.container{
+  width: 100%;
+  height: 90%;
+}
+
+.text{
+  font-family: "Sora", sans-serif;
+  margin: 5% 5%;
+}
+// Quem somos
+.container{
+  width: 100%;
+  height: 90%;
+}
+.container-quem-somos{
+  width: 100%;
+  height: 400px;
+  background-color: var(--color-light-pink);
+  margin: 5% 0;
+  opacity: 66%;
+  padding: 3% 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+
+}
+
+.folhas{
+  width: 30%;
+  height: 90%;
+  transform: scaleY(-1);
+  position: absolute;
+  margin-top: -80px;
+}
+img{
+  width: 20%;
+}
+// Cultura
+.cultura{
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+.card{
+  border-radius: 25px;
+  text-align: center;
+  width: 300px;
+  height: 180px;
+  padding-top: 5px;
+  background-color: white;
+  margin-bottom: 50px;
+}
+.card-cultura{
+  padding: 15px 20px 20px 20px
+}
+// Nossa história
+.historia{
+  text-align: center;
+}
+.nossa-historia{
+  width: 100%;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  width: 100%;
+  height: 50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+padding-top: 25%;
+
+}
+.card-historico{
+  width: 270px;
+  height: 250px;
+  text-align: left;
+  margin-top: -400px;
+  padding: 17px 15px ;
+}
+.card-historico, h2{
+  margin-bottom: 15px;
+}
+.verde{
+  border-radius: 20px 10px 20px 10px;
+ background-color: rgba(165, 166, 143, 1);
+ ;
+}
+.pontilhado{
+  border-radius: 10px 20px 10px 20px;
+  margin-top: -300px;
+  background-color:none;
+  border: 2px dashed rgba(217, 178, 169, 1);
+
+}
+.nossa-equipe{
+  width: 100%;
+  height: 800px;
+  margin-bottom: 5px;
+}
+.container-sobre{
+  width: 75%;
+  height: 75%;
+  margin-left: 250px;
+  display: grid;
+  grid-template-areas:
+		"div-vertical info info info"
+		;
+}
+.container-vertical{
+  border-radius: 15px;
+  width: 200px;
+  margin-right: 20px;
+  grid-area: div-vertical;
+  background-color: rgb(255, 178, 127);
+
+}
+.info{
+  grid-area: info;
+  display: grid;
+  grid-template-areas:
+    "membro-foto membro-info"
+    "membro-foto img-padrao"
+    ;
+  border-radius: 15px;
+}
+.membro-foto{
+  border-radius: 15px 0px 0 15px;
+  width: 500px;
+  height: 600px;
+  grid-area: membro-foto;
+  background-color: aliceblue;
+}
+.membro-info{
+  width: 680px;
+  height: 350px;
+  grid-area: membro-info;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0 15px 0px 0px;
+  padding: 60px 80px 60px;
+  text-align: left;
+}
+.img-padrao{
+  width: 680px;
+  height: 250px;
+  grid-area: img-padrao;
+  border-radius: 0px 0px 15px 0px;
+}
+
+
+
+
