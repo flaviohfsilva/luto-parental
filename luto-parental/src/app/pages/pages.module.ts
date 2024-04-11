@@ -9,9 +9,12 @@ import { CompartilharHistoriaComponent } from '../components/compartilhar-histor
 import { DepoimentosComponent } from './depoimentos/depoimentos.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { DireitosComponent } from './direitos/direitos.component';
-import { AssistenciasComponent } from './assistencias/assistencias.component';
-import { PlantoesPsicologicosComponent } from './plantoes-psicologicos/plantoes-psicologicos.component';
+import { DepoimentosComponent } from './depoimentos/depoimentos.component';
+import { VerDireitosComponent } from '../components/ver-direitos/ver-direitos.component';
+import { ModalHistoriasComponent } from '../components/modal-historias/modal-historias.component';
+import { ModalHistoriasModule } from '../components/modal-historias/modal-historia.module';
 import { SobreComponent } from './sobre/sobre.component';
+
 
 
 
@@ -21,11 +24,10 @@ import { SobreComponent } from './sobre/sobre.component';
         CompartilharHistoriaComponent,
         DepoimentosComponent,
         NoticiasComponent,
-          DireitosComponent,
-          AssistenciasComponent,
-        PlantoesPsicologicosComponent,
-        SobreComponent
-      ],
+        DireitosComponent,
+        DepoimentosComponent,
+        SobreComponent,
+    ],
     imports: [
         CommonModule,
         PageRoutingModule,

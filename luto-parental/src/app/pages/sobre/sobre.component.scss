@@ -90,17 +90,17 @@ img{
 }
 .nossa-historia{
   width: 100%;
-  height: 700px;
+  height: 500px;
   justify-content: center;
   align-items: center;
 }
 .container{
   width: 100%;
-  height: 100%;
+  height: 50%;
   display:flex;
   align-items: center;
   justify-content: center;
-
+padding-top: 25%;
 
 }
 .card-historico{
@@ -125,3 +125,60 @@ img{
   border: 2px dashed rgba(217, 178, 169, 1);
 
 }
+.nossa-equipe{
+  width: 100%;
+  height: 800px;
+  margin-bottom: 5px;
+}
+.container-sobre{
+  width: 75%;
+  height: 75%;
+  margin-left: 250px;
+  display: grid;
+  grid-template-areas:
+		"div-vertical info info info"
+		;
+}
+.container-vertical{
+  border-radius: 15px;
+  width: 200px;
+  margin-right: 20px;
+  grid-area: div-vertical;
+  background-color: rgb(255, 178, 127);
+
+}
+.info{
+  grid-area: info;
+  display: grid;
+  grid-template-areas:
+    "membro-foto membro-info"
+    "membro-foto img-padrao"
+    ;
+  border-radius: 15px;
+}
+.membro-foto{
+  border-radius: 15px 0px 0 15px;
+  width: 500px;
+  height: 600px;
+  grid-area: membro-foto;
+  background-color: aliceblue;
+}
+.membro-info{
+  width: 680px;
+  height: 350px;
+  grid-area: membro-info;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0 15px 0px 0px;
+  padding: 60px 80px 60px;
+  text-align: left;
+}
+.img-padrao{
+  width: 680px;
+  height: 250px;
+  grid-area: img-padrao;
+  border-radius: 0px 0px 15px 0px;
+}
+
+
+
+
