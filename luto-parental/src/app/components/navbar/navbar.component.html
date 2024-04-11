@@ -50,7 +50,7 @@
         <!--  =================== NAV LOGO AREA ===================  -->
         <div class="logo-area navbar-brand">
           <a>
-            <h2>LOGO</h2>
+            <h2 style="cursor: pointer;" routerLink="/home">LOGO</h2>
             <!-- <img src="" alt=""> -->
           </a>
           <button class="btn-toggle" *ngIf="toggleButton" (click)="toggleNavbar()">
@@ -91,7 +91,7 @@
           </li>
 
           <li>
-            <a class="nav-links">
+            <a class="nav-links" routerLink="/sobre" routerLinkActive="active">
               Sobre
             </a>
           </li>
@@ -109,6 +109,7 @@
           </li>
         </ul>
       </div>
+
     </div>
   </div>
 
