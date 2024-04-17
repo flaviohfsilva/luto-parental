@@ -1,9 +1,9 @@
 <nav class="navbar">
+  <!--  =================== NAVBAR CONTAINER ===================  -->
   <div class="navbar-container">
 
     <div class="top-nav">
       <div class="top-container">
-
         <!--  =================== SOCIAL MEDIA ===================  -->
         <div class="social-media">
           <!--  =================== SOCIAL LIST ===================  -->
@@ -27,7 +27,7 @@
             <!--  =================== TOP INFO MENU ===================  -->
             <ul class="top-info-menu">
               <!--  =================== TOP INFO LINKS ===================  -->
-              <li>
+              <!-- <li>
                 <a class="top-info-links" href="">SOBRE</a>
               </li>
 
@@ -37,51 +37,80 @@
 
               <li>
                 <a class="top-info-links" href="">CONTATO</a>
-              </li>
+              </li> -->
             </ul>
         </div>
       </div>
     </div>
 
-    <ul class="nav-menu">
-      <li>
-        <div class="logo-area">
-          <!-- <img src="" alt=""> -->
-          <h2>LOGO</h2>
+    <!--  =================== NAVBAR MENU ===================  -->
+    <div class="nav-menu">
+
+      <div class="nav-menu-content">
+        <!--  =================== NAV LOGO AREA ===================  -->
+        <div class="logo-area navbar-brand">
+          <a>
+            <h2 style="cursor: pointer;" routerLink="/home">LOGO</h2>
+            <!-- <img src="" alt=""> -->
+          </a>
+          <button class="btn-toggle" *ngIf="toggleButton" (click)="toggleNavbar()">
+            <i class="fa-solid fa-bars"></i>
+          </button>
         </div>
-      </li>
 
-      <li>
-        <a class="nav-links">
-          Assistências
-        </a>
-      </li>
+        <!--  =================== NAVBAR LINKS ===================  -->
+        <ul class="menu-links" *ngIf="!mostrarNavbar">
+          <!-- <li>
+            <a class="nav-links">
+              Assistências
+            </a>
+          </li>
 
-      <li>
-        <a class="nav-links">
-          Plantões psicológico
-        </a>
-      </li>
+          <li>
+            <a class="nav-links">
+              Plantões psicológico
+            </a>
+          </li> -->
 
-      <li>
-        <a class="nav-links">
-          Depoimentos
-        </a>
-      </li>
+          <li>
+            <a class="nav-links" routerLink="/depoimentos" routerLinkActive="active">
+              Depoimentos
+            </a>
+          </li>
 
-      <li>
-        <a class="nav-links">
-          Direitos
-        </a>
-      </li>
+          <li>
+            <a class="nav-links">
+              Direitos
+            </a>
+          </li>
 
-      <li>
-        <a class="nav-links">
-          Notícias
-        </a>
-      </li>
-    </ul>
+          <li>
+            <a class="nav-links" routerLink="/noticias" routerLinkActive="active">
+              Notícias
+            </a>
+          </li>
+
+          <li>
+            <a class="nav-links" routerLink="/sobre" routerLinkActive="active">
+              Sobre
+            </a>
+          </li>
+
+          <li>
+            <a class="nav-links">
+              O que fazemos
+            </a>
+          </li>
+
+          <li>
+            <a class="nav-links">
+              Contato
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
   </div>
-
 
 </nav>

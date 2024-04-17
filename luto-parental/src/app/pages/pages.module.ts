@@ -6,11 +6,17 @@ import { FooterModule } from "../components/footer/footer.module";
 import { NavbarModule } from '../components/navbar/navbar.module';
 import { NewslatterModule } from '../components/newslatter/newslatter.module';
 import { CompartilharHistoriaComponent } from '../components/compartilhar-historia/compartilhar-historia.component';
-import { DepoimentosComponent } from './depoimentos/depoimentos.component';
+import { VerNoticiasArtigosComponent } from '../components/ver-noticias-artigos/ver-noticias-artigos.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { DireitosComponent } from './direitos/direitos.component';
-import { AssistenciasComponent } from './assistencias/assistencias.component';
-import { PlantoesPsicologicosComponent } from './plantoes-psicologicos/plantoes-psicologicos.component';
+import { DepoimentosComponent } from './depoimentos/depoimentos.component';
+import { VerDireitosComponent } from '../components/ver-direitos/ver-direitos.component';
+import { ModalHistoriasComponent } from '../components/modal-historias/modal-historias.component';
+import { ModalHistoriasModule } from '../components/modal-historias/modal-historia.module';
+import { SobreComponent } from './sobre/sobre.component';
+import { VerHistoriasComponent } from '../components/ver-historias/ver-historias.component';
+
+
 
 
 
@@ -18,18 +24,21 @@ import { PlantoesPsicologicosComponent } from './plantoes-psicologicos/plantoes-
     declarations: [
         LandingPageComponent,
         CompartilharHistoriaComponent,
-        DepoimentosComponent,
+        VerNoticiasArtigosComponent,
+        VerDireitosComponent,
+        VerHistoriasComponent,
         NoticiasComponent,
         DireitosComponent,
-        AssistenciasComponent,
-        PlantoesPsicologicosComponent
+        DepoimentosComponent,
+        SobreComponent,
     ],
     imports: [
         CommonModule,
         PageRoutingModule,
         NavbarModule,
         FooterModule,
-        NewslatterModule
+        NewslatterModule,
+        ModalHistoriasModule,
     ]
 })
 export class PagesModule { }

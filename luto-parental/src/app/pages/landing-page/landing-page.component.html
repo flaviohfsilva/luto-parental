@@ -1,6 +1,124 @@
-<app-navbar></app-navbar>
-<p>landing-page works!</p>
 
-<app-compartilhar-historia></app-compartilhar-historia>
-<app-newslatter></app-newslatter>
+<!--  =================== NAVBAR AREA ===================  -->
+<app-navbar></app-navbar>
+
+<main class="home-page">
+
+  <!--  =================== CAROUSEL AREA ===================  -->
+  <section class="carousel-home" *ngIf="carouselAutomatic">
+
+    <!--  =================== CAROUSEL IMG ===================  -->
+    <div *ngIf="images && images.length > 0" class="carousel-container">
+      <img class="img-carousel" *ngFor="let image of images; let i = index"
+      [src]="image.imgSrc" [alt]="image.imgAlt"
+      [ngClass]="{'image-active': selectedIndex === i}"
+      >
+
+      <!--  =================== CAROUSEL TEXTS ===================  -->
+      <div *ngIf="textCarousel" class="info-area">
+        <div *ngFor="let text of images; let i = index"
+        class="text-area"
+        [ngClass]="{'text-active': selectedIndex === i}"
+        >
+          <h1 class="title-carousel">{{text.title}}</h1>
+          <p class="subtitle-carousel">{{text.subtitle}}</p>
+        </div>
+      </div>
+
+      <a class="btn-saibaMais">Saiba Mais</a>
+
+
+      <!--  =================== CAROUSEL SLIDERS ===================  -->
+      <div *ngIf="sliders" class="sliders-carousel">
+        <span *ngFor="let dot of images; let i = index"
+        class="dot-slider"
+        [ngClass]="{'active-dot': selectedIndex === i}"
+        (click)="passarSliderCarousel(i)"
+        >
+      </span>
+      </div>
+
+      <!--  =================== CAROUSEL BTN-VOLTAR ===================  -->
+      <!-- <button *ngIf="controls" class="btn-carousel btn-voltar">
+        <span (click)="voltarCarousel()" class="material-symbols-outlined icon-prev">
+          arrow_back_ios
+          </span>
+      </button> -->
+
+      <!--  =================== CAROUSEL BTN-AVANÇAR ===================  -->
+      <!-- <button *ngIf="controls" class="btn-carousel btn-avancar">
+        <span (click)="avancarCarousel()" class="material-symbols-outlined icon-prev">
+          arrow_forward_ios
+          </span>
+      </button> -->
+    </div>
+  </section>
+
+   <!--  =================== COMO PODEMOS AJUDAR AREA ===================  -->
+   <section class="como-podemos-ajudar">
+    <div class="ajudar-container">
+
+      <img src="../../../assets/mulher-abracando-2.png" alt="" class="ajuda-img">
+
+      <div class="area-ajudar">
+        <h1 class="title">Como podemos lhe ajudar ?</h1>
+        <p class="subtitle">
+          Oferecemos um espaço seguro e acolhedor para que você
+          possa compartilhar suas vivências, encontrar conforto e
+          construir esperança.
+        </p>
+
+        <p class="subtitle">
+          Oferecemos um espaço seguro e acolhedor para que você
+          possa compartilhar suas vivências, encontrar conforto e
+          construir esperança.
+        </p>
+
+        <button class="btn-ajuda">Saiba mais</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="mural-historia">
+    <h1 class="title-historia">Histórias Reais</h1>
+    <div class="mural-container">
+      <img src="../../../assets/folhas-bg.png" alt="" class="folhas-bg">
+
+      <div class="card-shadow card" *ngFor="let historia of historias | slice:0:3">
+        <div class="card-content">
+
+          <!-- <img src="../../../assets/image 2.png" alt="" class="card-img"> -->
+
+          <div class="card-info">
+            <h3 class="title-card">{{ historia.titulo }}</h3>
+            <p class="subtitle-card">{{ historia.texto }}</p>
+            <a href="" class="btn btn-lerMais">Ler mais</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="btn-area">
+      <!-- <div class="sliders-container">
+        <span *ngFor="let indicator of historias | slice: 0:3; let i;"
+        class="indicators"
+        >
+      </span>
+      </div> -->
+
+      <a class="btn-ver-historia" routerLink="/depoimentos">Veja Todas</a>
+    </div>
+  </section>
+
+   <!--  =================== COMPARTILHAR HISTÓRIA AREA ===================  -->
+  <app-compartilhar-historia></app-compartilhar-historia>
+
+  <app-ver-noticias-artigos [noticia]="noticia" [tag]="tag"></app-ver-noticias-artigos>
+
+  <!--  =================== NEWSLATTER AREA ===================  -->
+  <app-newslatter></app-newslatter>
+</main>
+
+<!--  =================== FOOTER AREA ===================  -->
 <app-footer></app-footer>
+

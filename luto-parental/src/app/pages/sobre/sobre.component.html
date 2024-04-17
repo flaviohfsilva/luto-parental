@@ -1,0 +1,185 @@
+<app-navbar></app-navbar>
+
+<main class="pagina-sobre-nos">
+  <div class="navegation-pages">
+    <p class="nav-home" routerLink="/home">Home</p>
+       <span class="material-symbols-outlined icon">
+       arrow_forward_ios
+    </span>
+    <span class="nav-router">Sobre</span>
+  </div>
+  <!-- Quem somos-->
+  <section class="quem-somos">
+    <div class="text">
+      <h1 class="title">Quem <span class="mark title">somos</span></h1>
+    </div>
+    <img class="folhas" src="../../assets/folhas-bg.png" alt="folhas">
+    <div class="container-quem-somos">
+        <p style="font-family: 'Open Sans', sans-serif;">
+          Somos um projeto dedicado a oferecer apoio, compreensão e esperança <br>
+          para pais que enfrentam o desafio do luto parental.<br>
+          Nossa jornada começou a partir da compreensão profunda da dor e da perda<br>
+           que acompanham o luto parental. Conhecemos em primeira mão as lágrimas<br>
+           silenciosas, as perguntas sem resposta e a sensação avassaladora de vazio<br>
+           que pode se instalar após a partida de um filho amado. Movidos pelo desejo<br>
+            de fazer a diferença na vida de outras pessoas, decidimos criar este espaço<br>
+            de apoio, esperança e cura.
+        </p>
+        <img class= "imagem-container" src="../../assets/mulher-abracando-2.png" alt="">
+    </div>
+
+
+    <div class="cultura">
+        <div class="card card-cultura">
+          <h2 style="font-family: 'Sora', sans-serif;">Visão</h2>
+          <p style="font-family: 'Open Sans', sans-serif;">Criar uma comunidade de apoio e compreensão para aqueles que estão lidando com o luto parental</p>
+        </div>
+        <div class="card card-cultura">
+          <h2 style="font-family: 'Sora', sans-serif;">Missão</h2>
+          <p style="font-family: 'Open Sans', sans-serif;">Oferecer informações abrangentes, histórias inspiradoras, conselhos práticos e uma comunidade solidária.</p>
+        </div>
+        <div class="card card-cultura">
+          <h2 style="font-family: 'Sora', sans-serif;">Valores</h2>
+          <p style="font-family: 'Open Sans', sans-serif;">Compreender, respeitar e apoiar sua jornada de luto</p>
+        </div>
+    </div>
+  </section>
+
+  <!--Nossa história-->
+  <section class="nossa-historia">
+    <div class="text">
+      <h1 class="historia">Nossa <span class="mark">história</span></h1>
+    </div>
+    <div class="container">
+      <div class="card-historico verde">
+        <h2 style="font-family: 'Sora', sans-serif;">2024</h2>
+        <p style="font-family: 'Open Sans', sans-serif; text-align: justify;">Neste ano nos tornamos um farol de esperança para milhares de pais em luto em todo o mundo. Nossa plataforma online, repleta de recursos informativos, tornou-se um refúgio seguro onde os pais podem compartilhar suas histórias </p>
+      </div>
+      <div class="card-historico pontilhado">
+        <h2 style="font-family: 'Sora', sans-serif;">2024</h2>
+        <p style="font-family: 'Open Sans', sans-serif; text-align: justify;">Testemunhamos a criação de laços profundos de solidariedade e empatia entre os membros de nossa comunidade. Pais que antes se sentiam isolados e desamparados agora encontram consolo na companhia de outros que compartilham suas experiências</p>
+      </div>
+    </div>
+  </section>
+  <!--Nossa equipe-->
+  <section class="nossa-equipe">
+
+    <div class="text">
+      <h1 class="title">Nossa <span class="mark title">equipe</span></h1>
+    </div>
+
+    <!--  =================== CAROUSEL AREA ===================  -->
+    <div class="carousel-sobre">
+
+    <!--  =================== CAROUSEL CONTAINER ===================  -->
+      <div class="carousel-container" *ngIf="carouselSobre && carouselSobre.length > 0">
+
+        <!--  =================== CAROUSEL FOTOS LATERAIS ===================  -->
+        <div class="carousel-fotos" *ngIf="carouselAutomatic">
+          <img (click)="avancarCarousel()" class="img-carousel-lateral"
+          *ngFor="let image of carouselSobre; let i = index"
+          [src]="image.imgSrc" [alt]="image.imgAlt"
+          [ngClass]="{'image-lateral-active': selectedIndex === i}"
+          >
+          <!-- <div class="overlay"></div> -->
+<!--
+          <button (click)="avancarCarousel()" class="btn-passar">
+            <span class="material-symbols-outlined icon">
+              expand_more
+            </span>
+          </button> -->
+        </div>
+
+        <!--  =================== CAROUSEL SELECIONADO AREA ===================  -->
+        <div class="carousel-selecionado"
+          *ngFor="let sobre of carouselSobre; let i = index"
+          >
+
+          <!--  =================== CAROUSEL IMAGEM SELECIONADA  ===================  -->
+          <img class="carousel-img-selecionado"
+          [src]="sobre.imgSrc2"
+          [alt]="sobre.imgAlt"
+          [ngClass]="{'image-active': selectedIndex === i}"
+          >
+
+          <!--  =================== CAROUSEL INFORMAÇÕES SELECIONADO  ===================  -->
+          <div class="carousel-info">
+            <div class="text-carousel">
+
+              <h2 class="title-carousel"
+                [ngClass]="{'title-active': selectedIndex === i}"
+                >
+                {{sobre.nome}}
+              </h2>
+
+              <h5 class="subtitle-carousel"
+                [ngClass]="{'subtitle-active': selectedIndex === i}"
+                >
+                {{sobre.funcao}}
+              </h5>
+
+              <p class="descricao"
+                [ngClass]="{'descricao-active': selectedIndex === i}"
+                >
+                {{sobre.descricao}}
+              </p>
+            </div>
+
+            <div class="img-area">
+              <img  class="img-padrao" [ngClass]="{'img-area-active': selectedIndex === i}" [src]="sobre.imgPadrao" alt="Imagem padrão">
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+   <!-- <div class="container-sobre" *ngIf="carouselSobre && carouselSobre.length > 0">
+
+        <div class="carousel-fotos">
+          <img  class="img-carousel-leteral"
+          *ngFor="let image of carouselSobre; let i = index;"
+          [src]="image.imgSrc"
+          [alt]="image.imgAlt"
+          [ngClass]="{'image-active': selectedIndex === i}"
+          >
+
+          <a class="btn-passar">
+            <span class="material-symbols-outlined icon">
+              expand_more
+            </span>
+          </a>
+        </div>
+
+
+        <div class="carousel-info" *ngFor="let sobre of carouselSobre; let i = index;">
+          <div class="carousel-content"
+          [ngClass]="{'sobre-active': selectedIndex === i}"
+          >
+              <img [src]="sobre.imgSrc2" [alt]="sobre.imgAlt" class="membro-foto">
+
+              <div class="carousel-area-info">
+
+              </div>
+              <div class="membro-info">
+                <h2>{{sobre.nome}}</h2>
+                <h5>{{sobre.funcao}}</h5>
+                <p>{{sobre.descricao}}</p>
+              </div>
+              <img src="../assets/img/sobre/padrao.png" alt="decoração" class="img-padrao">
+          </div>
+        </div>
+
+  </div> -->
+  </section>
+
+  <app-newslatter></app-newslatter>
+</main>
+
+<app-footer></app-footer>
+

@@ -1,0 +1,319 @@
+
+.navegation-pages{
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  gap: .2rem;
+  margin: 5%;
+}
+
+.nav-home, .nav-router{
+  cursor: pointer;
+}
+.nav-router{
+  color: var(--color-strong-pink);
+}
+.icon{
+  font-size: 14px;
+  transform: translateY(3px);
+}
+// Estilização de texto
+.mark{
+  color: var(--color-strong-pink);
+}
+title{
+  font-size: 18px;
+}
+.container{
+  width: 100%;
+  height: 90%;
+}
+
+.text{
+  font-family: "Sora", sans-serif;
+  margin: 5% 5%;
+}
+// Quem somos
+.container{
+  width: 100%;
+  height: 90%;
+}
+.container-quem-somos{
+  width: 100%;
+  height: 400px;
+  background-color: var(--color-light-pink);
+  margin: 5% 0;
+  opacity: 66%;
+  padding: 3% 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+
+}
+
+.folhas{
+  width: 30%;
+  height: 90%;
+  transform: scaleY(-1);
+  position: absolute;
+  margin-top: -80px;
+}
+img{
+  width: 20%;
+}
+// Cultura
+.cultura{
+  cursor: pointer;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  padding: 12% 0 10%;
+}
+.card{
+  border-radius: 25px;
+  text-align: center;
+  width: 300px;
+  height: 180px;
+  padding-top: 5px;
+  background-color: white;
+  margin-bottom: 50px;
+}
+.card-cultura{
+  padding: 15px 20px 20px 20px;
+  transition: .5 ease-in;
+}
+.card-cultura:hover{
+  transform: translateY(-5px);
+}
+// Nossa história
+.historia{
+  text-align: center;
+}
+.nossa-historia{
+  width: 100%;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  width: 100%;
+  height: 50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+padding-top: 25%;
+
+}
+.card-historico{
+  width: 350px;
+  height: 300px;
+  text-align: left;
+  margin-top: -400px;
+  padding: 2%;
+}
+.card-historico, h2{
+  margin-bottom: 15px;
+}
+.verde{
+  border-radius: 50px 25px 50px 25px;
+ background-color: rgba(165, 166, 143, 1);
+ ;
+}
+.pontilhado{
+  border-radius: 50px 25px 50px 25px;
+  margin-top: -300px;
+  background-color:none;
+  border: 2px dashed rgba(217, 178, 169, 1);
+
+}
+.nossa-equipe{
+  width: 100%;
+  height: 800px;
+  margin: 20% 10%;
+  padding: 8%;
+}
+// .container-sobre{
+//   width: 75%;
+//   height: 75%;
+//   margin:  0 5%;
+//   display: grid;
+//   grid-template-areas:
+// 		"div-vertical info info info"
+// 		;
+// }
+
+
+
+
+// .carousel-info{
+//   grid-area: info;
+//   display: grid;
+//   grid-template-areas:
+//     "membro-foto membro-info"
+//     "membro-foto img-padrao"
+//     ;
+//   border-radius: 15px;
+//   position: relative;
+// }
+
+.carousel-content{
+  display: none;
+}
+
+.membro-foto{
+  border-radius: 26px 0px 0 26px;
+  grid-area: membro-foto;
+  background-color: aliceblue;
+  width: 100%;
+}
+
+.membro-info{
+  width: 65%;
+  height: 60%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0 15px 0px 0px;
+  padding: 40px;
+  text-align: left;
+}
+.img-padrao{
+  width: 65%;
+  height: 80%;
+  grid-area: img-padrao;
+  border-radius: 0px 0px 15px 0px;
+}
+
+// ===================  CAROUSEL NEW AREA ===================
+
+.carousel-sobre{
+  margin: 5%;
+}
+
+.carousel-container{
+  display: flex;
+}
+
+  // ===================  CAROUSEL FOTOS LATERAIS ===================
+  .carousel-fotos{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 30%;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+  }
+
+  .img-carousel-lateral{
+    display: inline-block;
+    border-radius: 21px;
+    cursor: pointer;
+    position: relative;
+    width: 32%;
+  }
+
+  .image-lateral-active{
+    border: 3px solid var(--color-strong-blue);
+    border-radius: 20px;
+  }
+
+  // ===================  CAROUSEL SELECIONADO ===================
+  .carousel-info{
+    position: relative;
+  }
+
+  .carousel-selecionado{
+    display: flex;
+  }
+
+  .carousel-selecionado img{
+    display: none;
+  }
+
+  .title-carousel, .subtitle-carousel, .descricao{
+    display: none;
+  }
+
+  .carousel-selecionado img.image-active{
+    display: block;
+    width: 45%;
+  }
+
+  .img-area img.img-area-active{
+    display: block;
+  }
+
+
+  .text-carousel h2.title-active, h5.subtitle-active, p.descricao-active{
+    display: block;
+  }
+
+  .carousel-img-selecionado{
+    border-radius: 26px 0 0 26px;
+    width: 35%;
+    height: 95%;
+  }
+
+  .text-carousel{
+    background: var(--color-white);
+    border-radius: 0 26px 0 0;
+    overflow: hidden;
+    width: 55%;
+    height: 68.5%;
+  }
+
+  .img-padrao{
+    width: 55%;
+  }
+
+  .title-carousel{
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    font-size: 26px;
+    padding: 20% 15% 0;
+  }
+
+  .subtitle-carousel{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 1% 15%;
+  }
+
+  .descricao{
+    font-family: 'Open Sans', sans-serif;
+    padding: 25% 15%;
+    text-align: justify;
+
+  }
+
+
+.btn-passar{
+  cursor: pointer;
+  background: var(--color-strong-pink);
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  text-align: center;
+  transform: translate(35px, -20px);
+  width: 9%;
+}
+
+.icon-carousel-arrow{
+  font-size: 20px;
+}
+
+
+
+

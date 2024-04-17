@@ -1,0 +1,204 @@
+// =================== MODAL AREA ===================
+.modal-historia-container{
+  padding: 5%;
+}
+
+// =================== TITLE AREA MODAL ===================
+.title-area{
+  display: flex;
+  justify-content: space-between;
+}
+
+.title{
+  font-family: 'Sora', sans-serif;
+  font-size: 30px;
+}
+
+.mark-title{
+  color: var(--color-strong-pink);
+}
+
+.icon-close{
+  cursor: pointer;
+  color: var(--color-strong-pink);
+}
+
+// =================== FORM AREA MODAL ===================
+.form-historia{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 3% 0;
+}
+
+  // =================== FORM AREA INFORMAÇÕES ===================
+
+  .info-historia{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    margin: 5% 0;
+  }
+
+  .autorizar-postagem{
+    // display: flex;
+    gap: .2rem;
+  }
+
+  .info-envio{
+    margin: 2% 0;
+  }
+  // =================== FORM INPUTS ===================
+  .input-content{
+    display: flex;
+    gap: 5.5rem;
+  }
+
+  .input-field{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    margin: 3% 0;
+  }
+
+  .input-field label{
+    margin: 1%;
+  }
+
+  .form-input{
+    all: unset;
+    background: var(--color-white);
+    border: 1px solid var(--color-strong-pink);
+    border-radius: 30px;
+    color: var(--color-dark-green);
+    font-size: 15px;
+    line-height: 20px;
+    padding: 8px 12px;
+    position: relative;
+    width: 90%;
+  }
+
+  .form-input:focus-visible, .form-input-img:focus-visible{
+    border-color: var(--color-strong-blue);
+  }
+
+  .form-input:-webkit-autofill{
+    box-shadow: inset 0 0 0 32px var(--background-color) !important;
+    -webkit-text-fill-color: var(--color-text);
+  }
+
+  .form-input-img{
+    all: unset;
+    background: var(--color-white);
+    border: 1px solid var(--color-strong-pink);
+    border-radius: 30px;
+    color: var(--color-dark-green);
+    cursor: pointer;
+    display: block;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 8px 12px;
+    position: relative;
+    overflow: hidden;
+    width: 20%;
+  }
+
+  .form-input-img input[type=file]{
+    bottom: 18%;
+    cursor: pointer;
+    left: 8%;
+    opacity: 0;
+    position: absolute;
+    transform: scale(2);
+  }
+
+  .icon{
+    cursor: pointer;
+    font-size: 18px;
+    transform: rotate(-50deg);
+  }
+
+  // =================== FORM VALIDATION ===================
+  .error-validation{
+    color: var(--color-error);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 2%;
+  }
+
+  .border-erro{
+    border: 1px solid var(--color-error);
+  }
+
+  // =================== BUTTON AREA FORM ===================
+  .btn{
+    overflow: hidden;
+    position: relative;
+    transition: .5 ease-in;
+  }
+
+  .btn::before{
+    background-color: var(--color-strong-green);
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    transition: .8s ease-in;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .btn-enviar{
+    background: none;
+    border: 1px solid black;
+    border-radius: 75px;
+    cursor: pointer;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    margin: 5% 0;
+    padding: 10px;
+    width: 22%;
+    z-index: 0;
+  }
+
+  .btn-enviar::before{
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+  }
+
+  .btn-enviar:hover{
+    border: 1px solid var(--color-strong-green);
+    color: var(--color-white);
+  }
+
+  .btn-enviar:hover::before{
+    height: 180%;
+  }
+
+
+  @media screen and (max-width: 767px) {
+    .input-content{
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-input{
+      margin: 0 0 2% 0;
+    }
+
+    .form-input-img{
+      width: 50%;
+    }
+
+    .btn-enviar{
+      width: 60%;
+    }
+
+    .info-historia{
+      text-align: justify;
+    }
+    .autorizar-postagem{
+      margin: 0 0 8% 0;
+    }
+
+  }

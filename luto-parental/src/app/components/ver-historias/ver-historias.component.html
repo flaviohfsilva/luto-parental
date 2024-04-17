@@ -1,0 +1,42 @@
+<!--  =================== VER NOTÍCIAS SECTION ===================  -->
+<section class="ver-historias">
+  <!--  =================== TITLE VER NOTÍCIAS ===================  -->
+  <div class="title-area">
+
+    <div class="main-text">
+      <h1 class="title">Veja
+        <span class="mark-title">Histórias Reais</span>
+      </h1>
+
+      <p class="subtitle-area">
+        Torne mais leve o sofrimento do luto e perceba que você não está sozinho.
+      </p>
+    </div>
+
+
+    <a routerLink="/depoimentos" class="btn-ver">Veja todas</a>
+  </div>
+
+  <div class="container-historias">
+    <!--  =================== CARD NOTÍCIAS ===================  -->
+    <div class="card-shadow card" *ngFor="let historia of historias | slice:0:3">
+      <div class="card-content">
+
+        <!-- <img src="../../../assets/image 2.png" alt="" class="card-img"> -->
+
+        <div class="card-info">
+          <h3 class="title-card">{{ historia.titulo }}</h3>
+          <p class="subtitle-card">{{ historia.texto }}</p>
+          <a href="" class="btn btn-lerMais">Ler mais</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--  =================== BUTTON VER DIREITOS RESPONSIVO  ===================  -->
+  <div class="btn-responsivo" *ngIf="btnResponsivo">
+    <a routerLink="/depoimentos" class="btn-ver-responsiva">Ver todos</a>
+  </div>
+
+</section>
