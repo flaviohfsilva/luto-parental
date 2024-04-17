@@ -64,7 +64,7 @@
       justify-content: space-evenly;
       // padding: 5em;
       row-gap: 40px;
-      gap: 80px;
+      gap: 10px;
 
       section {
         width: 352px;
@@ -73,7 +73,8 @@
         border-radius: 18px;
         background-color: #F6F6F6;
         font-size: 14px;
-        padding: 1.5em
+        padding: 1.5em;
+        margin-bottom: 50px;
       }
 
       img {
