@@ -18,6 +18,7 @@ export class DepoimentosComponent {
   historiaId: number = 0;
   rotaHistoria!: Subscription;
   public paginaAtual: number = 1;
+  public totalPaginasArray: number[] = [];
   public proximaPagina: number = 0;
   avancarPagina: boolean = true;
   voltarPagina: boolean = false;
@@ -96,6 +97,10 @@ export class DepoimentosComponent {
             // Vai armazenar nas variáveis os valores que vem do back-end para passar as páginas.
             this.avancarPagina = dadosPaginaAtual.avancarPagina;
             this.voltarPagina = dadosPaginaAtual.voltarPagina;
+
+            this.totalPaginasArray = dadosPaginaAtual.totalPaginas;
+            console.log({dadosPaginaAtual})
+            console.log('Pages: ', this.totalPaginasArray);
 
             // Atualiza os dados da página atual
             this.carregarDadosPaginados(this.excluido);

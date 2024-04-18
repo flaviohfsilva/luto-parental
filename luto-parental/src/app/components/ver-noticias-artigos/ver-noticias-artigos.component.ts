@@ -1,4 +1,5 @@
 import { Component, HostListener, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { RequestService } from 'src/app/core/request.service';
 import { Noticia, NoticiasArtigosImg, Tag } from 'src/app/interfaces';
 
@@ -14,7 +15,8 @@ export class VerNoticiasArtigosComponent {
   @Input() noticia: Noticia[] = [];
 
   constructor(
-    private requestService: RequestService
+    private requestService: RequestService,
+    private router: Router
     ) {}
 
   ngOnInit(){
@@ -95,6 +97,10 @@ estiloTags(idTag: number) {
 mostrarImagensNoticia(idNoticia: number){
   const imagem = this.images.find(item => item.id === idNoticia);
   return imagem ? imagem.imgSrc : '';
+}
+
+noticiaSelecionada(){
+  
 }
 
 }
