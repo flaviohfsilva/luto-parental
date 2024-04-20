@@ -1,0 +1,109 @@
+.navegation-pages{
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  gap: .2rem;
+  margin: 5%;
+}
+
+.nav-home, .nav-router{
+  cursor: pointer;
+}
+.nav-router{
+  color: var(--color-strong-pink);
+}
+.icon{
+  font-size: 14px;
+  transform: translateY(3px);
+}
+
+.mark{
+  color: var(--color-strong-pink);
+}
+title{
+  font-size: 18px;
+}
+
+.text{
+  font-family: "Sora", sans-serif;
+  margin: 5% 5%;
+}
+.descricao{
+  width: 510px;
+  margin-top: 20px;
+}
+.noticia-selecionada {
+  width: 100wr;
+  position: relative;
+  padding: 5%;
+  border-top: solid #A5A68F;
+  border-bottom: solid #A5A68F;
+}
+.pagina-noticias__noticias__botao {
+  position: absolute;
+  top: 10px;
+  right: 10.2%;
+}
+
+.informacoes {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 30% 30% 1fr;
+  grid-template-rows: auto auto 1fr 1fr;
+  grid-gap: 5%;
+}
+
+.title-noticia{
+  grid-column: 1 / span 4;
+  font-size: 24px;
+}
+.data{
+  font-size: 18px;
+  color: rgba($color: #60748D, $alpha: 1.0);
+}
+.detalhes{
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 2;
+  padding-bottom: 50px;
+}
+.detalhes p {
+  margin-bottom: 10px; /* Adiciona um espaço de 10 pixels entre cada tag span */
+}
+
+.img {
+  grid-column: 3 / span 2; /* Ocpa duas colunas */
+  grid-row: 2 / span 2; /* Ocupa duas linhas */
+  text-align: center;
+}
+.img_detalhe{
+  color: #525252;
+  font-style: italic;
+}
+
+img {
+  width: 70%;
+  height: 90%;
+  border-radius: 15px;
+}
+
+.detalhes-baixo {
+  grid-column: 1 / span 3; /* Ocpa três colunas */
+  grid-row: 4; /* Ocupa uma linha */
+}
+
+/* Estilizando os elementos dentro do grid */
+.informacoes > * {
+  padding: 10px; /* Adicionando um espaço interno */
+}
+
+/* Media query para dispositivos menores */
+@media screen and (max-width: 768px) {
+  .informacoes {
+    grid-template-columns: 1fr; /* Uma coluna em dispositivos menores */
+    grid-template-rows: auto auto auto auto; /* Quatro linhas */
+  }
+
+  .title-noticia {
+    grid-column: 1; /* Título ocupando apenas uma coluna */
+  }
+}

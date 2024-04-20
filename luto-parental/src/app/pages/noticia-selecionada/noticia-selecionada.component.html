@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+<main>
+  <div class="navegation-pages">
+    <p class="nav-home" routerLink="/home">Home</p>
+       <span class="material-symbols-outlined icon">
+       arrow_forward_ios
+    </span>
+    <p class="nav-home" routerLink="/home">Noticia</p>
+    <span class="nav-router">Nome da noticia selecionada</span>
+  </div>
+  <div class="text">
+    <h1 class="title">Quadro de <span class="mark title">notícias</span></h1>
+    <p class="descricao">
+      Acompanhe sobre as últimas notícias sobre o luto parental, artigos, leis
+      de apoio aos pais aos pais enlutados e muito mais.
+    </p>
+  </div>
+  <section class="noticia-selecionada">
+
+
+
+    <div class="informacoes">
+      <div class="pagina-noticias__noticias__botao">
+        <button>
+          <label>Filtrar por categoria:</label>
+          <select>
+            <option value="#"></option>
+            <option *ngFor="let categoria of categorias" [value]="categoria.categoria">
+              {{ categoria.categoria }}
+            </option>
+          </select>
+        </button>
+      </div>
+
+     <div class="title-noticia">
+        <p class="data">10/02/2024</p>
+        <h1>COMO VIVER O LUTO DE MANEIRA MAIS <br> SAUDÁVEL E PRESERVAR A SUA SAÚDE MENTAL</h1>
+      </div>
+      <p class="detalhes">O corpo se expressa através da dor. Diz a Dra. Taty Logiodice, especializada
+        em medicina integrativa. Ela não concorda com a classificação de “dores emocionais” e “dores físicas”
+        e explica que são dores reais que podem ter igual intensidade.
+        <br><br>
+        De fato, o luto não configura uma doença, mas isso não nos impede de sentir fisicamente as suas dores.
+         Em pesquisas realizadas pela Universidade da Califórnia ficou demonstrado que a parte do cérebro que
+         processa a dor física também processa a dor emocional.
+        <br><br>
+        Quem está sofrendo por alguma perda costumarelatar dores na altura do peito e palpitações, sintomas da
+        chamada “síndrome do coração partido”, um mecanismo de defesa do coração às descargas de adrenalina que
+        costumam acompanhar as situações de choque.</p>
+      <div class="img">
+        <img  src="../assets/noticias-artigos/saudeMental.png" alt="">
+        <p class="img_detalhe">Representação do estado da saúde mental</p>
+      </div>
+      <p class="detalhes-baixo">Ouvir a expressão do corpo, reconhecer as dores e, principalmente, falar sem medo sobre elas é o <br>primeiro e mais importante passo para deixar de senti -las. Não ter vergonha de pedir ajuda. <br> <br>
+
+        Não tem receita pronta. Cada um sabe da dor que sente e vai descobrir aos poucos o que lhe faz <br>sentir melhor. Praticar exercícios físicos pode ajudar não apenas no físico, mas emocionalmente também. Durante a atividade, o corpo libera neurotransmissores importantes no cérebro, que dão a sensação de prazer e bem-estar.
+
+
+
+        </p>
+
+    </div>
+  </section>
+
+  <app-ver-noticias-artigos [noticia]="noticia" [tag]="tag"></app-ver-noticias-artigos>
+  <app-newslatter></app-newslatter>
+</main>
+<app-footer></app-footer>
