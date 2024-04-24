@@ -215,9 +215,16 @@ select {
   }
 
   .number-page{
+    background: var(--color-light-green);
+    color: var(--color-text);
+    padding: 6px 11px;
+    border-radius: 50%;
+  }
+
+  .page-active{
     background: var(--color-strong-green);
     color: var(--color-white);
-    padding: 5px 10px;
+    padding: 6px 11px;
     border-radius: 50%;
   }
 

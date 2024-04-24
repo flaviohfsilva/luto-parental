@@ -15,6 +15,7 @@ import { ModalHistoriasComponent } from '../components/modal-historias/modal-his
 import { ModalHistoriasModule } from '../components/modal-historias/modal-historia.module';
 import { SobreComponent } from './sobre/sobre.component';
 import { VerHistoriasComponent } from '../components/ver-historias/ver-historias.component';
+import { LimitePalavrasPipe } from '../pipes/limite-palavras.pipe';
 
 
 
@@ -31,6 +32,7 @@ import { VerHistoriasComponent } from '../components/ver-historias/ver-historias
         DireitosComponent,
         DepoimentosComponent,
         SobreComponent,
+        LimitePalavrasPipe
     ],
     imports: [
         CommonModule,

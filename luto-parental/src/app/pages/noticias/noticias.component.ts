@@ -29,19 +29,20 @@ export class NoticiasComponent {
   constructor(private requestService: RequestService) {}
 
 
-  ngOnInit(){
-    this.carregarDadosPaginados(this.excluido);
-    this.mostrarTags();
-  }
-
   public dadosDaPaginaAtual: any = [];
   public paginaAtual: number = 1;
-  public proximaPagina: number = 0;
+  public totalPaginasArray: number[] = [];
   public imagens = [];
   tag: Tag[] = [];
   avancarPagina: boolean = true;
   voltarPagina: boolean = false;
   protected excluido: string = '0';
+
+
+  ngOnInit(){
+    this.carregarDadosPaginados(this.excluido);
+    this.mostrarTags();
+  }
 
 
   // public historias = [
@@ -148,6 +149,7 @@ export class NoticiasComponent {
     this.requestService.consultarPaginacaoNoticias(excluido, this.paginaAtual).subscribe(
       (RetornoPaginaAtual: any) => {
         this.dadosDaPaginaAtual = RetornoPaginaAtual.dados;
+        this.totalPaginasArray = RetornoPaginaAtual.totalPaginas;
         console.log('CarregarDadosPaginados: ', this.dadosDaPaginaAtual)
       },
       (error) => {

@@ -73,6 +73,9 @@ export class DepoimentosComponent {
     this.requestService.consultarPaginacaoHistorias(excluido, this.paginaAtual).subscribe(
       (RetornoPaginaAtual: any) => {
         this.dadosDaPaginaAtual = RetornoPaginaAtual.dados;
+        this.totalPaginasArray = RetornoPaginaAtual.totalPaginas;
+
+        console.log('Páginas: ', this.totalPaginasArray)
         console.log('CarregarDadosPaginados: ', this.dadosDaPaginaAtual)
       },
       (error) =>{
@@ -93,14 +96,13 @@ export class DepoimentosComponent {
         .subscribe(
           (dadosPaginaAtual: any) => {
             this.dadosDaPaginaAtual = dadosPaginaAtual.dados;
+            this.totalPaginasArray = dadosPaginaAtual.totalPaginas;
 
             // Vai armazenar nas variáveis os valores que vem do back-end para passar as páginas.
             this.avancarPagina = dadosPaginaAtual.avancarPagina;
             this.voltarPagina = dadosPaginaAtual.voltarPagina;
 
-            this.totalPaginasArray = dadosPaginaAtual.totalPaginas;
             console.log({dadosPaginaAtual})
-            console.log('Pages: ', this.totalPaginasArray);
 
             // Atualiza os dados da página atual
             this.carregarDadosPaginados(this.excluido);
