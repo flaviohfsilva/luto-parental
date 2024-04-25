@@ -53,3 +53,13 @@ export interface NoticiasArtigosImg {
   imgSrc: string;
   imgAlt: string;
 }
+
+export interface CarouselSobre {
+  nome: string;
+  funcao: string;
+  descricao: string;
+  imgSrc: string;
+  imgSrc2: string;
+  imgPadrao: string;
+  imgAlt: string;
+}
