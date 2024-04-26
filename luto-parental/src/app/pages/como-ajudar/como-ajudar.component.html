@@ -1,0 +1,208 @@
+<!--  =================== NAVBAR ===================  -->
+<app-navbar></app-navbar>
+
+
+<main class="como-ajudar-area">
+
+
+   <!--  =================== NAVIGATION PAGES ===================  -->
+   <div class="navegation-pages">
+     <p class="nav-home" routerLink="/home">Home</p>
+     <span class="material-symbols-outlined icon">
+       arrow_forward_ios
+     </span>
+     <span class="nav-router" routerLink="/como-ajudar" routerLinkActive="active">Como Ajudar</span>
+   </div>
+
+
+
+
+   <!--  =================== TEXTOS COMO AJUDAR ===================  -->
+   <div class="texts-como-ajudar">
+   <h1 class="title-como-ajudar">Como <span class="mark-title">ajudar?</span></h1>
+   <p class="subtitle-como-ajudar">
+     Faça uma doação e mantenha e projeto vivo!
+   </p>
+ </div>
+
+
+
+
+   <!--  =================== MURAL DE AJUDA ===================  -->
+   <section class="mural-ajuda">
+     <!--  =================== FILTRO BUTTON ===================  -->
+
+
+     <div class="line-separator" style="border: 1px solid var(--color-text); width: 100%; margin: 5% 0;"></div>
+
+
+     <div class="mural-container-ajuda">
+
+
+       <div class="info-ajuda">
+
+
+         <div class="info-text">
+           <h2 style="margin: 5% 0; width: 70%;">
+             Ao fazer uma doação, você está contribuindo diretamente para:
+           </h2>
+
+
+
+
+           <ol class="contribuicao">
+
+
+             <li class="pontos-contruibuicao">
+               <strong>1. Manutenção do Site:</strong> Garantindo que nosso
+               site permaneça acessível a todos que precisam;
+             </li>
+
+
+             <li class="pontos-contruibuicao">
+               <strong>2. Desenvolvimento Contínuo:</strong>  Capacitando-nos
+               a expandir nossos recursos, oferecendo ainda
+               mais suporte emocional e informativo.
+             </li>
+
+
+             <li class="pontos-contruibuicao">
+              <strong>3. Apoio à Comunidade:</strong> Facilitando o acesso a
+               serviços de aconselhamento, grupos de apoio e
+               outros recursos essenciais para pais e famílias em luto.
+             </li>
+           </ol>
+
+
+           <h3 style="margin: 5% 0; font-weight: 400;">
+             Sua doação, independentemente do tamanho, faz a diferença. Cada contribuição é um gesto
+             de solidariedade e empatia que ecoa através das histórias de todos aqueles que encontram
+             conforto neste espaço.
+           </h3>
+         </div>
+
+
+         <div class="img-area">
+           <img class="img-ajuda" src="../../../assets/como-ajudar/coracao-img.png" alt="Coração se abraçando">
+         </div>
+
+
+       </div>
+
+
+
+
+
+
+         <!--  =================== ÁREA DE DOAÇÃO ===================  -->
+         <div class="doacao-area">
+         <!--  =================== CONTAINER ÁREA DE DOAÇÃO ===================  -->
+           <div class="doacao-container">
+
+
+             <h2 class="title-doacao">Aqui está o pix para realizar a doação </h2>
+
+
+             <h3 class="subtitle-doacao">Cole o código na opção do app “pix copia e cola “ ou escaneie o nosso QR Code.</h3>
+
+
+
+
+             <!--  =================== QR CODE ÁREA ===================  -->
+             <div class="qrcode-area">
+
+
+               <!--  =================== QR CODE IMG ===================  -->
+               <img class="qrcode-img" src="../../../assets/como-ajudar/qrcode.png" alt="QR Code">
+
+
+               <div class="qrcode-content">
+                 <div class="card-copia-cola">
+                   <p class="pix-copia-cola">
+                     00020126360014BR.GOV.BCB.PI
+                     X0114+55819960649445204000
+                     053039865802BR5925Flavio Hen
+                     rique Ferreira 6009SAO PAULO6
+                     2140510YoCItibWGf630462F8
+                   </p>
+                 </div>
+
+
+                 <!--  =================== BTN COPIAR ===================  -->
+                 <a class="btn-copiar">
+                   <span class="material-symbols-outlined icon-copy">
+                     content_copy
+                   </span>
+
+
+                   Pix copia e cola
+                 </a>
+               </div>
+             </div>
+
+
+           </div>
+         </div>
+
+
+
+
+     </div>
+   </section>
+
+
+   <!--  =================== MURAL HISTÓRIA ===================  -->
+   <section class="mural-historia">
+     <h1 class="title-historia">Histórias Reais</h1>
+     <div class="mural-container">
+       <!-- <img src="../../../assets/folhas-bg.png" alt="" class="folhas-bg"> -->
+
+
+       <div class="card-shadow card" *ngFor="let historia of historias | slice:0:3">
+         <div class="card-content">
+
+
+           <!-- <img src="../../../assets/image 2.png" alt="" class="card-img"> -->
+
+
+           <div class="card-info">
+             <h3 class="title-card">{{ historia.titulo }}</h3>
+             <p class="subtitle-card">{{ historia.texto }}</p>
+             <a href="" class="btn btn-lerMais">Ler mais</a>
+           </div>
+         </div>
+       </div>
+
+
+     </div>
+     <div class="btn-area">
+       <!-- <div class="sliders-container">
+         <span *ngFor="let indicator of historias | slice: 0:3; let i;"
+         class="indicators"
+         >
+       </span>
+       </div> -->
+
+
+       <a class="btn-ver-historia" routerLink="/depoimentos">Veja Todas</a>
+     </div>
+   </section>
+
+
+   <!--  =================== COMPARTILHAR HISTÓRIAS ===================  -->
+   <app-compartilhar-historia></app-compartilhar-historia>
+
+
+
+
+   <!--  =================== VER DIREITOS ===================  -->
+   <app-ver-direitos></app-ver-direitos>
+
+
+   <!--  =================== NEWSLATTER ===================  -->
+   <app-newslatter></app-newslatter>
+</main>
+
+
+<!--  =================== FOOTER ===================  -->
+<app-footer></app-footer>

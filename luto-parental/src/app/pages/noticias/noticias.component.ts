@@ -37,6 +37,7 @@ export class NoticiasComponent {
   public dadosDaPaginaAtual: any = [];
   public paginaAtual: number = 1;
   public proximaPagina: number = 0;
+  public totalPaginasArray = [];
   public imagens = [];
   tag: Tag[] = [];
   avancarPagina: boolean = true;
@@ -148,6 +149,7 @@ export class NoticiasComponent {
     this.requestService.consultarPaginacaoNoticias(excluido, this.paginaAtual).subscribe(
       (RetornoPaginaAtual: any) => {
         this.dadosDaPaginaAtual = RetornoPaginaAtual.dados;
+        this.totalPaginasArray = RetornoPaginaAtual.totalPaginas;
         console.log('CarregarDadosPaginados: ', this.dadosDaPaginaAtual)
       },
       (error) => {

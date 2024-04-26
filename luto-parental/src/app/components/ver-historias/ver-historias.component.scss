@@ -1,20 +1,20 @@
 .ver-historias{
   padding: 5% 0;
-  margin: 0 5%;
+  margin: 0 10%;
 }
 
 .container-historias{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2em;
-  margin: 5% 3%;
+  margin: 5% 8%;
 }
 
 .title-area{
   display: flex;
   font-family: 'Sora', sans-serif;
   justify-content: space-between;
-  margin: 5%;
+  margin: 5% 10%;
 }
 
 .subtitle-area{

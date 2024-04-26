@@ -57,7 +57,7 @@
             <!-- Título card  -->
             <h3>{{ noticia.titulo }}</h3>
             <!-- Conteúdo card  -->
-            <p style="margin-bottom: 10px">{{ noticia.texto }}</p>
+            <p style="margin-bottom: 10px">{{ noticia.texto | limitarPalavras: 200 }}</p>
 
             <!-- Leia mais  -->
             <a class="btn-lerMais">
@@ -81,7 +81,13 @@
             arrow_back_ios
           </span>
         </button>
-        <span class="number-page">{{this.paginaAtual}}</span>
+
+        <span class="number-page"
+          *ngFor="let paginas of totalPaginasArray"
+          [ngClass]="{'page-active': paginaAtual === paginas}"
+          >{{paginas}}
+        </span>
+
         <button (click)="carregarProximaPagina(true)" class="btn-passar" [disabled]="!avancarPagina">
           <span class="material-symbols-outlined icon-avancar">
             arrow_forward_ios
@@ -94,7 +100,7 @@
 
   <!-- Histórias -->
   <app-ver-historias></app-ver-historias>
-  
+
   <!-- Newsletter -->
   <app-newslatter></app-newslatter>
 </main>

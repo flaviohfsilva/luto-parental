@@ -19,6 +19,7 @@ export class DepoimentosComponent {
   rotaHistoria!: Subscription;
   public paginaAtual: number = 1;
   public proximaPagina: number = 0;
+  public totalPaginasArray: [] = [];
   avancarPagina: boolean = true;
   voltarPagina: boolean = false;
   protected excluido: string = '0';
@@ -72,6 +73,7 @@ export class DepoimentosComponent {
     this.requestService.consultarPaginacaoHistorias(excluido, this.paginaAtual).subscribe(
       (RetornoPaginaAtual: any) => {
         this.dadosDaPaginaAtual = RetornoPaginaAtual.dados;
+        this.totalPaginasArray = RetornoPaginaAtual.totalPaginas;
         console.log('CarregarDadosPaginados: ', this.dadosDaPaginaAtual)
       },
       (error) =>{
