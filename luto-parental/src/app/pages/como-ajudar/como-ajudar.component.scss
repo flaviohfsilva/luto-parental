@@ -1,0 +1,443 @@
+
+
+// =================== NAVEGATION PAGES AREA ===================
+.navegation-pages{
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  gap: .2rem;
+  margin: 5%;
+ }
+
+
+ .nav-home, .nav-router{
+  cursor: pointer;
+ }
+
+
+ .icon{
+  font-size: 14px;
+  transform: translateY(3px);
+ }
+
+
+ .active{
+  color: var(--color-strong-pink);
+ }
+
+
+
+
+ // =================== COMO AJUDAR TITLE ===================
+ .texts-como-ajudar{
+  font-family: "Sora", sans-serif;
+  margin: 5% 5%;
+ }
+
+
+ .subtitle-como-ajudar{
+  text-align: justify;
+  margin: 5% 0;
+  width: 50%;
+ }
+
+
+ .mark-title{
+  color: var(--color-strong-pink);
+ }
+
+
+
+
+ // =================== MURAL DE AJUDA ===================
+ .mural-ajuda{
+  background-color: var(--color-light-pink);
+  margin: 5% 0 10%;
+  opacity: 90%;
+  padding: 3% 0;
+ }
+
+
+ .mural-container-ajuda{
+  gap: 2rem;
+  margin: 5%;
+  padding: 0 5%;
+  justify-content: center;
+  align-items: center;
+ }
+
+
+ .info-text{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+ }
+
+
+ .pontos-contruibuicao{
+ margin: 5%;
+ width: 55%;
+ }
+
+
+ .info-ajuda{
+  display: flex;
+  margin: 5%;
+  padding: 0 5%;
+  gap: 2rem;
+  justify-content: center;
+ }
+
+
+ .contribuicao{
+  font-family: 'Open Sans', sans-serif;
+ }
+
+
+ .img-ajuda{
+  width: 150%;
+ }
+
+
+  // =================== QR CODE AREA ===================
+
+
+
+
+  .doacao-area{
+    background: var(--color-strong-green);
+    border-radius: 25px 50px;
+    margin: 5% 20% 5%;
+    padding: 3%;
+    width: 60%;
+  }
+  .doacao-container{
+    gap: 2rem;
+    margin: 5%;
+    padding: 0 5%;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+
+
+  .title-doacao{
+    font-family: 'Sora', sans-serif;
+    font-weight: 300;
+    margin: 0 0 5% 0;
+  }
+
+
+  .subtitle-doacao{
+    font-family: 'Sora', sans-serif;
+    font-weight: bold;
+    margin: 0 0 5% 0;
+    width: 70%;
+  }
+
+
+
+
+  .qrcode-area{
+    display: flex;
+    gap: 3rem;
+  }
+
+
+  .qrcode-img{
+    width: 50%;
+  }
+
+
+  .card-copia-cola{
+    align-items: center;
+    border: 2px dashed var(--color-light-pink);
+    border-radius: 25px 50px;
+    height: 80%;
+    margin: 0 0 15% 0;
+    padding: 20% 12%;
+    width: 120%;
+  }
+
+  .pix-copia-cola{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+  }
+
+
+    // =================== QR CODE AREA - BTN ===================
+    .btn{
+      overflow: hidden;
+      position: relative;
+      transition: .5 ease-in;
+    }
+
+
+    .btn::before{
+      background-color: var(--color-strong-green);
+      content: "";
+      height: 0;
+      left: 0;
+      position: absolute;
+      transition: .8s ease-in;
+      width: 100%;
+      z-index: -1;
+    }
+
+
+    .btn-enviar{
+      background: none;
+      border: 1px solid black;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      margin: 5% 0;
+      padding: 10px;
+      width: 25%;
+      z-index: 0;
+    }
+
+
+    .btn-enviar::before{
+      bottom: 0;
+      border-radius: 50% 50% 0 0;
+    }
+
+
+    .btn-enviar:hover{
+      border: 1px solid var(--color-strong-green);
+      color: var(--color-white);
+    }
+
+
+    .btn-enviar:hover::before{
+      height: 180%;
+    }
+
+
+    .btn-copiar{
+      align-items: center;
+      background-color: var(--color-strong-pink);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      color: var(--color-text);
+      font-family: "Open Sans", sans-serif;
+      font-size: 18px;
+      text-align: center;
+      text-decoration: none;
+      padding: 15px 20px;
+      // margin: 0;
+      // width: 2%;
+      height: 35px;
+      margin: 0 5%;
+      text-transform: uppercase;
+    }
+
+
+    .btn-copiar:hover{
+
+
+      transform: translateY(-2px);
+      transition: .2s ease-in;
+    }
+
+
+    .icon-copy{
+      transform: translateY(5px);
+    }
+
+
+ // =================== MURAL HISTÓRIAS ===================
+ .mural-historia{
+  background-color: var(--color-strong-pink);
+  margin: 5% 0;
+  opacity: 90%;
+  padding: 3% 0;
+ }
+
+
+ .mural-container{
+  display: flex;
+  justify-content: center;
+  position: relative;
+ }
+
+
+
+
+ .title-historia{
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+ }
+
+
+ .folhas-bg{
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  transform: translateY(32%);
+  width: 40%;
+ }
+
+
+  // ======== CARD AREA ========
+  .card-shadow::after {
+    background: var(--color-strong-green);
+    border-radius: 50px;
+    border-end-end-radius: 25px;
+    bottom: 3px;
+    content: "";
+    //Medidas do card sem imagem
+    height: 290px;
+    // height: 400px;
+    margin: 0 0 6%;
+    position: absolute;
+    right: 3px;
+    top: 0;
+    width: 325px;
+    z-index: -1;
+  }
+
+
+  .card{
+    background: var(--color-white);
+    border-radius: 50px;
+    border-end-end-radius: 25px;
+    //Medidas do card sem imagem
+    height: 280px;
+    // height: 400px;
+    margin: 5%;
+    position: relative;
+    width: 320px;
+  }
+
+
+  .card-content{
+    padding: 10px;
+  }
+
+
+  .card-img{
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    width: 100%;
+  }
+  // ======== TEXT AREA CARD ========
+  .card-info{
+    //Medidas do card sem imagem
+    margin: 15% 5%;
+    // margin: 5% 0;
+  }
+
+
+  .title-card{
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    // width: 80%;
+  }
+
+
+  .subtitle-card{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    text-align: justify;
+    margin: 5% 0;
+    width: 95%;
+  }
+
+
+  // ======== BUTTONS CARDS ========
+  .btn{
+    overflow: hidden;
+    position: relative;
+    transition: .5 ease-in-out;
+  }
+
+
+  .btn::before{
+    background-color: var(--color-strong-green);
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    transition: .8s ease;
+    width: 100%;
+    z-index: -1;
+  }
+
+
+  .btn-lerMais{
+    background: none;
+    border: 1px solid var(--color-text);
+    border-radius: 50px 50px 25px 50px;
+    color: var(--color-text);
+    font-size: 12px;
+    height: 19px;
+    padding: 2px 15px;
+    text-decoration: none;
+    left: 70%;
+    width: 85px;
+    z-index: 0;
+  }
+
+
+  .btn-lerMais::before{
+    bottom: 0;
+    border-radius: 50px 50px 25px 50px;
+  }
+
+
+  .btn-lerMais:hover{
+    border: 1px solid var(--color-strong-green);
+    color: var(--color-white);
+  }
+
+
+  .btn-lerMais:hover::before{
+    height: 100%;
+  }
+  // ======== BUTTON & SLIDERS  MURAL AREA ========
+  .btn-area{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 12%;
+    position: relative;
+    justify-content: end;
+  }
+
+
+  .indicators{
+    border: 1px solid var(--color-strong-blue);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 13px;
+    margin: 0 5px;
+    width: 13px;
+  }
+
+
+  .btn-ver-historia{
+    background-color: var(--color-strong-green);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: var(--color-white);
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    padding: 10px 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+
+  .btn-ver-historia:hover{
+    transform: translateY(-2px);
+    transition: .2s ease-in;
+  }
+
+

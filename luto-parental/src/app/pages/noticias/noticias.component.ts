@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { RequestService } from 'src/app/core/request.service';
 import { Tag } from 'src/app/interfaces';
 
@@ -26,7 +27,10 @@ export class NoticiasComponent {
     },
   ];
 
-  constructor(private requestService: RequestService) {}
+  constructor(
+    private requestService: RequestService,
+    private router: Router,
+  ) {}
 
 
   ngOnInit(){
@@ -37,6 +41,7 @@ export class NoticiasComponent {
   public dadosDaPaginaAtual: any = [];
   public paginaAtual: number = 1;
   public proximaPagina: number = 0;
+  public totalPaginasArray = [];
   public imagens = [];
   tag: Tag[] = [];
   avancarPagina: boolean = true;
@@ -148,6 +153,7 @@ export class NoticiasComponent {
     this.requestService.consultarPaginacaoNoticias(excluido, this.paginaAtual).subscribe(
       (RetornoPaginaAtual: any) => {
         this.dadosDaPaginaAtual = RetornoPaginaAtual.dados;
+        this.totalPaginasArray = RetornoPaginaAtual.totalPaginas;
         console.log('CarregarDadosPaginados: ', this.dadosDaPaginaAtual)
       },
       (error) => {
@@ -242,6 +248,19 @@ export class NoticiasComponent {
       default:
         return '';
     }
+  }
+
+  selecionarInformacao(id: number, titulo: string, texto: string, data: string, img:string){
+    console.log('Chegou no selecionarInformacao', id, titulo, texto, data, img);
+    this.router.navigate(['noticia-selecionada/'], {
+      queryParams: {
+        id: id,
+        titulo: titulo,
+        texto: texto,
+        data: data,
+        img: img,
+      }
+    })
   }
 
 }

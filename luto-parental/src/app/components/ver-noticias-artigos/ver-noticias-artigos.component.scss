@@ -1,6 +1,6 @@
 .novas-noticias{
   padding: 5% 0 10%;
-  margin: 5% 0;
+  margin: 5% 8%;
 }
 
 .container-noticias{
@@ -36,6 +36,7 @@
   font-size: 14px;
   text-align: center;
   text-decoration: none;
+  margin: 0 5%;
   padding: 8px 40px;
   text-transform: uppercase;
 }
@@ -122,6 +123,7 @@
   border-bottom-left-radius: 26px;
   padding: 4%;
   transform: translateY(-4px);
+  width: 90%;
 }
 
 .card-cabecalho{
@@ -138,7 +140,7 @@
 }
 
 .card-img{
-  width: 100%;
+  width: 90%;
 }
 
 .title-card{
