@@ -39,7 +39,7 @@
 
       <!-- Card  -->
       <div class="pagina-noticias__noticias__cards">
-        <section class="pagina-noticias__cards-content" *ngFor="let noticia of dadosDaPaginaAtual">
+        <section class="pagina-noticias__cards-content" *ngFor="let noticia of dadosDaPaginaAtual" (click)="selecionarInformacao(noticia.id, noticia.titulo, noticia.texto, noticia.data, noticia.img)">
           <img [src]="'assets/img/page-noticias/' + noticia.img + '.svg'" alt="Imagem SVG" />
           <!-- Imagem card  -->
 

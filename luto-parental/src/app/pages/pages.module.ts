@@ -17,6 +17,7 @@ import { SobreComponent } from './sobre/sobre.component';
 import { VerHistoriasComponent } from '../components/ver-historias/ver-historias.component';
 import { ComoAjudarComponent } from './como-ajudar/como-ajudar.component';
 import { LimitePalavrasPipe } from './pipe/limitar-palavras.pipe';
+import { NoticiaSelecionadaComponent } from './informacao-selecionada/noticia-selecionada.component';
 
 
 
@@ -34,7 +35,8 @@ import { LimitePalavrasPipe } from './pipe/limitar-palavras.pipe';
         DepoimentosComponent,
         SobreComponent,
         ComoAjudarComponent,
-        LimitePalavrasPipe
+        LimitePalavrasPipe,
+        NoticiaSelecionadaComponent
     ],
     imports: [
         CommonModule,
