@@ -1,0 +1,39 @@
+/* =================== SCROLLTOP AREA =================== */
+
+.scroll-top {
+  background: var(--color-strong-pink);
+  border-radius: 50%;
+  bottom: 50px;
+  cursor: pointer;
+  color: var(--color-black);
+  display: inline-block;
+  padding: 2px 4px;
+  position: fixed;
+  right: 20px;
+  text-align: center;
+  transition: .5s ease;
+  z-index: 1;
+}
+
+.icon{
+  transform: translateY(2px);
+}
+
+.scroll-top::before{
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.scroll-top::after{
+  opacity: 1;
+}
+
+.scroll-top:hover{
+  background: var(--color-strong-green);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.ecg-icon{
+  padding: 8px;
+}

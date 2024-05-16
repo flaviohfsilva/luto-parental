@@ -1,0 +1,150 @@
+<!--  =================== NAVBAR ===================  -->
+<app-navbar></app-navbar>
+
+
+<main class="oque-fazemos-area">
+
+
+   <!--  =================== NAVIGATION PAGES ===================  -->
+   <div class="navegation-pages">
+     <p class="nav-home" routerLink="/home">Home</p>
+     <span class="material-symbols-outlined icon">
+       arrow_forward_ios
+     </span>
+     <span class="nav-router" routerLink="/oque-fazemos" routerLinkActive="active">O que fazemos</span>
+   </div>
+
+
+
+
+   <!--  =================== TEXTOS O QUE FAZEMOS ===================  -->
+   <div class="texts-oque-fazemos">
+   <h1 class="title-oque-fazemos">O que <span class="mark-title">fazemos?</span></h1>
+   <p class="subtitle-oque-fazemos">
+    Um abraço acolhedor em meio a dor.
+   </p>
+ </div>
+
+
+
+
+   <!--  =================== MURAL DE O QUE FAZEMOS ===================  -->
+   <section class="mural-oque-fazemos">
+     <!--  =================== FILTRO BUTTON ===================  -->
+
+
+     <div class="line-separator" style="border: 1px solid var(--color-text); width: 100%; margin: 5% 0;"></div>
+
+
+     <div class="mural-container-oque-fazemos">
+
+
+       <div class="info-oque-fazemos">
+
+
+         <div class="info-text">
+           <p style="margin: 5% 0; width: 60%;">
+              Através de murais de histórias, notícias, artigos e informações sobre direitos,
+              atuamos para criar um ambiente seguro e sem julgamentos oferecendo suporte a todos
+              que vivenciam a dor do luto perinatal.
+           </p>
+
+           <p style="margin: 5% 0; width: 60%;">
+              Acreditamos que a dor compartilhada se torna mais leve. Ao compartilhar sua história,
+              você oferece conforto e esperança para outros mães e familías que também estão enfrentando
+              o luto perinatal. Sua voz é importante, seu relato é valioso.
+           </p>
+
+            <p style="margin: 5% 0; width: 60%;">
+              Juntos, podemos construir uma rede de apoio forte e acolhedora, onde a dor do luto perinatal
+              se transforma em um espaço de cura, memória e esperança.
+            </p>
+
+         </div>
+       </div>
+
+         <!--  =================== PONTOS IMPORTANTES SOBRE O QUE FAZEMOS ===================  -->
+
+         <div class="pontos-importantes">
+          <div class="lado-esquerdo">
+            <div class="content">
+
+              <img class="img-esquerdo" src="../../../assets/Ellipse 8.png" alt="">
+              <div class="card-esquerdo">
+                <h3 style="font-size: 30px; text-align: center;">Conexão</h3>
+                <p style="text-align: center; width: 110%; margin: 8% 0; font-size: 18px;">Das mães e famílias que compreedem a sua dor</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lado-direito">
+            <div class="content">
+
+              <div class="card-direito">
+                <h3 style="font-size: 30px; text-align: center; width: 110%;">Empoderando Mães e Famílias</h3>
+                <p style="text-align: center; margin: 8% 0; font-size: 18px;">Sobre os seus direitos relacionados ao luto perinatal</p>
+              </div>
+
+              <img class="img-direito" src="../../../assets/Ellipse 9.png" alt="">
+
+            </div>
+          </div>
+         </div>
+     </div>
+   </section>
+
+
+   <!--  =================== COMPARTILHAR HISTÓRIAS ===================  -->
+   <app-compartilhar-historia></app-compartilhar-historia>
+
+
+   <!--  =================== MURAL HISTÓRIA ===================  -->
+   <section class="mural-historia">
+     <h1 class="title-historia">Histórias Reais</h1>
+     <div class="mural-container">
+       <!-- <img src="../../../assets/folhas-bg.png" alt="" class="folhas-bg"> -->
+
+
+       <div class="card-shadow card" *ngFor="let historia of historias | slice:0:3">
+         <div class="card-content">
+
+
+           <!-- <img src="../../../assets/image 2.png" alt="" class="card-img"> -->
+
+
+           <div class="card-info">
+             <h3 class="title-card">{{ historia.titulo }}</h3>
+             <p class="subtitle-card">{{ historia.texto }}</p>
+             <a href="" class="btn btn-lerMais">Ler mais</a>
+           </div>
+         </div>
+       </div>
+
+
+     </div>
+     <div class="btn-area">
+       <!-- <div class="sliders-container">
+         <span *ngFor="let indicator of historias | slice: 0:3; let i;"
+         class="indicators"
+         >
+       </span>
+       </div> -->
+
+
+       <a class="btn-ver-historia" routerLink="/depoimentos">Veja Todas</a>
+     </div>
+   </section>
+
+
+
+
+
+   <!--  =================== NEWSLATTER ===================  -->
+   <app-newslatter></app-newslatter>
+</main>
+
+<!--  =================== SCROLL TO TOP ===================  -->
+<app-scroll-top></app-scroll-top>
+
+<!--  =================== FOOTER ===================  -->
+<app-footer></app-footer>

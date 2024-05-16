@@ -1,4 +1,5 @@
 import { Component, HostListener, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { RequestService } from 'src/app/core/request.service';
 import { Noticia, NoticiasArtigosImg, Tag } from 'src/app/interfaces';
 
@@ -10,11 +11,15 @@ import { Noticia, NoticiasArtigosImg, Tag } from 'src/app/interfaces';
 export class VerNoticiasArtigosComponent {
 
   btnResponsivo: boolean = false;
+  title: string = '';
+  markTitle: string = '';
+  descricao: string = '';
   @Input() tag: Tag[] = [];
   @Input() noticia: Noticia[] = [];
 
   constructor(
-    private requestService: RequestService
+    private requestService: RequestService,
+    private router: Router
     ) {}
 
   ngOnInit(){
@@ -95,6 +100,30 @@ estiloTags(idTag: number) {
 mostrarImagensNoticia(idNoticia: number){
   const imagem = this.images.find(item => item.id === idNoticia);
   return imagem ? imagem.imgSrc : '';
+}
+
+selecionarInformacao(id: number, idTipoInformacao:number, titulo: string, texto: string, data: string| Date, img:string){
+  console.log('Chegou no selecionarInformacao', id, titulo, texto, data, img);
+
+  this.title = 'Quadro de';
+  this.markTitle = 'notícias';
+  this.descricao = 'Acompanhe sobre as últimas notícias sobre o luto parental, artigos, leis de apoio aos pais  aos pais enlutados e muito mais.';
+
+  this.router.navigate(['noticia-selecionada/'], {
+    queryParams: {
+      id: id,
+      idTipoInformacao: idTipoInformacao,
+      titulo: titulo,
+      texto: texto,
+      data: data,
+      rotaNome: 'Notícias',
+      secaoAtiva: 'noticias',
+      img: img,
+      title: this.title,
+      markTitle: this.markTitle,
+      descricao: this.descricao,
+    }
+  })
 }
 
 }

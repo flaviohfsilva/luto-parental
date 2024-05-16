@@ -16,8 +16,10 @@ import { ModalHistoriasModule } from '../components/modal-historias/modal-histor
 import { SobreComponent } from './sobre/sobre.component';
 import { VerHistoriasComponent } from '../components/ver-historias/ver-historias.component';
 import { ComoAjudarComponent } from './como-ajudar/como-ajudar.component';
-import { LimitePalavrasPipe } from './pipe/limitar-palavras.pipe';
+import { LimitarPalavrasPipe } from './pipe/limitar-palavras.pipe';
 import { NoticiaSelecionadaComponent } from './informacao-selecionada/noticia-selecionada.component';
+import { OqueFazemosComponent } from './oque-fazemos/oque-fazemos.component';
+import { ScrollTopComponent } from '../components/scroll-top/scroll-top.component';
 
 
 
@@ -35,8 +37,10 @@ import { NoticiaSelecionadaComponent } from './informacao-selecionada/noticia-se
         DepoimentosComponent,
         SobreComponent,
         ComoAjudarComponent,
-        LimitePalavrasPipe,
-        NoticiaSelecionadaComponent
+        LimitarPalavrasPipe,
+        NoticiaSelecionadaComponent,
+        OqueFazemosComponent,
+        ScrollTopComponent
     ],
     imports: [
         CommonModule,

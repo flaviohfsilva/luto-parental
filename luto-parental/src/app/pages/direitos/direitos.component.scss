@@ -1,0 +1,253 @@
+// =================== NAVEGATION PAGES AREA ===================
+.navegation-pages{
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  gap: .2rem;
+  margin: 5%;
+}
+
+.nav-home, .nav-router{
+  cursor: pointer;
+}
+
+.icon{
+  font-size: 14px;
+  transform: translateY(3px);
+}
+
+.active{
+  color: var(--color-strong-pink);
+}
+
+// =================== DEPOIMENTO TITLE ===================
+.texts-direitos{
+  font-family: "Sora", sans-serif;
+  margin: 5% 5%;
+}
+
+.subtitle-direitos{
+  text-align: justify;
+  margin: 5% 0;
+  width: 35%;
+}
+
+.mark-title{
+  color: var(--color-strong-pink);
+}
+
+// =================== MURAL DE HISTÓRIAS ===================
+.mural-direitos{
+  background-color: var(--color-light-pink);
+  margin: 5% 0;
+  opacity: 90%;
+  padding: 3% 0;
+}
+
+.mural-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 5%;
+  padding: 2% 5% 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.filtro-area{
+  display: flex;
+  justify-content: end;
+  border-bottom: 2px solid var(--color-text);
+}
+
+select {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+
+.filtro{
+  background: var(--color-white);
+  border-radius: 8px;
+  padding: 8px;
+  width: 15%;
+  // transform: translateY(-20px);
+  margin: 0 6% 20px;
+}
+  // ======== CARD AREA ========
+  .card-shadow::after {
+    background: var(--color-strong-green);
+    border-radius: 50px;
+    border-end-end-radius: 25px;
+    bottom: 3px;
+    content: "";
+    //Medidas do card sem imagem
+    height: 290px;
+    // height: 400px;
+    margin: 0 0 6%;
+    position: absolute;
+    right: 3px;
+    top: 0;
+    width: 325px;
+    z-index: -1;
+  }
+
+  .card{
+    background: var(--color-white);
+    border-radius: 50px;
+    border-end-end-radius: 25px;
+    //Medidas do card sem imagem
+    height: 280px;
+    // height: 400px;
+    margin: 5%;
+    position: relative;
+    width: 320px;
+  }
+
+  .card-content{
+    padding: 10px;
+  }
+
+  .card-img{
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    width: 100%;
+  }
+
+  // ======== TEXT AREA CARD ========
+  .card-info{
+    //Medidas do card sem imagem
+    margin: 15% 5%;
+    // margin: 5% 0;
+  }
+
+  .title-card{
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    // width: 80%;
+  }
+
+  .subtitle-card{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    text-align: justify;
+    margin: 5% 0;
+    width: 95%;
+  }
+
+
+  // ======== BUTTONS CARDS ========
+  .btn{
+    overflow: hidden;
+    position: relative;
+    transition: .5 ease-in-out;
+  }
+
+  .btn::before{
+    background-color: var(--color-strong-green);
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    transition: .8s ease;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .btn-lerMais{
+    background: none;
+    border: 1px solid var(--color-text);
+    border-radius: 50px 50px 25px 50px;
+    color: var(--color-text);
+    font-size: 12px;
+    height: 19px;
+    padding: 2px 15px;
+    text-decoration: none;
+    left: 70%;
+    width: 85px;
+    z-index: 0;
+  }
+
+  .btn-lerMais::before{
+    bottom: 0;
+    border-radius: 50px 50px 25px 50px;
+  }
+
+  .btn-lerMais:hover{
+    border: 1px solid var(--color-strong-green);
+    color: var(--color-white);
+  }
+
+  .btn-lerMais:hover::before{
+    height: 100%;
+  }
+
+  // =================== PAGINATORS MURAL DIREITOS ===================
+  .paginators{
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 5% 6%  2% 0;
+  }
+
+  .btn-voltar, .btn-passar{
+    cursor: pointer;
+    background: var(--color-white);
+    border: none;
+    border-radius: 50%;
+    // padding: 5px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .icon-voltar, .icon-avancar{
+    align-items: center;
+    font-size: 18px;
+    transform: translate(2px, 2px);
+  }
+
+  .number-page{
+    background: var(--color-light-green);
+    color: var(--color-text);
+    padding: 6px 11px;
+    border-radius: 50%;
+  }
+
+  .page-active{
+    background: var(--color-strong-green);
+    color: var(--color-white);
+    padding: 6px 11px;
+    border-radius: 50%;
+  }
+
+
+
+@media screen and (max-width: 767px) {
+  .mural-container{
+    grid-template-columns: repeat(1, 1fr);
+    transform: translateX(-15px);
+  }
+
+  .texts-direitos{
+    padding: 5% 0 10%;
+  }
+  .subtitle-direitos{
+    width: 90%;
+  }
+  .filtro{
+    width: 50%;
+  }
+
+
+
+
+
+}

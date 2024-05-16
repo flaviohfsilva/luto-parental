@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { RequestService } from 'src/app/core/request.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Estados, Historia } from 'src/app/interfaces';
 
 @Component({

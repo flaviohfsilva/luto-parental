@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RequestService } from 'src/app/core/request.service';
-import { Tag } from 'src/app/interfaces';
+import { Noticia, Tag } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-noticias',
@@ -39,95 +39,34 @@ export class NoticiasComponent {
   }
 
   public dadosDaPaginaAtual: any = [];
+  noticias: Noticia[] = [];
   public paginaAtual: number = 1;
   public proximaPagina: number = 0;
+  public palavraFiltrada: string = '';
   public totalPaginasArray = [];
   public imagens = [];
   tag: Tag[] = [];
   avancarPagina: boolean = true;
   voltarPagina: boolean = false;
+  title: string = '';
+  markTitle: string = '';
+  descricao: string = '';
   protected excluido: string = '0';
 
 
-  // public historias = [
-  //   {
-  //     titulo: 'Meu sonho de ser mães e as tentativas pela maternidade',
-  //     conteudo:
-  //       'Desde sempre sonhava em ser mãe, mas as tentativas frustadas me deixam bastante triste. A cada tentativa que dá errado é um aperto em meu coração e a incerteza de que meu sonho...',
-  //   },
-  //   {
-  //     titulo: 'Encontrando e retomando a esperança',
-  //     conteudo:
-  //       'Enfrentei uma das provações mais difíceis da minha vida, quando perdi o meu filho recém-nascido. Estou extremamente abalada e impotente, sem forças para nada. No entanto, com o apoio de grupos...',
-  //   },
-  //   {
-  //     titulo: 'Um novo começo após a perda do meu filho querido',
-  //     conteudo:
-  //       'Após perdermos nossos gêmeos prematuros, enfrentamos um período de profunda tristeza e desespero. No entanto, através de terapia individual e familiar, encontramos um caminho de cura... ',
-  //   },
-  // ];
-
-  public noticias = [
-    {
-      imagem: 'noticia-1',
-      data: '10/10/2017',
-      categoria: 'NOTÍCIA',
-      titulo: 'POLÍTICA DE HUMANIZAÇÃO DO LUTO PARENTAL',
-      texto:
-        'A Comissão de Saúde da Câmara dos Deputados aprovou o Projeto de Lei 1640/22, que institui a Política Nacional de Humanização do Luto Materno e Parental.  A relatora, deputada Jandira Feghali (PCdoB-RJ), disse que o principal ponto do texto é garantir...',
-    },
-    {
-      imagem: 'noticia-2',
-      data: '10/10/2017',
-      categoria: 'ARTIGO',
-      titulo:
-        'POLÍTICA DE HUMANIZAÇÃO DO LULUTO PARENTAL E CONSTRUÇÃO IDENTITÁRIA: COMPREENDENDO O PROCESSO APÓS A PERDA DO FILHOTO PARENTAL',
-      texto:
-        'A morte de um filho é um fato inesperado pelos pais, geralmente é visto como algo contrário à natureza, incitando um luto muito particular. As manifestações desse luto são diversas...',
-    },
-    {
-      imagem: 'noticia-3',
-      data: '10/10/2017',
-      categoria: 'ARTIGO',
-      titulo:
-        'SAIBA OS PRINCIPAIS DIREITOS RELACIONADOS À SAÚDE DAS FAMÍLIAS ENLUTADAS ',
-      texto:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    },
-    {
-      imagem: 'noticia-4',
-      data: '10/10/2017',
-      categoria: 'NOTÍCIA',
-      titulo: 'O SILÊNCIO EM TORNO DO LUTO PARENTAL DENTRO DAS EMPRESAS.',
-      texto:
-        'O luto parental é um tema frequentemente negligenciado nas empresas, com os departamentos de Recursos Humanos mostrando uma compreensão limitada de como proteger os direitos dos funcionários...',
-    },
-    {
-      imagem: 'noticia-5',
-      data: '10/10/2017',
-      categoria: 'NOTÍCIA',
-      titulo:
-        'LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE.',
-      texto:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...',
-    },
-    {
-      imagem: 'noticia-6',
-      data: '10/10/2017',
-      categoria: 'ARTIGO',
-      titulo:
-        'COMO VIVER O LUTO DE MANEIRA MAIS SAUDÁVEL E PRESERVAR A SUA SAÚDE MENTAL',
-      texto:
-        'A saúde mental corresponde muito mais do que somente à ausência de doenças mentais. De acordo com a Organização Mundial da Saúde (OMS), saúde mental é um estado de bem-estar no qual o indivíduo é capaz de usar...',
-    },
-  ];
 
   public categorias = [
     {
-      categoria: 'NOTÍCIA',
+      categoria: 'Notícia',
     },
     {
       categoria: 'ARTIGO'
+    },
+    {
+      categoria: 'Mais Recentes'
+    },
+    {
+      categoria: 'Mais Antigos'
     }
   ];
 
@@ -139,9 +78,13 @@ export class NoticiasComponent {
    */
   public visualizarCorCategoria(categoria: string): string {
     switch(categoria) {
-      case 'NOTÍCIA':
+      case 'Notícia':
         return '#D9B2A9';
-      case 'ARTIGO':
+      case 'Artigo':
+        return '#60748D';
+      case 'Mais Recentes':
+        return '#60748D';
+      case 'Mais Antigas':
         return '#60748D';
       default:
         return ''
@@ -154,6 +97,7 @@ export class NoticiasComponent {
       (RetornoPaginaAtual: any) => {
         this.dadosDaPaginaAtual = RetornoPaginaAtual.dados;
         this.totalPaginasArray = RetornoPaginaAtual.totalPaginas;
+        console.log('TotalPaginas', this.totalPaginasArray)
         console.log('CarregarDadosPaginados: ', this.dadosDaPaginaAtual)
       },
       (error) => {
@@ -168,9 +112,11 @@ export class NoticiasComponent {
 
     console.log(this.paginaAtual);
 
+    const filtro = this.palavraFiltrada;
+
     try {
       this.requestService
-        .consultarPaginacaoNoticias(this.excluido, this.paginaAtual)
+        .consultarPaginacaoNoticias(this.excluido, this.paginaAtual, )
         .subscribe(
           (dadosPaginaAtual: any) => {
             this.dadosDaPaginaAtual = dadosPaginaAtual.dados;
@@ -250,15 +196,26 @@ export class NoticiasComponent {
     }
   }
 
-  selecionarInformacao(id: number, titulo: string, texto: string, data: string, img:string){
+  selecionarInformacao(id: number, idTipoInformacao:number, titulo: string, texto: string, data: string| Date, img:string){
     console.log('Chegou no selecionarInformacao', id, titulo, texto, data, img);
+
+    this.title = 'Quadro de';
+    this.markTitle = 'notícias';
+    this.descricao = 'Acompanhe sobre as últimas notícias sobre o luto parental, artigos, leis de apoio aos pais  aos pais enlutados e muito mais.';
+
     this.router.navigate(['noticia-selecionada/'], {
       queryParams: {
         id: id,
+        idTipoInformacao: idTipoInformacao,
         titulo: titulo,
         texto: texto,
         data: data,
+        rotaNome: 'Notícias',
+        secaoAtiva: 'noticias',
         img: img,
+        title: this.title,
+        markTitle: this.markTitle,
+        descricao: this.descricao,
       }
     })
   }
