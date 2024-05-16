@@ -27,7 +27,7 @@
         <div class="card-info">
           <h3 class="title-card">{{ historia.titulo }}</h3>
           <p class="subtitle-card">{{ historia.texto }}</p>
-          <a href="" class="btn btn-lerMais">Ler mais</a>
+          <a class="btn btn-lerMais" (click)="selecionarInformacao(historia.id, historia.idTipoInformacao, historia.titulo, historia.texto, historia.dataHora)">Ler mais</a>
         </div>
       </div>
     </div>

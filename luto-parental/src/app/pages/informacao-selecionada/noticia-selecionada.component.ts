@@ -13,10 +13,16 @@ export class NoticiaSelecionadaComponent {
   tag: Tag[] = [];
   noticia: Noticia[] = [];
   id!: number;
+  idTipoInformacao!:number;
   titulo!: string;
   texto!:string;
   data!:string;
   img!:string;
+  title!:string;
+  markTitle!: string;
+  descricao!: string;
+  rotaAtiva!: string;
+  rotaNome!:string;
 
   constructor(
     private requestService: RequestService,
@@ -28,7 +34,13 @@ export class NoticiaSelecionadaComponent {
     // Recebendo os dados passados via queryParams do componente noticias.ts
     this.route.queryParams.subscribe(params => {
       this.id = params['id'];
+      this.idTipoInformacao = params['idTipoInformacao'];
       this.titulo = params['titulo'];
+      this.title = params['title'];
+      this.markTitle = params['markTitle'];
+      this.descricao = params['descricao'];
+      this.rotaAtiva = params['secaoAtiva'];
+      this.rotaNome = params['rotaNome']
       this.texto = params['texto'];
       this.data = params['data'];
       this.img = params['img'];
@@ -36,6 +48,8 @@ export class NoticiaSelecionadaComponent {
 
     this.mostrarNoticias();
     this.mostrarTags();
+
+    console.log(this.texto)
   }
 
   public categorias = [
@@ -87,5 +101,4 @@ export class NoticiaSelecionadaComponent {
       }
     )
   }
-
 }

@@ -23,6 +23,8 @@ export interface Historia {
   titulo: string | null;
   texto: string;
   genero: string;
+  idTipoInformacao: number;
+  dataHora: Date;
   idEstado: number;
   estados: Estados[];
   // img: File | null;

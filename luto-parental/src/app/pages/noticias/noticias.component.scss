@@ -41,7 +41,7 @@
     &__botao {
       display: flex;
       margin: 2% 5%;
-      justify-content: end;
+      justify-content: flex-end;
 
 
       button {
@@ -272,9 +272,10 @@
  // =================== BTN LER MAIS NOTÍCIAS ===================
  .btn-lerMais{
   color: var(--color-text);
+  cursor: pointer;
   display: flex;
   font-size: 12px;
-  justify-content: end;
+  justify-content: flex-end;
   text-decoration: none;
   text-transform: uppercase;
   transition: .1s ease-in-out;

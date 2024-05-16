@@ -1,6 +1,6 @@
 .novas-noticias{
   padding: 5% 0 10%;
-  margin: 5% 8%;
+  margin: 0% 8%;
 }
 
 .container-noticias{
@@ -156,6 +156,7 @@
 }
 
 .btn-lerMais{
+  cursor: pointer;
   color: var(--color-text);
   display: flex;
   font-size: 12px;

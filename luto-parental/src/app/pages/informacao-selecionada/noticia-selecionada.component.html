@@ -7,7 +7,7 @@
        arrow_forward_ios
     </span>
 
-    <p class="nav-home" routerLink="/noticias">Noticia</p>
+    <p class="nav-home" routerLink="/{{rotaAtiva}}">{{this.rotaNome}}</p>
 
     <span class="material-symbols-outlined icon">
       arrow_forward_ios
@@ -17,10 +17,9 @@
   </div>
 
   <div class="text">
-    <h1 class="title">Quadro de <span class="mark title">notícias</span></h1>
+    <h1 class="title">{{this.title}} <span class="mark title">{{this.markTitle}}</span></h1>
     <p class="descricao">
-      Acompanhe sobre as últimas notícias sobre o luto parental, artigos, leis
-      de apoio aos pais aos pais enlutados e muito mais.
+      {{this.descricao}}
     </p>
   </div>
   <section class="noticia-selecionada">
@@ -41,11 +40,11 @@
       </div>
 
      <div class="title-noticia">
-        <p class="data">{{this.data}}</p>
+        <p class="data">{{this.data | date: 'dd/MM/yyyy'}}</p>
         <h1>{{this.titulo}}</h1>
       </div>
 
-      <p class="detalhes">{{this.texto}}</p>
+      <p class="detalhes" style="text-align: justify;">{{this.texto}}</p>
 
       <div class="img">
         <img [src]="'assets/img/page-noticias/' + this.img + '.svg'" alt="Imagem da notícia" />
@@ -60,4 +59,8 @@
   <app-ver-noticias-artigos [noticia]="noticia" [tag]="tag"></app-ver-noticias-artigos>
   <app-newslatter></app-newslatter>
 </main>
+
+<!--  =================== SCROLL TO TOP ===================  -->
+<app-scroll-top></app-scroll-top>
+
 <app-footer></app-footer>

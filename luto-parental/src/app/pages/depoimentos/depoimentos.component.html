@@ -46,7 +46,7 @@
             <div class="card-info">
               <h3 class="title-card">{{historia.titulo}}</h3>
               <p class="subtitle-card">{{historia.texto | limitarPalavras: 200 }}</p>
-              <a href="" class="btn btn-lerMais">Ler mais</a>
+              <a class="btn btn-lerMais" (click)="selecionarInformacao(historia.id, historia.idTipoInformacao, historia.titulo, historia.texto, historia.dataHora, historia.img)">Ler mais</a>
             </div>
           </div>
         </div>
@@ -1890,6 +1890,9 @@
     <app-newslatter></app-newslatter>
   </div>
 </main>
+
+<!--  =================== SCROLL TO TOP ===================  -->
+<app-scroll-top></app-scroll-top>
 
 <!--  =================== FOOTER ===================  -->
 <app-footer></app-footer>

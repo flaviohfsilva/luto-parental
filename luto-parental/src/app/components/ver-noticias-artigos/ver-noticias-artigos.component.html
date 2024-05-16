@@ -28,7 +28,7 @@
           {{noticias.texto}}
           </p>
 
-          <a href="" class="btn-lerMais">
+          <a class="btn-lerMais" (click)="selecionarInformacao(noticias.id, noticias.idTipoInformacao, noticias.titulo, noticias.texto, noticias.dataHora, noticias.img)">
             <p class="btn-text">Leia mais</p>
             <span class="icon-arrow material-symbols-outlined">
               arrow_forward_ios
