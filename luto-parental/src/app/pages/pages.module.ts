@@ -19,6 +19,7 @@ import { LimitarPalavrasPipe } from './pipe/limitar-palavras.pipe';
 import { NoticiaSelecionadaComponent } from './informacao-selecionada/noticia-selecionada.component';
 import { OqueFazemosComponent } from './oque-fazemos/oque-fazemos.component';
 import { ScrollTopComponent } from '../components/scroll-top/scroll-top.component';
+import { ContatoComponent } from './contato/contato.component';
 
 
 
@@ -39,7 +40,8 @@ import { ScrollTopComponent } from '../components/scroll-top/scroll-top.componen
         LimitarPalavrasPipe,
         NoticiaSelecionadaComponent,
         OqueFazemosComponent,
-        ScrollTopComponent
+        ScrollTopComponent,
+        ContatoComponent
     ],
     imports: [
         CommonModule,

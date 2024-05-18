@@ -1,0 +1,87 @@
+<app-navbar></app-navbar>
+<main>
+  <div class="navegation-pages">
+    <p class="nav-home" routerLink="/home">Home</p>
+       <span class="material-symbols-outlined icon">
+       arrow_forward_ios
+    </span>
+    <span class="nav-router">Sobre</span>
+  </div>
+  <section class="contato">
+    <div class="text">
+      <h1 class="title">Contato</h1>
+      <p class="subtitle">
+          Quer conversar com a gente?
+      </p>
+    </div>
+    <div class="container-contato">
+      <div class="line-separator" style="border: 1    px solid var(--color-text); width: 100%;"></div>
+
+        <div class="conteudo-contato">
+          <p>
+            Compreendemos que o luto perinatal é uma jornada
+            complexa e individual, marcada por emoções intensas e a
+            mais árdua tarefa de reconstruir a vida após a perda de um filho.
+            Compartilhar histórias, queremos nos colocar à disposição
+            para oferecer um apoio ainda mais próximo
+           </p>
+           <p><b>Por isso, criamos esse canal de comunicação direto</b></p>
+           <p>
+             Através deste canal, você pode:
+           </p>
+
+           <br>
+             <ul>
+               <li>Enviar suas dúvidas, sugestões e comentários sobre o site.
+                 Sua opinião é fundamental para que possamos aprimorar
+                 nossos serviços e atender ás suas necessidades de forma
+                 cada vez mais eficaz
+               </li>
+               <li>
+                Conversar. Se você precisa de alguém para conversar, não
+                hesite em entrar em contato conosco. Através do
+                formulário abiaxo, você pode enviar uma mensagem,
+                iremos responder o mais rápido possível.
+               </li>
+             </ul>
+        </div>
+      </div>
+  </section>
+  <img class="folhas" src="../../assets/folhas-bg.png" alt="folhas">
+  <section class="quadro-branco">
+    <form class="form">
+      <div class="dados">
+        <div class="nome">
+          <label for="nome">Nome*</label>
+          <input type="text" id="nome" name="nome" required placeholder="Qual seu nome?">
+        </div>
+        <div class="email">
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email" required placeholder="Qual é o seu Email?">
+        </div>
+      </div>
+
+      <div class="mensagem">
+        <label for="mensagem">Mensagem*</label>
+        <textarea id="mensagem" name="mensagem" rows="6" required placeholder="Conte sua história"></textarea>
+      </div>
+      <div class="termo">
+        <input type="checkbox" name="termo" id="termo">
+        <p class="texto-termo">Desejo assinar a Newsletter da Raízes de Amor</p>
+      </div>
+      <p class="termo-descricao">Ao clicar enviar, você concorda com a nossa <a href="">  Polpitica de privacidade</a></p>
+
+
+      <div class="botao">
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </section>
+
+  <app-ver-historias></app-ver-historias>
+  <app-compartilhar-historia></app-compartilhar-historia>
+  <!-- Newsletter -->
+  <app-newslatter></app-newslatter>
+</main>
+<app-footer></app-footer>
+
