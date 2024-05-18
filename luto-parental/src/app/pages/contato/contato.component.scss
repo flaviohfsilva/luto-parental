@@ -1,0 +1,171 @@
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+}
+.conteudo-contato>p{
+  margin: 5% 0% 5% 0; width: 100%;
+}
+.navegation-pages{
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  gap: .2rem;
+  margin: 5%;
+}
+
+.nav-home, .nav-router{
+  cursor: pointer;
+}
+.nav-router{
+  color: var(--color-strong-pink);
+}
+.icon{
+  font-size: 14px;
+  transform: translateY(3px);
+}
+title{
+  font-size: 18px;
+}
+.container{
+  width: 100%;
+  height: 90%;
+}
+
+.text{
+  font-family: "Sora", sans-serif;
+  margin: 5% 5%;
+}
+.subtitle{
+  text-align: justify;
+  margin: 2% 0;
+  width: 50%;
+ }
+ .container{
+  width: 100%;
+  height: 90%;
+}
+//contato
+
+.conteudo-contato{
+  width: 40%;
+
+}
+.container-contato{
+  width: 100wr;
+  height: 20%;
+  background-color:  #F2DBD5;
+  margin: 5% 0;
+  padding: 3% 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+  padding-top: 5%;
+}
+li{
+    margin-bottom: 2%;
+    list-style-type: disc; /* Define o estilo do bullet como um círculo cheio */
+    width: 100%
+}
+
+.folhas{
+  width: 30%;
+  height: 150%;
+  position: absolute;
+  margin-top: -20%;
+}
+img{
+  width: 20%;
+}
+
+// formulário
+.quadro-branco {
+  margin: 3% 5% 0% 20%;
+  width: 60%;
+  height: 50%;
+  background-color: #ffffff;
+  padding: 5%;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dados {
+  padding: 2%;
+  gap: 2%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.nome,
+.email {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.mensagem {
+  padding: 2%;
+  width: 100%;
+  margin-bottom: 10px;
+}
+textarea{
+  height: 250px;
+  overflow: auto;
+}
+textarea,
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid rgba(217, 178, 169, 1);
+  background-color:#f5e8e5;
+  opacity: 0.4;
+  border-radius: 15px;
+}
+input[type="text"],
+input[type="email"]{
+  width: 100%;
+  height: 90%;
+}
+button {
+  padding: 8px 60px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 12px;
+  border: solid black 1px;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 1px solid rgba(217, 178, 169, 1);
+  background-color:#f5e8e5;
+}
+.termo{
+ width: 95%;
+ display: flex;
+ align-items: flex-start;
+}
+.texto-termo{
+  display: flex;
+}
+.termo-descricao{
+  width: 91%;
+  text-align: left;
+  font-size: 12px;
+  color: #575757;
+  display: flex;
+  flex-direction: co;
+  align-items: flex-start;
+  margin-bottom: 5%;
+}
