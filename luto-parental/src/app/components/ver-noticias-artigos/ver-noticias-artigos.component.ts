@@ -1,4 +1,4 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RequestService } from 'src/app/core/request.service';
 import { Noticia, NoticiasArtigosImg, Tag } from 'src/app/interfaces';
@@ -8,12 +8,12 @@ import { Noticia, NoticiasArtigosImg, Tag } from 'src/app/interfaces';
   templateUrl: './ver-noticias-artigos.component.html',
   styleUrls: ['./ver-noticias-artigos.component.scss']
 })
-export class VerNoticiasArtigosComponent {
+export class VerNoticiasArtigosComponent implements OnInit {
 
-  btnResponsivo: boolean = false;
-  title: string = '';
-  markTitle: string = '';
-  descricao: string = '';
+  btnResponsivo = false;
+  title = '';
+  markTitle = '';
+  descricao = '';
   @Input() tag: Tag[] = [];
   @Input() noticia: Noticia[] = [];
 
@@ -28,6 +28,7 @@ export class VerNoticiasArtigosComponent {
 
   @HostListener('window:resize', ['$event'])
   // Verifica o tamanho da tela
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   verTamanho(event: Event){
     this.verificarTamanhoTela();
   }
@@ -81,8 +82,6 @@ estiloCardNoticia(idTag: number){
 }
 
 estiloTags(idTag: number) {
-  const tags = this.tag.find(tag => tag.id == idTag);
-  const tagId = tags?.id;
 
   const noticias = 1;
   const artigos = 2;

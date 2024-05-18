@@ -1,12 +1,12 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-ver-direitos',
   templateUrl: './ver-direitos.component.html',
   styleUrls: ['./ver-direitos.component.scss']
 })
-export class VerDireitosComponent {
-  btnResponsivo: boolean = false;
+export class VerDireitosComponent implements OnInit {
+  btnResponsivo = false;
 
   constructor() {}
 
@@ -16,6 +16,7 @@ export class VerDireitosComponent {
 
   @HostListener('window:resize', ['$event'])
   // Verifica o tamanho da tela
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   verTamanho(event: Event){
     this.verificarTamanhoTela();
   }

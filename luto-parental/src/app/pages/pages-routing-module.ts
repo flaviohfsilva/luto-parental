@@ -1,5 +1,5 @@
-import { Injectable, NgModule, Component } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterModule, RouterStateSnapshot, Routes, UrlTree } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { DepoimentosComponent } from './depoimentos/depoimentos.component';

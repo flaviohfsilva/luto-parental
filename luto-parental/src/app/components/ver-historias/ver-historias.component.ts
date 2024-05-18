@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RequestService } from 'src/app/core/request.service';
 import { Historia } from 'src/app/interfaces';
@@ -8,13 +8,13 @@ import { Historia } from 'src/app/interfaces';
   templateUrl: './ver-historias.component.html',
   styleUrls: ['./ver-historias.component.scss']
 })
-export class VerHistoriasComponent {
+export class VerHistoriasComponent implements OnInit {
 
   historias: Historia[] = [];
-  btnResponsivo: boolean = false;
-  title: string = '';
-  markTitle: string = '';
-  descricao: string = '';
+  btnResponsivo = false;
+  title = '';
+  markTitle = '';
+  descricao = '';
 
   constructor(
     private requestService: RequestService,
@@ -28,6 +28,7 @@ export class VerHistoriasComponent {
 
   @HostListener('window:resize', ['$event'])
   // Verifica o tamanho da tela
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   verTamanho(event: Event){
     this.verificarTamanhoTela();
   }

@@ -1,3 +1,5 @@
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
 <!-- Navbar -->
 <app-navbar></app-navbar>
 <!-- Conteúdo central  -->
@@ -22,8 +24,8 @@
 
       <div class="pagina-noticias__noticias__botao">
         <button>
-          <label>Filtrar por categoria:</label>
-          <select>
+          <label for="categorias">Filtrar por categoria:</label>
+          <select id="categorias" (change)="aplicarFiltro($event)">
             <option value="#"></option>
             <option *ngFor="let categoria of categorias" [value]="categoria.categoria">
               {{ categoria.categoria }}
@@ -35,7 +37,7 @@
       <div class="line-separator" style="border: 1px solid var(--color-text); width: 100%;"></div>
 
       <!-- Imagem de fundo  -->
-      <img class="pagina-noticias__noticias__background" src="../../../assets/img/page-noticias/lateral-flora.svg"/>
+      <img class="pagina-noticias__noticias__background" src="../../../assets/img/page-noticias/lateral-flora.svg" alt="flor-background"/>
 
       <!-- Card  -->
       <div class="pagina-noticias__noticias__cards">
@@ -67,10 +69,6 @@
               </span>
             </a>
           </div>
-
-
-
-
         </section>
       </div>
 

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { RequestService } from 'src/app/core/request.service';
 import { Noticia, Tag } from 'src/app/interfaces';
 
@@ -8,7 +8,7 @@ import { Noticia, Tag } from 'src/app/interfaces';
   templateUrl: './noticia-selecionada.component.html',
   styleUrls: ['./noticia-selecionada.component.scss']
 })
-export class NoticiaSelecionadaComponent {
+export class NoticiaSelecionadaComponent implements OnInit {
 
   tag: Tag[] = [];
   noticia: Noticia[] = [];

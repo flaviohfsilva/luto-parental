@@ -1,8 +1,9 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { RequestService } from 'src/app/core/request.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+// import { MatSnackBar } from '@angular/material/snack-bar';
 import { Estados, Historia } from 'src/app/interfaces';
 
 @Component({
@@ -10,11 +11,11 @@ import { Estados, Historia } from 'src/app/interfaces';
   templateUrl: './modal-historias.component.html',
   styleUrls: ['./modal-historias.component.scss']
 })
-export class ModalHistoriasComponent {
+export class ModalHistoriasComponent implements OnInit {
 
   historiaForm!: FormGroup;
   estados: Estados[] = [];
-  estadoSelecionado: string = '';
+  estadoSelecionado = '';
   arquivoSelecionado: File | undefined;
   historia!: Historia;
 
@@ -81,6 +82,7 @@ enviar(formHistorias: FormGroup){
   )
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 onFileSelected(event: any) {
   this.arquivoSelecionado = event.target.files[0];
 }
@@ -104,8 +106,8 @@ transformarImagemEmBinario(imagem: File) {
           break;
         case 'object':
           // Se for um objeto (ArrayBuffer), converte em binário
-          const arrayDeBytes = new Uint8Array(resultadoBinario as ArrayBuffer);
-          console.log('Resultado binário (ArrayBuffer):', arrayDeBytes);
+          // const arrayDeBytes = new Uint8Array(resultadoBinario as ArrayBuffer);
+          // console.log('Resultado binário (ArrayBuffer):', arrayDeBytes);
           break;
         default:
           console.error('Resultado binário inválido');

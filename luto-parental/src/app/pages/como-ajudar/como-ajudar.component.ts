@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RequestService } from 'src/app/core/request.service';
 import { Historia } from 'src/app/interfaces';
 
@@ -8,9 +8,9 @@ import { Historia } from 'src/app/interfaces';
  templateUrl: './como-ajudar.component.html',
  styleUrls: ['./como-ajudar.component.scss']
 })
-export class ComoAjudarComponent {
+export class ComoAjudarComponent implements OnInit {
  historias: Historia[] = [];
- texto: string = '';
+ texto = '';
 
 
  constructor(

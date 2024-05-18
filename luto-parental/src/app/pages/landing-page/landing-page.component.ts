@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { RequestService } from 'src/app/core/request.service';
 import { CarouselHome, Historia, Noticia, Tag } from 'src/app/interfaces';
 
@@ -7,14 +7,14 @@ import { CarouselHome, Historia, Noticia, Tag } from 'src/app/interfaces';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
-export class LandingPageComponent {
+export class LandingPageComponent implements OnInit {
 
-  selectedIndex: number = 0;
-  sliders: boolean = true;
-  controls: boolean = true;
-  carouselImages: boolean = false;
-  carouselAutomatic: boolean = true;
-  textCarousel: boolean = true;
+  selectedIndex = 0;
+  sliders = true;
+  controls = true;
+  carouselImages = false;
+  carouselAutomatic = true;
+  textCarousel = true;
   historias: Historia[] = [];
   tag: Tag[] = [];
   noticia: Noticia[] = [];
@@ -34,6 +34,7 @@ export class LandingPageComponent {
 
   @HostListener('window:resize', ['$event'])
   // Verifica o tamanho da tela
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   verTamanho(event: Event){
     this.verificarTamanhoTela();
   }
@@ -81,6 +82,7 @@ export class LandingPageComponent {
   }
 
   verificarTamanhoTela(){
+  // eslint-disable-next-line no-cond-assign
   if (this.carouselImages = window.innerWidth <= 767) {
       const images: CarouselHome[] = [
         {

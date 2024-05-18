@@ -34,7 +34,7 @@ export interface StatusPaginaHistoria {
   erro: boolean;
   msg: string;
   paginaAtual: number;
-  dados: {}[];
+  dados: object[];
   avancarPagina: boolean;
   voltarPagina: boolean
 }

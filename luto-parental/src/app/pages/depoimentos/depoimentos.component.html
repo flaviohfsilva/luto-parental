@@ -1,3 +1,5 @@
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
 <!--  =================== NAVBAR ===================  -->
 <app-navbar></app-navbar>
 
@@ -26,16 +28,20 @@
     <!--  =================== MURAL DE HISTÓRIAS ===================  -->
     <section class="mural-historias">
       <!--  =================== FILTRO BUTTON ===================  -->
-      <div class="filtro-area">
-        <select class="filtro" name="" id="">
-          <option selected disabled>Filtrar por:</option>
-          <option *ngFor="let categoria of categorias"
-          [value]="categoria.categoria"
-          >
-          {{categoria.categoria}}
-        </option>
-        </select>
+      <div class="pagina-noticias__noticias__botao">
+        <button>
+          <label for="categorias">Filtrar por categoria:</label>
+          <select id="categorias" (change)="aplicarFiltro($event)">
+            <option value="#"></option>
+            <option *ngFor="let categoria of categorias" [value]="categoria.categoria">
+              {{ categoria.categoria }}
+            </option>
+          </select>
+        </button>
       </div>
+
+      <div class="line-separator" style="border: 1px solid var(--color-text); width: 100%; margin: 4% 0"></div>
+
       <div class="mural-container" *ngIf="dadosDaPaginaAtual">
         <!--  =================== CARD HISTÓRIAS ===================  -->
         <div class="card-shadow card" *ngFor="let historia of dadosDaPaginaAtual">

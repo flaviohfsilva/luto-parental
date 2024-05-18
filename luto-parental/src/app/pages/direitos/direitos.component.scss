@@ -54,31 +54,32 @@
   align-items: center;
 }
 
-.filtro-area{
-  display: flex;
-  justify-content: end;
-  border-bottom: 2px solid var(--color-text);
-}
+// =================== FILTRO AREA ===================
 
-select {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
+.pagina-noticias__noticias__botao {
+  position: absolute;
+  right: 10.2%;
+
+      button {
+        padding: 0.7em;
+      }
 
 
-.filtro{
-  background: var(--color-white);
-  border-radius: 8px;
-  padding: 8px;
-  width: 15%;
-  // transform: translateY(-20px);
-  margin: 0 6% 20px;
+      label {
+        font-size: 15.5px;
+        font-weight: 600;
+      }
+
+      button,
+      select {
+        padding-left: 1em;
+        padding-right: 1em;
+        background-color: #FFFFFF;
+        border: none;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 14px;
+      }
 }
   // ======== CARD AREA ========
   .card-shadow::after {

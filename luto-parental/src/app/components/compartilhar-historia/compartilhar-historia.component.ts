@@ -1,4 +1,5 @@
-import { Component, HostListener } from '@angular/core';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalHistoriasComponent } from '../modal-historias/modal-historias.component';
 
@@ -7,9 +8,9 @@ import { ModalHistoriasComponent } from '../modal-historias/modal-historias.comp
   templateUrl: './compartilhar-historia.component.html',
   styleUrls: ['./compartilhar-historia.component.scss']
 })
-export class CompartilharHistoriaComponent {
+export class CompartilharHistoriaComponent implements OnInit {
 
-  btnResponsivo: boolean = false;
+  btnResponsivo = false;
 
   constructor(private dialog: MatDialog) {}
 
@@ -35,6 +36,5 @@ export class CompartilharHistoriaComponent {
       disableClose: true
     }
     const dialog = this.dialog.open(ModalHistoriasComponent, config);
-
   }
 }

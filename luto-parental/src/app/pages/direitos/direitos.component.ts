@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { RequestService } from 'src/app/core/request.service';
@@ -9,20 +9,22 @@ import { Estados, Historia, Noticia, Tag } from 'src/app/interfaces';
   templateUrl: './direitos.component.html',
   styleUrls: ['./direitos.component.scss']
 })
-export class DireitosComponent {
+export class DireitosComponent implements OnInit {
 
   historias: Historia[] = [];
   estados: Estados[] = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public dadosDaPaginaAtual: any = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public objetoPaginacao: any = [];
-  historiaId: number = 0;
+  historiaId = 0;
   rotaHistoria!: Subscription;
-  public paginaAtual: number = 1;
-  public proximaPagina: number = 0;
+  public paginaAtual = 1;
+  public proximaPagina = 0;
   public totalPaginasArray: [] = [];
-  avancarPagina: boolean = true;
-  voltarPagina: boolean = false;
-  protected excluido: string = '0';
+  avancarPagina = true;
+  voltarPagina = false;
+  protected excluido = '0';
   tag: Tag[] = [];
   noticia: Noticia[] = [];
 
@@ -98,7 +100,8 @@ export class DireitosComponent {
   ];
 
   carregarDadosPaginados(excluido: string){
-    this.requestService.consultarPaginacaoHistorias(excluido, this.paginaAtual).subscribe(
+    this.requestService.consultarPaginacaoHistorias(excluido, this.paginaAtual, '').subscribe(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (RetornoPaginaAtual: any) => {
         this.dadosDaPaginaAtual = RetornoPaginaAtual.dados;
         this.totalPaginasArray = RetornoPaginaAtual.totalPaginas;
@@ -118,8 +121,9 @@ export class DireitosComponent {
 
     try {
       this.requestService
-        .consultarPaginacaoHistorias(this.excluido, this.paginaAtual)
+        .consultarPaginacaoHistorias(this.excluido, this.paginaAtual, '')
         .subscribe(
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (dadosPaginaAtual: any) => {
             this.dadosDaPaginaAtual = dadosPaginaAtual.dados;
 

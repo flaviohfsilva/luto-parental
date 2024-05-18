@@ -7,7 +7,7 @@ import { Component, HostListener } from '@angular/core';
 })
 export class ScrollTopComponent {
 
-  isScroll: boolean = false;
+  isScroll = false;
 
 
   @HostListener('window:scroll', ['$event'])

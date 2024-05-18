@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RequestService } from 'src/app/core/request.service';
 import { Historia } from 'src/app/interfaces';
 
@@ -7,7 +7,7 @@ import { Historia } from 'src/app/interfaces';
   templateUrl: './oque-fazemos.component.html',
   styleUrls: ['./oque-fazemos.component.scss']
 })
-export class OqueFazemosComponent {
+export class OqueFazemosComponent implements OnInit {
 
   historias: Historia[] = [];
 

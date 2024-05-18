@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RequestService } from 'src/app/core/request.service';
 import { Noticia, Tag } from 'src/app/interfaces';
@@ -8,7 +8,7 @@ import { Noticia, Tag } from 'src/app/interfaces';
   templateUrl: './noticias.component.html',
   styleUrls: ['./noticias.component.scss'],
 })
-export class NoticiasComponent {
+export class NoticiasComponent implements OnInit {
   public historias = [
     {
       titulo: 'Meu sonho de ser mães e as tentativas pela maternidade',
@@ -38,29 +38,30 @@ export class NoticiasComponent {
     this.mostrarTags();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public dadosDaPaginaAtual: any = [];
   noticias: Noticia[] = [];
-  public paginaAtual: number = 1;
-  public proximaPagina: number = 0;
-  public palavraFiltrada: string = '';
+  public paginaAtual = 1;
+  public proximaPagina = 0;
+  public palavraFiltrada = '';
   public totalPaginasArray = [];
   public imagens = [];
   tag: Tag[] = [];
-  avancarPagina: boolean = true;
-  voltarPagina: boolean = false;
-  title: string = '';
-  markTitle: string = '';
-  descricao: string = '';
-  protected excluido: string = '0';
+  avancarPagina = true;
+  voltarPagina = false;
+  title = '';
+  markTitle = '';
+  descricao = '';
+  protected excluido = '0';
 
 
 
   public categorias = [
     {
-      categoria: 'Notícia',
+      categoria: 'Notícias',
     },
     {
-      categoria: 'ARTIGO'
+      categoria: 'Artigos'
     },
     {
       categoria: 'Mais Recentes'
@@ -78,9 +79,9 @@ export class NoticiasComponent {
    */
   public visualizarCorCategoria(categoria: string): string {
     switch(categoria) {
-      case 'Notícia':
+      case 'Notícias':
         return '#D9B2A9';
-      case 'Artigo':
+      case 'Artigos':
         return '#60748D';
       case 'Mais Recentes':
         return '#60748D';
@@ -91,9 +92,19 @@ export class NoticiasComponent {
     }
   }
 
+  aplicarFiltro(event: Event){
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.palavraFiltrada = filterValue.trim();
+    console.log(this.palavraFiltrada)
+    // Reiniciando o índice das páginas
+    this.paginaAtual = 0;
+    this.carregarProximaPagina(true);
+  }
+
 
   carregarDadosPaginados(excluido: string){
-    this.requestService.consultarPaginacaoNoticias(excluido, this.paginaAtual).subscribe(
+    this.requestService.consultarPaginacaoNoticias(excluido, this.paginaAtual, this.palavraFiltrada).subscribe(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (RetornoPaginaAtual: any) => {
         this.dadosDaPaginaAtual = RetornoPaginaAtual.dados;
         this.totalPaginasArray = RetornoPaginaAtual.totalPaginas;
@@ -113,11 +124,13 @@ export class NoticiasComponent {
     console.log(this.paginaAtual);
 
     const filtro = this.palavraFiltrada;
+    console.log('A: ', filtro)
 
     try {
       this.requestService
-        .consultarPaginacaoNoticias(this.excluido, this.paginaAtual, )
+        .consultarPaginacaoNoticias(this.excluido, this.paginaAtual, filtro)
         .subscribe(
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (dadosPaginaAtual: any) => {
             this.dadosDaPaginaAtual = dadosPaginaAtual.dados;
 
@@ -163,8 +176,8 @@ export class NoticiasComponent {
   }
 
   estiloTags(idTag: number) {
-    const tags = this.tag.find(tag => tag.id == idTag);
-    const tagId = tags?.id;
+    // const tags = this.tag.find(tag => tag.id == idTag);
+    // const tagId = tags?.id;
 
     const noticias = 1;
     const artigos = 2;

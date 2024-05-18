@@ -1,3 +1,6 @@
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+
 <!--  =================== VER NOTÍCIAS SECTION ===================  -->
 <section class="novas-noticias">
   <!--  =================== TITLE VER NOTÍCIAS ===================  -->
@@ -14,7 +17,7 @@
     <div class="card" *ngFor="let noticias of noticia | slice:0:3">
       <div class="card-content">
 
-        <img [src]="mostrarImagensNoticia(noticias.id)" class="card-img">
+        <img [src]="mostrarImagensNoticia(noticias.id)" class="card-img" alt="Imagem da notícia">
 
         <div class="card-info" [ngClass]="estiloCardNoticia(noticias.idTag)">
 

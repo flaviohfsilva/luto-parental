@@ -1,15 +1,15 @@
 import { CarouselSobre } from '../../interfaces';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sobre',
   templateUrl: './sobre.component.html',
   styleUrls: ['./sobre.component.scss']
 })
-export class SobreComponent {
+export class SobreComponent implements OnInit {
 
-  selectedIndex: number = 0;
-  carouselAutomatic: boolean = true;
+  selectedIndex = 0;
+  carouselAutomatic = true;
 
   ngOnInit(){
     if(this.carouselAutomatic){
