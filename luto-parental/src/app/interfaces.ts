@@ -65,3 +65,9 @@ export interface CarouselSobre {
   imgPadrao: string;
   imgAlt: string;
 }
+export interface ReceberEmail {
+  nome: string;
+  emial:string;
+  mensagem: string;
+  isChecked: boolean;
+}

@@ -1,3 +1,4 @@
+import { ReceberEmail } from './../interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -43,6 +44,14 @@ export class RequestService {
 
   consultarPaginacaoNoticias(excluido:string, pagina:number, filtro: string) {
     return this.httpClient.get(`${API}/noticias/buscarPaginas?excluido=${excluido}&&pagina=${pagina}&&filtro=${filtro}`);
+  }
+
+  enviarNewsletter(nome: string, email: string) {
+    return this.httpClient.get(`${API}/newsletter/enviar/${nome}/${email}`)
+  }
+
+  receberEmail(emailContato: ReceberEmail) {
+    return this.httpClient.post(`${API}/newsletter/receber`, emailContato)
   }
 
 }

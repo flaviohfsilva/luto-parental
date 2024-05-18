@@ -6,10 +6,11 @@
       <p class="subtitle">Fique dentro de nossa<br>programação, artigos e notícias</p>
     </div>
 
-    <div class="form-news">
+    <form action="" class="form-news"  [formGroup]="newsForm" (ngSubmit)="enviar(newsForm)" #formDir="ngForm">
       <div class="form-area">
-        <input type="text" class="nome" placeholder="Nome">
-        <input type="email" class="email" placeholder="Email">
+
+        <input type="text" class="nome" placeholder="Nome" formControlName="nome" required>
+        <input type="email" class="email" placeholder="Email" formControlName="email" required>
 
         <div class="termos-section">
 
@@ -21,10 +22,16 @@
             </label>
           </div>
 
-          <button class="btn btn-enviar" type="submit">ENVIAR</button>
+          <button class="btn btn-enviar"  type="button"
+          [formaction]="newsForm"
+          (click)="enviar(newsForm)"
+          [disabled]="!formPreenchido()"
+          >
+            ENVIAR
+          </button>
         </div>
 
       </div>
-    </div>
+    </form>
   </div>
 </section>

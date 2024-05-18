@@ -137,6 +137,19 @@
     height: 180%;
   }
 
+  // =================== COLORS SNACKBAR AREA ===================
+
+  .green {
+    background-color: green;
+    color: var(--color-white);
+
+  }
+
+  .red {
+    background-color: red;
+    color: var(--color-white);
+  }
+
   @media screen and (max-width: 767px) {
     .newslatter{
       margin: 0 0 18%;
