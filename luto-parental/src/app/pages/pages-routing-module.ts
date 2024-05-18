@@ -8,6 +8,7 @@ import { ComoAjudarComponent } from './como-ajudar/como-ajudar.component';
 import { NoticiaSelecionadaComponent } from './informacao-selecionada/noticia-selecionada.component';
 import { DireitosComponent } from './direitos/direitos.component';
 import { OqueFazemosComponent } from './oque-fazemos/oque-fazemos.component';
+import { ContatoComponent } from './contato/contato.component';
 
 // Vai ficar todas as rotas das páginas do nosso site
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'como-ajudar', component: ComoAjudarComponent},
   { path: 'noticia-selecionada', component: NoticiaSelecionadaComponent},
   { path: 'direitos', component: DireitosComponent},
-  { path: 'oque-fazemos', component: OqueFazemosComponent}
+  { path: 'oque-fazemos', component: OqueFazemosComponent},
+  { path: 'contato', component: ContatoComponent}
 ];
 
 @NgModule({
