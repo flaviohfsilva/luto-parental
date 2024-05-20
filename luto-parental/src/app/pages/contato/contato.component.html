@@ -1,87 +1,156 @@
+<!--  =================== NAVBAR ===================  -->
 <app-navbar></app-navbar>
+
 <main>
-  <div class="navegation-pages">
+      <!--  =================== NAVIGATION PAGES ===================  -->
+   <div class="navegation-pages">
     <p class="nav-home" routerLink="/home">Home</p>
-       <span class="material-symbols-outlined icon">
-       arrow_forward_ios
+    <span class="material-symbols-outlined icon">
+      arrow_forward_ios
     </span>
-    <span class="nav-router">Sobre</span>
+    <span class="nav-router" routerLink="/contato" routerLinkActive="active">Contato</span>
   </div>
-  <section class="contato">
-    <div class="text">
-      <h1 class="title">Contato</h1>
-      <p class="subtitle">
-          Quer conversar com a gente?
+
+    <!--  =================== TEXTOS CONTATO ===================  -->
+    <div class="texts-contatos">
+      <h1 class="title-contatos">Contato</h1>
+      <p class="subtitle-contatos">
+        Quer conversar com a gente ?
       </p>
     </div>
-    <div class="container-contato">
-      <div class="line-separator" style="border: 1    px solid var(--color-text); width: 100%;"></div>
 
-        <div class="conteudo-contato">
-          <p>
-            Compreendemos que o luto perinatal é uma jornada
-            complexa e individual, marcada por emoções intensas e a
-            mais árdua tarefa de reconstruir a vida após a perda de um filho.
-            Compartilhar histórias, queremos nos colocar à disposição
-            para oferecer um apoio ainda mais próximo
-           </p>
-           <p><b>Por isso, criamos esse canal de comunicação direto</b></p>
-           <p>
-             Através deste canal, você pode:
-           </p>
+  <!--  =================== MURAL DE CONTATO ===================  -->
+  <section class="mural-contatos">
 
-           <br>
-             <ul>
-               <li>Enviar suas dúvidas, sugestões e comentários sobre o site.
-                 Sua opinião é fundamental para que possamos aprimorar
-                 nossos serviços e atender ás suas necessidades de forma
-                 cada vez mais eficaz
-               </li>
-               <li>
-                Conversar. Se você precisa de alguém para conversar, não
-                hesite em entrar em contato conosco. Através do
-                formulário abiaxo, você pode enviar uma mensagem,
-                iremos responder o mais rápido possível.
-               </li>
-             </ul>
+    <div class="line-separator" style="border: 1px solid var(--color-text); width: 100%; margin: 5% 0 0;"></div>
+
+
+    <div class="mural-contatos">
+
+
+      <div class="info-contatos">
+
+
+        <div class="info-text">
+          <p style="margin:  0; width: 60%;">
+            Compreendemos que o luto perinatal é uma jornada complexa e individual, marcada por
+            emoções intensas e a árdua tarefa de reconstruir a vida após a perda de um filho. Mais
+            do que oferecer informações e um espaço para compartilhar histórias, queremos nos colocar
+            à disposição para oferecer um apoio ainda mais próximo.
+
+          <p style="margin: 4% 0 0; width: 60%; font-weight: bold;">
+            Por isso, criamos esse canal de comunicação direto.
+          </p>
+
+
+
+          <ul style="margin:  2% 0; width: 60%;">
+              <p style="margin: 5% 0;font-weight: 600;">Através deste canal você pode: </p>
+
+              <li style="margin: 0 5% 5%;">Enviar suas dúvidas, sugestões e comentários sobre o site. Sua opinião
+                é fundamental para que possamos aprimorar nossos serviços e atender às suas
+                necessidades de forma cada vez mais eficaz;
+              </li>
+
+              <li style="margin: 0 5%;">
+                Conversar. Se você precisa de alguém para conversar, não hesite em entrar em
+                contato conosco. Através do formulário abaixo, você pode enviar uma mensagem,
+                que, assim que possível, daremos um retorno.
+              </li>
+          </ul>
+
+
         </div>
       </div>
+    </div>
   </section>
-  <img class="folhas" src="../../assets/folhas-bg.png" alt="folhas">
+
+
+  <!-- <img class="folhas" src="../../assets/folhas-bg.png" alt="folhas"> -->
+
   <section class="quadro-branco">
-    <form class="form">
-      <div class="dados">
-        <div class="nome">
-          <label for="nome">Nome*</label>
-          <input type="text" id="nome" name="nome" required placeholder="Qual seu nome?">
+    <form action="" class="form-contatos" [formGroup]="contatoForm" (ngSubmit)="enviar(contatoForm)" #formDir="ngForm">
+      <!--  =================== FORM CONTAINER ===================  -->
+      <div class="form-container">
+
+        <!--  =================== INPUT CONTENT FORM ===================  -->
+        <div class="input-content">
+          <!--  =================== INPUT FIELD 1 ===================  -->
+          <div class="input-field">
+            <label for="nome">Nome *</label>
+            <input class="form-input" type="text" id="nome" placeholder="Qual é o seu nome?" formControlName="nome" [ngClass]="{'border-erro': nome.invalid && nome.touched}" required>
+
+            <!--  =================== VALIDATION INPUT ===================  -->
+            <div class="error-validation" *ngIf="nome.invalid && nome.touched">
+              <p *ngIf="nome.errors?.['required']"> Por favor, insira o seu nome.</p>
+            </div>
+          </div>
+
+
+          <!--  =================== INPUT FIELD 2 ===================  -->
+          <div class="input-field">
+            <label for="">Email *</label>
+            <input class="form-input" type="text" placeholder="Qual é o seu email?" formControlName="email" [ngClass]="{'border-erro': email.invalid && email.touched}" required>
+
+            <!--  =================== VALIDATION INPUT ===================  -->
+            <div class="error-validation" *ngIf="email.invalid && email.touched">
+              <p *ngIf="email.errors?.['required']"> Por favor, insira o seu email.</p>
+              <p *ngIf="email.errors?.['email']">Insira um e-mail válido. Exemplo@gmail.com</p>
+            </div>
+
+
+          </div>
         </div>
-        <div class="email">
-          <label for="email">Email*</label>
-          <input type="email" id="email" name="email" required placeholder="Qual é o seu Email?">
+
+        <!--  =================== INPUT FIELD 5 ===================  -->
+        <div class="input-field">
+          <label for="">Mensagem *</label>
+          <textarea class="form-input-text-area" name="" id="" cols="30" rows="10" formControlName="mensagem" [ngClass]="{'border-erro': mensagem.invalid && mensagem.touched}" required></textarea>
+
+          <!--  =================== VALIDATION INPUT ===================  -->
+          <div class="error-validation" *ngIf="mensagem.invalid && mensagem.touched">
+            <p *ngIf="mensagem.errors?.['required']"> Por favor, deixe a sua mensagem.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="mensagem">
-        <label for="mensagem">Mensagem*</label>
-        <textarea id="mensagem" name="mensagem" rows="6" required placeholder="Conte sua história"></textarea>
-      </div>
-      <div class="termo">
-        <input type="checkbox" name="termo" id="termo">
-        <p class="texto-termo">Desejo assinar a Newsletter da Raízes de Amor</p>
-      </div>
-      <p class="termo-descricao">Ao clicar enviar, você concorda com a nossa <a href="">  Polpitica de privacidade</a></p>
+        <div class="info-historia">
+          <div class="info-container">
+            <label class="autorizar-postagem">
+              <input type="checkbox" formControlName="isChecked">
+              Desejo assinar a Newsletter da Raízes de Amor
+            </label>
 
+            <p class="info-envio">Ao clicar em enviar, você concorda com a nossa <a href="" style="color: var(--color-strong-blue);">Política de Privacidade</a></p>
 
-      <div class="botao">
-        <button type="submit">Enviar</button>
+          </div>
+
+        </div>
+
+        <button class="btn btn-enviar"
+          type="button"
+          [formaction]="contatoForm"
+          (click)="enviar(contatoForm)"
+          [disabled]="!formPreenchido()"
+        >
+          Enviar
+        </button>
       </div>
     </form>
   </section>
 
-  <app-ver-historias></app-ver-historias>
+  <!--  =================== COMPARTILHAR HISTORIA ===================  -->
   <app-compartilhar-historia></app-compartilhar-historia>
-  <!-- Newsletter -->
+
+  <!--  =================== VER NOTICIAS E ARTIGOS ===================  -->
+  <app-ver-noticias-artigos [noticia]="noticia" [tag]="tag"></app-ver-noticias-artigos>
+
+  <!--  =================== NEWSLETTER ===================  -->
   <app-newslatter></app-newslatter>
 </main>
+
+<!--  =================== SCROLL TO TOP ===================  -->
+<app-scroll-top></app-scroll-top>
+
+<!--  =================== FOOTER ===================  -->
 <app-footer></app-footer>
 

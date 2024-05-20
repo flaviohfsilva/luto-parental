@@ -1,73 +1,133 @@
-
-body{
-  font-family: 'Open Sans', sans-serif;
-  font-size: 24px;
-}
-.conteudo-contato>p{
-  margin: 5% 0% 5% 0; width: 100%;
-}
+// =================== NAVEGATION PAGES AREA ===================
 .navegation-pages{
   display: flex;
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   gap: .2rem;
-  margin: 5%;
-}
+  margin: 5% 5% 0;
+ }
 
-.nav-home, .nav-router{
+
+ .nav-home, .nav-router{
   cursor: pointer;
-}
-.nav-router{
-  color: var(--color-strong-pink);
-}
-.icon{
+ }
+
+
+ .icon{
   font-size: 14px;
   transform: translateY(3px);
-}
-title{
-  font-size: 18px;
-}
-.container{
-  width: 100%;
-  height: 90%;
-}
+ }
 
-.text{
+
+ .active{
+  color: var(--color-strong-pink);
+ }
+
+ // =================== COMO AJUDAR TITLE ===================
+ .texts-contatos{
   font-family: "Sora", sans-serif;
-  margin: 5% 5%;
-}
-.subtitle{
+  margin: 25px 5%;
+ }
+
+ .title-contatos{
+  font-size: 38px;
+ }
+
+ .subtitle-contatos{
   text-align: justify;
-  margin: 2% 0;
+  font-size: 18px;
+  margin: 50px 0;
   width: 50%;
  }
- .container{
-  width: 100%;
-  height: 90%;
-}
-//contato
 
-.conteudo-contato{
-  width: 40%;
+ .mark-title{
+  color: var(--color-strong-pink);
+ }
 
-}
-.container-contato{
-  width: 100wr;
-  height: 20%;
-  background-color:  #F2DBD5;
-  margin: 5% 0;
-  padding: 3% 0;
-  align-items: center;
+
+ // =================== MURAL DE O QUE FAZEMOS ===================
+ .mural-contatos{
+  background-color: var(--color-light-pink);
+  margin: 2% 0 2%;
+  opacity: 90%;
+  padding: 2% 0;
+ }
+
+ .mural-container-contatos{
+  gap: 2rem;
+  margin: 5%;
+  padding: 0 5%;
   justify-content: center;
+  align-items: center;
+ }
+
+ .info-text{
+  align-items: center;
   display: flex;
-  flex-wrap: wrap;
-  gap: 5%;
-  padding-top: 5%;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  justify-content: center;
+  text-align: justify;
 }
+
+ .info-contatos{
+  display: flex;
+  margin: 5%;
+  padding: 0 5%;
+  gap: 2rem;
+  justify-content: center;
+  // transform: translateX(12%);
+ }
+
+ // =================== BUTTON AREA FORM ===================
+ .btn{
+  overflow: hidden;
+  position: relative;
+  transition: .5 ease-in;
+}
+
+.btn::before{
+  background-color: var(--color-strong-green);
+  content: "";
+  height: 0;
+  left: 0;
+  position: absolute;
+  transition: .8s ease-in;
+  width: 100%;
+  z-index: -1;
+}
+
+.btn-enviar{
+  background: none;
+  border: 1px solid black;
+  border-radius: 75px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  margin: 5% 35%;
+  padding: 10px;
+  width: 30%;
+  z-index: 0;
+}
+
+.btn-enviar::before{
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+}
+
+.btn-enviar:hover{
+  border: 1px solid var(--color-strong-green);
+  color: var(--color-white);
+}
+
+.btn-enviar:hover::before{
+  height: 180%;
+}
+
+
 li{
-    margin-bottom: 2%;
     list-style-type: disc; /* Define o estilo do bullet como um círculo cheio */
-    width: 100%
 }
 
 .folhas{
@@ -82,75 +142,14 @@ img{
 
 // formulário
 .quadro-branco {
-  margin: 3% 5% 0% 20%;
+  margin: 5% 5% 10% 20%;
   width: 60%;
-  height: 50%;
-  background-color: #ffffff;
-  padding: 5%;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 20%;
+  background-color: #FDFDFD;
+  padding: 5% 5% 0;
+  border-radius: 73px;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.dados {
-  padding: 2%;
-  gap: 2%;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.nome,
-.email {
-  flex: 1;
-  margin-right: 10px;
-}
-
-.mensagem {
-  padding: 2%;
-  width: 100%;
-  margin-bottom: 10px;
-}
-textarea{
-  height: 250px;
-  overflow: auto;
-}
-textarea,
-input[type="text"],
-input[type="email"] {
-  width: 100%;
-  padding: 5px;
-  margin-top: 5px;
-  border: 1px solid rgba(217, 178, 169, 1);
-  background-color:#f5e8e5;
-  opacity: 0.4;
-  border-radius: 15px;
-}
-input[type="text"],
-input[type="email"]{
-  width: 100%;
-  height: 90%;
-}
-button {
-  padding: 8px 60px;
-  background-color: white;
-  color: black;
-  border: none;
-  border-radius: 12px;
-  border: solid black 1px;
-  cursor: pointer;
-}
-
-button:hover {
-  border: 1px solid rgba(217, 178, 169, 1);
-  background-color:#f5e8e5;
-}
 .termo{
  width: 95%;
  display: flex;
@@ -169,3 +168,125 @@ button:hover {
   align-items: flex-start;
   margin-bottom: 5%;
 }
+
+// =================== FORM AREA ===================
+.form-contatos{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3% 0;
+}
+
+  // =================== FORM AREA INFORMAÇÕES ===================
+
+  .info-historia{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    margin: 5% 0;
+  }
+
+  .autorizar-postagem{
+    // display: flex;
+    color: #5E5E5E;
+    gap: .2rem;
+  }
+
+  .info-envio{
+    margin: 2% 3%;
+    color: #5E5E5E;
+  }
+  // =================== FORM INPUTS ===================
+  .input-content{
+    display: flex;
+    gap: 14.5rem;
+  }
+
+  .input-field{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    margin: 3% 0;
+  }
+
+  .input-field label{
+    margin: 1%;
+  }
+
+  .form-input{
+    all: unset;
+    background-color: #f5e8e5;
+    border: 2px solid var(--color-strong-pink);
+    border-radius: 30px;
+    color: var(--color-dark-green);
+    font-size: 15px;
+    line-height: 20px;
+    opacity: 0.4;
+    padding: 8px 12px;
+    position: relative;
+    width: 150%;
+  }
+
+  .form-input:focus-visible, .form-input-img:focus-visible, .form-input-text-area:focus-visible{
+    border-color: var(--color-strong-blue);
+  }
+
+  .form-input:-webkit-autofill{
+    box-shadow: inset 0 0 0 32px var(--background-color) !important;
+    -webkit-text-fill-color: var(--color-text);
+  }
+
+  .form-input-text-area{
+    all: unset;
+    background-color: #f5e8e5;
+    border: 2px solid var(--color-strong-pink);
+    border-radius: 30px;
+    color: var(--color-dark-green);
+    font-size: 15px;
+    line-height: 20px;
+    opacity: 0.4;
+    padding: 8px 12px;
+    position: relative;
+    width: 100%;
+  }
+
+
+
+  .form-input-img{
+    all: unset;
+    background: var(--color-white);
+    border: 1px solid var(--color-strong-pink);
+    border-radius: 30px;
+    color: var(--color-dark-green);
+    cursor: pointer;
+    display: block;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 8px 12px;
+    position: relative;
+    overflow: hidden;
+    width: 20%;
+  }
+
+  .form-input-img input[type=file]{
+    bottom: 18%;
+    cursor: pointer;
+    left: 8%;
+    opacity: 0;
+    position: absolute;
+    transform: scale(2);
+  }
+
+  // =================== FORM VALIDATION ===================
+  .error-validation{
+    color: var(--color-error);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 2%;
+  }
+
+  .border-erro{
+    border: 1px solid var(--color-error);
+  }

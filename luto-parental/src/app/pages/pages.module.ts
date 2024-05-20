@@ -20,6 +20,8 @@ import { NoticiaSelecionadaComponent } from './informacao-selecionada/noticia-se
 import { OqueFazemosComponent } from './oque-fazemos/oque-fazemos.component';
 import { ScrollTopComponent } from '../components/scroll-top/scroll-top.component';
 import { ContatoComponent } from './contato/contato.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -50,6 +52,9 @@ import { ContatoComponent } from './contato/contato.component';
         FooterModule,
         NewslatterModule,
         ModalHistoriasModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatSnackBarModule
     ]
 })
 export class PagesModule { }

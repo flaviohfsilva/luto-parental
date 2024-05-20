@@ -67,7 +67,7 @@ export interface CarouselSobre {
 }
 export interface ReceberEmail {
   nome: string;
-  emial:string;
+  email:string;
   mensagem: string;
   isChecked: boolean;
 }
