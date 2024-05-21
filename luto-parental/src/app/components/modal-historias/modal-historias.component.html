@@ -31,7 +31,7 @@
             <div class="input-field">
               <label for="">Estado *</label>
               <!-- <input class="form-input" type="text" placeholder="Qual o seu estado?" formControlName="estado"  [ngClass]="{'border-erro': estado.invalid && estado.touched}" required> -->
-              <select class="form-input" [(ngModel)]="estadoSelecionado"  (change)="mapearEstados(estadoSelecionado)" type="text" placeholder="Qual o seu estado?" formControlName="estado"  [ngClass]="{'border-erro': estado.invalid && estado.touched}" required name="estados" id="">
+              <select class="form-input" [(ngModel)]="estadoSelecionado"  (change)="mapearEstados(estadoSelecionado)" type="text" placeholder="Qual o seu estado?" formControlName="idEstado"  [ngClass]="{'border-erro': estado.invalid && estado.touched}" required name="estados" id="">
                 <option value="" selected disabled></option>
                 <option [value]="estado.nome" *ngFor="let estado of estados">{{ estado.nome }}</option>
               </select>

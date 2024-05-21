@@ -36,7 +36,7 @@ ngOnInit(){
   // ================= Criação dos campos do fomulário =================
   this.historiaForm = this.formBuilder.group({
     nome: [''],
-    estado: ['', [Validators.required]],
+    idEstado: ['', [Validators.required]],
     genero: ['', [Validators.required]],
     titulo: [''],
     texto: ['', [Validators.required]],
@@ -48,7 +48,7 @@ ngOnInit(){
 // ================= Verifica se o formulário foi preenchido =================
 formPreenchido(): boolean{
   const formHistorias = this.historiaForm.value;
-  return formHistorias.estado, formHistorias.genero, formHistorias.texto;
+  return formHistorias.idEstado, formHistorias.genero, formHistorias.texto;
 }
 
 // ================= Fecha o Modal =================
@@ -66,9 +66,10 @@ enviar(formHistorias: FormGroup){
   // Armazena o valor dos bytes no campo do form
   // this.historiaForm.get('historiaImg')?.setValue(imagemBinaria);
 
-  const estadoSelecionado = formHistorias.get('estado')?.value;
+  const estadoSelecionado = formHistorias.get('idEstado')?.value;
   const idEstado = this.mapearEstados(estadoSelecionado);
-  formHistorias.get('estado')?.setValue(idEstado);
+  formHistorias.get('idEstado')?.setValue(idEstado);
+  console.log(formHistorias.get('idEstado')?.setValue(idEstado))
 
   this.requestService.enviarHistorias(this.historiaForm.value).subscribe(
     (historiaForm) => {
@@ -136,7 +137,7 @@ mostrarEstados(){
 mapearEstados(estado: string){
   const estadoSelecionado = this.estados.find(estados => estados.nome === estado);
 
-  if(estado) {
+  if(estadoSelecionado) {
     const idEstado = estadoSelecionado?.id;
     console.log('ID do estado seleciondado: ', idEstado);
     return idEstado;
@@ -144,13 +145,14 @@ mapearEstados(estado: string){
   return null;
 }
 
+
   // ================= Pega os campos do formulário =================
   get nome(){
     return this.historiaForm.get('nome')!;
   }
 
   get estado(){
-    return this.historiaForm.get('estado')!;
+    return this.historiaForm.get('idEstado')!;
   }
 
   get genero(){

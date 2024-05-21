@@ -22,6 +22,7 @@ import { ScrollTopComponent } from '../components/scroll-top/scroll-top.componen
 import { ContatoComponent } from './contato/contato.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MapaDepoimentosComponent } from '../components/mapa-depoimentos/mapa-depoimentos.component';
 
 
 
@@ -43,7 +44,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         NoticiaSelecionadaComponent,
         OqueFazemosComponent,
         ScrollTopComponent,
-        ContatoComponent
+        ContatoComponent,
+        MapaDepoimentosComponent
     ],
     imports: [
         CommonModule,

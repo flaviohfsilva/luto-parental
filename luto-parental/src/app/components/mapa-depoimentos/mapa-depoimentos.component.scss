@@ -1,0 +1,68 @@
+// =================== MAPA DAS HISTÓRIAS ===================
+
+.mapa-container{
+  position: relative;
+}
+
+.mapa-brasil{
+  transform: translateX(250px);
+  width: 55%;
+}
+
+svg {
+  transform: translateX(250px);
+}
+
+svg path {
+  fill: var(--color-strong-pink);
+}
+
+svg path:hover{
+  cursor: pointer;
+  fill: var(--color-light-pink);
+}
+
+.tooltip {
+  position: absolute;
+  background-color: var(--color-white);
+  padding: 20px 15px;
+  border-radius: 20px;
+  display: none;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.title-tooltip{
+  font-family: 'Sora', sans-serif;
+  font-size: 18px;
+}
+
+.subtitle-tooltip {
+  font-family: 'Open Sans', sans-serif;
+  margin: 5% 0;
+}
+
+.mark-text{
+  color: var(--color-strong-pink);
+}
+
+@media screen and (max-width: 767px) {
+
+  .mapa-historias{
+    margin: 8%;
+  }
+  .title-mapa{
+    width: 105%;
+  }
+
+  .subtitle-mapa{
+    width: 95%;
+  }
+
+
+  svg {
+    transform: translateX(20px);
+    width: 300px;
+    height: 300px;
+  }
+}

@@ -15,6 +15,8 @@ export interface Tag {
 export interface Estados {
   id: number;
   nome: string;
+  ativo: number;
+  TotalCont: number;
 }
 
 export interface Historia {
