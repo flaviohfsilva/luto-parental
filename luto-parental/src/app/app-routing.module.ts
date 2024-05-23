@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-import { NoticiasComponent } from './pages/noticias/noticias.component';
 
 const routes: Routes = [
   // Vai ser responsável por carregar as rotas das páginas.

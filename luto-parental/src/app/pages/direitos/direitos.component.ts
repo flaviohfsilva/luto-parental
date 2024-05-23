@@ -1,30 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { RequestService } from 'src/app/core/request.service';
-import { Estados, Historia, Noticia, Tag } from 'src/app/interfaces';
+import { Direitos, Estados, Historia, Noticia, Tag } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-direitos',
   templateUrl: './direitos.component.html',
   styleUrls: ['./direitos.component.scss']
 })
-export class DireitosComponent {
+export class DireitosComponent implements OnInit {
 
-  historias: Historia[] = [];
+  direitos: Direitos[] = [];
   estados: Estados[] = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public dadosDaPaginaAtual: any = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public objetoPaginacao: any = [];
-  historiaId: number = 0;
+  historiaId = 0;
   rotaHistoria!: Subscription;
-  public paginaAtual: number = 1;
-  public proximaPagina: number = 0;
+  public paginaAtual = 1;
+  public proximaPagina = 0;
   public totalPaginasArray: [] = [];
-  avancarPagina: boolean = true;
-  voltarPagina: boolean = false;
-  protected excluido: string = '0';
+  avancarPagina = true;
+  voltarPagina = false;
+  protected excluido = '0';
   tag: Tag[] = [];
   noticia: Noticia[] = [];
+  title = '';
+  markTitle = '';
+  descricao = '';
 
   constructor(
     private requestService: RequestService,
@@ -33,18 +38,19 @@ export class DireitosComponent {
     ) {}
 
   ngOnInit(){
-    // this.mostrarHistorias();
     this.carregarDadosPaginados(this.excluido);
     this.mostrarEstados();
     this.mostrarNoticias();
+    this.mostrarDireitos();
     this.mostrarTags();
   }
 
-  mostrarHistorias(){
-    this.requestService.buscarHistorias().subscribe(
-      (depoimentos) => {
-        this.historias = depoimentos;
-        console.log('Histórias', this.historias);
+
+  mostrarDireitos(){
+    this.requestService.buscarDireitos().subscribe(
+      (direitos) => {
+        this.direitos = direitos;
+        console.log('Direitos: ', this.direitos);
       },
       (error) => {
         console.log('Erro ao buscar histórias', error)
@@ -98,7 +104,8 @@ export class DireitosComponent {
   ];
 
   carregarDadosPaginados(excluido: string){
-    this.requestService.consultarPaginacaoHistorias(excluido, this.paginaAtual).subscribe(
+    this.requestService.consultarPaginacaoDireitos(excluido, this.paginaAtual, '').subscribe(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (RetornoPaginaAtual: any) => {
         this.dadosDaPaginaAtual = RetornoPaginaAtual.dados;
         this.totalPaginasArray = RetornoPaginaAtual.totalPaginas;
@@ -118,8 +125,9 @@ export class DireitosComponent {
 
     try {
       this.requestService
-        .consultarPaginacaoHistorias(this.excluido, this.paginaAtual)
+        .consultarPaginacaoDireitos(this.excluido, this.paginaAtual, '')
         .subscribe(
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (dadosPaginaAtual: any) => {
             this.dadosDaPaginaAtual = dadosPaginaAtual.dados;
 
@@ -141,6 +149,30 @@ export class DireitosComponent {
     } catch (error) {
       console.log('Erro ao fazer paginação.', error);
     }
+  }
+
+  selecionarInformacao(id: number, idTipoInformacao:number, titulo: string, texto: string, data: string| Date, img:string){
+    console.log('Chegou no selecionarInformacao', id, titulo, texto, data, img);
+
+    this.title = 'Mural de';
+    this.markTitle = 'direitos';
+    this.descricao = 'Conheça os principais direitos relacionados à Saúde  e à Assistência Social no contexto do luto perinatal e também os caminhos para buscar a Justiça, caso seus direitos não sejam respeitados.';
+
+    this.router.navigate(['noticia-selecionada/'], {
+      queryParams: {
+        id: id,
+        idTipoInformacao: idTipoInformacao,
+        titulo: titulo,
+        texto: texto,
+        data: data,
+        rotaNome: 'Direitos',
+        secaoAtiva: 'direitos',
+        img: img,
+        title: this.title,
+        markTitle: this.markTitle,
+        descricao: this.descricao,
+      }
+    })
   }
 
 }

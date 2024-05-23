@@ -1,15 +1,15 @@
 import { CarouselSobre } from '../../interfaces';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sobre',
   templateUrl: './sobre.component.html',
   styleUrls: ['./sobre.component.scss']
 })
-export class SobreComponent {
+export class SobreComponent implements OnInit {
 
-  selectedIndex: number = 0;
-  carouselAutomatic: boolean = true;
+  selectedIndex = 0;
+  carouselAutomatic = true;
 
   ngOnInit(){
     if(this.carouselAutomatic){
@@ -20,8 +20,8 @@ export class SobreComponent {
   carouselSobre: CarouselSobre[] = [
     {
       nome: 'Hadrya Maria',
-      funcao: 'UX/UI Designer | Documentação ',
-      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
+      funcao: 'Líder de projeto | UX/UI Designer | Copywriting ',
+      descricao: 'Quero agradecer por confiar em nossa plataforma. Espero que ela ofereça o acolhimento e o apoio necessário durante este momento difícil.',
       imgSrc: '../../../assets/img/sobre/hadrya-lateral.png',
       imgSrc2: '../../../assets/img/sobre/Hadrya-poster.png',
       imgPadrao: '../../../assets/img/sobre/padrao.png',
@@ -30,8 +30,8 @@ export class SobreComponent {
 
   {
     nome: 'Flávio Henrique',
-    funcao: 'Desenvolvedor Front e Back-end | Banco de dados',
-    descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
+    funcao: 'Líder de projeto | Designer UX/UI | Desenvolvedor',
+    descricao: 'Que a Raízes do Amor possa ser um ponto de paz e esperança em meio à sua dor.',
     imgSrc: '../../../assets/img/sobre/flavio-lateral.png',
     imgSrc2: '../../../assets/img/sobre/flavio-poster.png',
     imgPadrao: '../../../assets/img/sobre/padrao.png',
@@ -40,8 +40,8 @@ export class SobreComponent {
 
   {
     nome: 'Gabriela Diniz',
-    funcao: 'Desenvolvedora Front-end | Documentação',
-    descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
+    funcao: 'Desenvolvedora Front-end',
+    descricao: 'Somos um espaço de apoio para as mães e famílias. Espero que sejamos um ponto de conforto e de esperança para quem procura.',
     imgSrc: '../../../assets/img/sobre/Gabi-lateral.png',
     imgSrc2: '../../../assets/img/sobre/Gabi-poster.png',
     imgPadrao: '../../../assets/img/sobre/padrao.png',
@@ -51,7 +51,7 @@ export class SobreComponent {
   {
     nome: 'Fernando Filipe',
     funcao: 'Desenvolvedor Front-end | Documentação',
-    descricao: '',
+    descricao: 'As coisas vão melhorar. Tudo vai ficar bem.',
     imgSrc: '../../../assets/img/sobre/Fernando-lateral.png',
     imgSrc2: '../../../assets/img/sobre/Fernando-poster.png',
     imgPadrao: '../../../assets/img/sobre/padrao.png',
@@ -60,8 +60,8 @@ export class SobreComponent {
 
   {
     nome: 'Maria Laura',
-    funcao: 'UX Designer | Documentação ',
-    descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
+    funcao: 'UX Designer | Copywriting ',
+    descricao: 'Saiba que você não está sozinho. Você é amado, você é lembrado, e aqui, você sempre encontrará um lugar de compreensão e acolhimento.',
     imgSrc: '../../../assets/img/sobre/Laura-lateral.png',
     imgSrc2: '../../../assets/img/sobre/Laura-poster.png',
     imgPadrao: '../../../assets/img/sobre/padrao.png',
@@ -70,8 +70,8 @@ export class SobreComponent {
 
   {
     nome: 'Leonardo José',
-    funcao: 'Desenvolvedor Front-end | Documentação',
-    descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
+    funcao: 'Desenvolvedor Front-end',
+    descricao: 'Essa é a nossa forma de dizermos que vocês são importantes e nós nos importamos com vocês.',
     imgSrc: '../../../assets/img/sobre/leo-lateral.png',
     imgSrc2: '../../../assets/img/sobre/leo-poster.png',
     imgPadrao: '../../../assets/img/sobre/padrao.png',

@@ -2,9 +2,9 @@
 .navegation-pages{
   display: flex;
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   gap: .2rem;
-  margin: 5%;
+  margin: 5% 5% 0;
 }
 
 .nav-home, .nav-router{
@@ -13,7 +13,7 @@
 
 .icon{
   font-size: 14px;
-  transform: translateY(3px);
+  transform: translateY(4px);
 }
 
 .active{
@@ -23,12 +23,17 @@
 // =================== DEPOIMENTO TITLE ===================
 .texts-depoimentos{
   font-family: "Sora", sans-serif;
-  margin: 5% 5%;
+  margin: 25px 5%;
 }
+
+.title-depoimentos{
+  font-size: 38px;
+ }
 
 .subtitle-depoimentos{
   text-align: justify;
-  margin: 5% 0;
+  font-size: 18px;
+  margin: 50px 0;
   width: 50%;
 }
 
@@ -54,32 +59,34 @@
   align-items: center;
 }
 
-.filtro-area{
-  display: flex;
-  justify-content: end;
-  border-bottom: 2px solid var(--color-text);
-}
+// =================== FILTRO AREA ===================
 
-select {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
+.pagina-noticias__noticias__botao {
+  position: absolute;
+  right: 10.2%;
+
+      button {
+        padding: 0.7em;
+      }
 
 
-.filtro{
-  background: var(--color-white);
-  border-radius: 8px;
-  padding: 8px;
-  width: 15%;
-  // transform: translateY(-20px);
-  margin: 0 6% 20px;
-}
+      label {
+        font-size: 15.5px;
+        font-weight: 600;
+      }
+
+      button,
+      select {
+        padding-left: 1em;
+        padding-right: 1em;
+        background-color: #FFFFFF;
+        border: none;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+  }
+
   // ======== CARD AREA ========
   .card-shadow::after {
     background: var(--color-strong-green);
@@ -252,25 +259,6 @@ select {
   width: 38%;
 }
 
-.mapa-brasil{
-  transform: translateX(250px);
-  width: 55%;
-}
-
-svg {
-  transform: translateX(250px);
-}
-
-svg path {
-  fill: var(--color-strong-pink);
-}
-
-svg path:hover{
-  cursor: pointer;
-  fill: var(--color-light-pink);
-}
-
-
 @media screen and (max-width: 767px) {
   .mural-container{
     grid-template-columns: repeat(1, 1fr);
@@ -297,14 +285,5 @@ svg path:hover{
   .subtitle-mapa{
     width: 95%;
   }
-
-
-  svg {
-    transform: translateX(20px);
-    width: 300px;
-    height: 300px;
-  }
-
-
 
 }

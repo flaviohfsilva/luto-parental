@@ -1,3 +1,5 @@
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
 <!--  =================== NAVBAR ===================  -->
 <app-navbar></app-navbar>
 
@@ -30,8 +32,6 @@
 
    <!--  =================== MURAL DE O QUE FAZEMOS ===================  -->
    <section class="mural-oque-fazemos">
-     <!--  =================== FILTRO BUTTON ===================  -->
-
 
      <div class="line-separator" style="border: 1px solid var(--color-text); width: 100%; margin: 5% 0;"></div>
 
@@ -43,13 +43,13 @@
 
 
          <div class="info-text">
-           <p style="margin: 5% 0; width: 60%;">
+           <p style="margin: 5% 0 0; width: 60%;">
               Através de murais de histórias, notícias, artigos e informações sobre direitos,
               atuamos para criar um ambiente seguro e sem julgamentos oferecendo suporte a todos
               que vivenciam a dor do luto perinatal.
            </p>
 
-           <p style="margin: 5% 0; width: 60%;">
+           <p style="margin: 5% 0 0; width: 60%;">
               Acreditamos que a dor compartilhada se torna mais leve. Ao compartilhar sua história,
               você oferece conforto e esperança para outros mães e familías que também estão enfrentando
               o luto perinatal. Sua voz é importante, seu relato é valioso.
@@ -115,7 +115,7 @@
            <div class="card-info">
              <h3 class="title-card">{{ historia.titulo }}</h3>
              <p class="subtitle-card">{{ historia.texto }}</p>
-             <a href="" class="btn btn-lerMais">Ler mais</a>
+             <a class="btn btn-lerMais" (click)="selecionarInformacao(historia.id, historia.idTipoInformacao, historia.texto, historia.texto, historia.dataHora)">Ler mais</a>
            </div>
          </div>
        </div>

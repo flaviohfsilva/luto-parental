@@ -4,9 +4,9 @@
 .navegation-pages{
   display: flex;
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   gap: .2rem;
-  margin: 5%;
+  margin: 5% 5% 0;
  }
 
 
@@ -17,7 +17,7 @@
 
  .icon{
   font-size: 14px;
-  transform: translateY(3px);
+  transform: translateY(4px);
  }
 
 
@@ -31,13 +31,17 @@
  // =================== COMO AJUDAR TITLE ===================
  .texts-como-ajudar{
   font-family: "Sora", sans-serif;
-  margin: 5% 5%;
+  margin: 25px 5%;
  }
 
+ .title-como-ajudar{
+  font-size: 38px;
+ }
 
  .subtitle-como-ajudar{
   text-align: justify;
-  margin: 5% 0;
+  font-size: 18px;
+  margin: 50px 0;
   width: 50%;
  }
 
@@ -96,6 +100,84 @@
  .img-ajuda{
   width: 150%;
  }
+
+  // ======== VERIFICAÇÃO AREA ========
+
+  .verificacao-container{
+    background-color: #f5e8e5;
+    border-radius: 40px;
+    padding: 5px 0;
+  }
+
+  .form-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5% 0 0;
+  }
+
+  .input-content{
+    // display: flex;
+    gap: 5.5rem;
+  }
+
+  .input-field{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    margin: 2% 0;
+  }
+
+  .input-field label{
+    margin: 5px 0;
+  }
+
+  .form-input{
+    all: unset;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-light-pink);
+    border-radius: 4px;
+    font-family: "Open Sans", sans-serif;
+    line-height: 20px;
+    padding: 12px;
+    width: 400px;
+  }
+
+  .form-input:focus-visible, .form-input-img:focus-visible{
+    border-color: var(--color-strong-green);
+  }
+
+  .form-input:-webkit-autofill{
+    box-shadow: inset 0 0 0 32px var(--background-color) !important;
+    -webkit-text-fill-color: var(--color-text);
+  }
+
+  // =================== FORM VALIDATION ===================
+  .error-validation{
+    color: var(--color-error);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 5px
+  }
+
+  .border-erro{
+    border: 1px solid var(--color-error);
+  }
+
+    // =================== COLORS SNACKBAR AREA ===================
+
+    .green {
+      background-color: green;
+      color: var(--color-white);
+
+    }
+
+    .red {
+      background-color: red;
+      color: var(--color-white);
+    }
 
 
   // =================== QR CODE AREA ===================
@@ -376,6 +458,7 @@
     border: 1px solid var(--color-text);
     border-radius: 50px 50px 25px 50px;
     color: var(--color-text);
+    cursor: pointer;
     font-size: 12px;
     height: 19px;
     padding: 2px 15px;
@@ -405,9 +488,9 @@
   .btn-area{
     display: flex;
     justify-content: space-between;
-    margin: 0 12%;
+    margin: 0 15%;
     position: relative;
-    justify-content: end;
+    justify-content: flex-end;
   }
 
 

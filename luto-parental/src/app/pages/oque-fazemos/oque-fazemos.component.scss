@@ -4,9 +4,9 @@
 .navegation-pages{
   display: flex;
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   gap: .2rem;
-  margin: 5%;
+  margin: 5% 5% 0;
  }
 
 
@@ -17,7 +17,7 @@
 
  .icon{
   font-size: 14px;
-  transform: translateY(3px);
+  transform: translateY(4px);
  }
 
 
@@ -31,13 +31,17 @@
  // =================== COMO AJUDAR TITLE ===================
  .texts-oque-fazemos{
   font-family: "Sora", sans-serif;
-  margin: 5% 5%;
+  margin: 25px 5%;
  }
 
+ .title-oque-fazemos{
+  font-size: 38px;
+ }
 
  .subtitle-oque-fazemos{
   text-align: justify;
-  margin: 5% 0;
+  font-size: 18px;
+  margin: 50px 0;
   width: 50%;
  }
 
@@ -68,8 +72,12 @@
 
 
  .info-text{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
+  justify-content: center;
   text-align: justify;
 }
 
@@ -81,7 +89,6 @@
   padding: 0 5%;
   gap: 2rem;
   justify-content: center;
-  transform: translateX(16%);
  }
 
 
@@ -271,6 +278,7 @@
     border: 1px solid var(--color-text);
     border-radius: 50px 50px 25px 50px;
     color: var(--color-text);
+    cursor: pointer;
     font-size: 12px;
     height: 19px;
     padding: 2px 15px;
@@ -302,7 +310,7 @@
     justify-content: space-between;
     margin: 0 12%;
     position: relative;
-    justify-content: end;
+    justify-content: flex-end;
   }
 
 

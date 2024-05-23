@@ -9,7 +9,7 @@
   border-radius: 50px;
   display: flex;
   justify-content: space-evenly;
-  padding: 5% 5% 0;
+  padding: 2% 2% 0;
 }
 
 // =================== LOGO AREA ===================
@@ -23,8 +23,14 @@
   font-weight: 400;
 }
 
+.logo-img{
+  cursor: pointer;
+  transform: translateX(-200px);
+  width: 90%;
+}
+
 .logo-area{
-  margin: 2%;
+  margin: 0 2%;
 }
 
 .logo-area h2{
@@ -35,7 +41,8 @@
   font-family: "Sora", sans-serif;
   font-size: 22px;
   font-weight: 600;
-  width: 50%;
+  margin: 0 12%;
+  width: 30%;
 }
 
   // =================== SOCIAL MEDIA ===================
@@ -43,6 +50,7 @@
   .social-list{
     display: flex;
     list-style: none;
+    margin: 0 12%;
     padding: 0;
   }
 
@@ -77,7 +85,7 @@
   display: flex;
   justify-content: space-evenly;
   width: 55%;
-  margin: 6% 0 0;
+  margin: 8% 0 0;
 }
 
 .footer-info{

@@ -1,7 +1,9 @@
 export interface CarouselHome {
+  id: string;
   imgSrc: string;
   imgAlt: string;
   title: string;
+  rota?: string;
   subtitle: string;
 }
 
@@ -15,6 +17,8 @@ export interface Tag {
 export interface Estados {
   id: number;
   nome: string;
+  ativo: number;
+  TotalCont: number;
 }
 
 export interface Historia {
@@ -34,12 +38,23 @@ export interface StatusPaginaHistoria {
   erro: boolean;
   msg: string;
   paginaAtual: number;
-  dados: {}[];
+  dados: object[];
   avancarPagina: boolean;
   voltarPagina: boolean
 }
 
 export interface Noticia {
+  id: number;
+  titulo: string;
+  texto: string;
+  idTag: number;
+  idTipoInformacao: number;
+  dataHora: Date;
+  tag: Tag[];
+  img: string;
+}
+
+export interface Direitos {
   id: number;
   titulo: string;
   texto: string;
@@ -64,4 +79,14 @@ export interface CarouselSobre {
   imgSrc2: string;
   imgPadrao: string;
   imgAlt: string;
+}
+export interface ReceberEmail {
+  nome: string;
+  email:string;
+  mensagem: string;
+  isChecked: boolean;
+}
+
+export interface VerificadorQrCode {
+  valid: boolean;
 }

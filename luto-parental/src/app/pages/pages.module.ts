@@ -11,7 +11,6 @@ import { NoticiasComponent } from './noticias/noticias.component';
 import { DireitosComponent } from './direitos/direitos.component';
 import { DepoimentosComponent } from './depoimentos/depoimentos.component';
 import { VerDireitosComponent } from '../components/ver-direitos/ver-direitos.component';
-import { ModalHistoriasComponent } from '../components/modal-historias/modal-historias.component';
 import { ModalHistoriasModule } from '../components/modal-historias/modal-historia.module';
 import { SobreComponent } from './sobre/sobre.component';
 import { VerHistoriasComponent } from '../components/ver-historias/ver-historias.component';
@@ -20,6 +19,10 @@ import { LimitarPalavrasPipe } from './pipe/limitar-palavras.pipe';
 import { NoticiaSelecionadaComponent } from './informacao-selecionada/noticia-selecionada.component';
 import { OqueFazemosComponent } from './oque-fazemos/oque-fazemos.component';
 import { ScrollTopComponent } from '../components/scroll-top/scroll-top.component';
+import { ContatoComponent } from './contato/contato.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MapaDepoimentosComponent } from '../components/mapa-depoimentos/mapa-depoimentos.component';
 
 
 
@@ -40,7 +43,9 @@ import { ScrollTopComponent } from '../components/scroll-top/scroll-top.componen
         LimitarPalavrasPipe,
         NoticiaSelecionadaComponent,
         OqueFazemosComponent,
-        ScrollTopComponent
+        ScrollTopComponent,
+        ContatoComponent,
+        MapaDepoimentosComponent
     ],
     imports: [
         CommonModule,
@@ -49,6 +54,9 @@ import { ScrollTopComponent } from '../components/scroll-top/scroll-top.componen
         FooterModule,
         NewslatterModule,
         ModalHistoriasModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatSnackBarModule
     ]
 })
 export class PagesModule { }

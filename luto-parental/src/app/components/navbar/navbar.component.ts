@@ -1,14 +1,13 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RequestService } from 'src/app/core/request.service';
-import { Historia } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
 
   constructor(private router: Router, private requestService: RequestService) {}
 
@@ -16,13 +15,14 @@ export class NavbarComponent {
     this.verificarTamanhoTela();
   }
 
-  toggleButton: boolean = false;
-  mostrarNavbar: boolean = false;
-  topLinks: boolean = false;
+  toggleButton = false;
+  mostrarNavbar = false;
+  topLinks = false;
 
 
   @HostListener('window:resize', ['$event'])
   // Verifica o tamanho da tela
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   verTamanho(event: Event){
     this.verificarTamanhoTela();
   }
@@ -38,18 +38,4 @@ export class NavbarComponent {
   toggleNavbar(){
     this.mostrarNavbar = !this.mostrarNavbar;
   }
-
-  // rotaHistoria(historia: Historia[]) {
-
-  //   for(let i = 0; i < historia.length; i++){
-  //     const historiaDados = historia[i];
-
-  //     this.router.navigate(['/depoimentos'], {
-  //       queryParams: {
-  //         id: historiaDados.id,
-  //       },
-  //     });
-
-  //   }
-  // }
 }

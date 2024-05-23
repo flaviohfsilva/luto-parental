@@ -1,31 +1,33 @@
-import { Component } from '@angular/core';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { RequestService } from 'src/app/core/request.service';
-import { StatusPaginaHistoria, Historia, Estados } from 'src/app/interfaces';
+import { Historia, Estados } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-depoimentos',
   templateUrl: './depoimentos.component.html',
   styleUrls: ['./depoimentos.component.scss']
 })
-export class DepoimentosComponent {
+export class DepoimentosComponent implements OnInit {
 
   historias: Historia[] = [];
   estados: Estados[] = [];
   public dadosDaPaginaAtual: any = [];
   public objetoPaginacao: any = [];
-  historiaId: number = 0;
+  historiaId = 0;
   rotaHistoria!: Subscription;
-  public paginaAtual: number = 1;
-  public proximaPagina: number = 0;
+  palavraFiltrada = '';
+  public paginaAtual = 1;
+  public proximaPagina = 0;
   public totalPaginasArray: [] = [];
-  avancarPagina: boolean = true;
-  voltarPagina: boolean = false;
-  title: string = '';
-  markTitle: string = '';
-  descricao: string = '';
-  protected excluido: string = '0';
+  avancarPagina = true;
+  voltarPagina = false;
+  title = '';
+  markTitle = '';
+  descricao = '';
+  protected excluido = '0';
 
   constructor(
     private requestService: RequestService,
@@ -72,8 +74,21 @@ export class DepoimentosComponent {
     }
   ];
 
+  aplicarFiltro(event: Event){
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.palavraFiltrada = filterValue.trim();
+    console.log(this.palavraFiltrada);
+
+    // Reiniciando o índice das páginas
+    this.paginaAtual = 0;
+    this.carregarProximaPagina(true);
+  }
+
+
+
   carregarDadosPaginados(excluido: string){
-    this.requestService.consultarPaginacaoHistorias(excluido, this.paginaAtual).subscribe(
+    this.requestService.consultarPaginacaoHistorias(excluido, this.paginaAtual, this.palavraFiltrada).subscribe(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (RetornoPaginaAtual: any) => {
         this.dadosDaPaginaAtual = RetornoPaginaAtual.dados;
         this.totalPaginasArray = RetornoPaginaAtual.totalPaginas;
@@ -90,12 +105,14 @@ export class DepoimentosComponent {
 
     this.proximaPagina = proximaPagina ? (this.paginaAtual++) : (this.paginaAtual--); // Incrementa ou decrementa paginaAtual
 
+    const filtro = this.palavraFiltrada;
     console.log(this.paginaAtual);
 
     try {
       this.requestService
-        .consultarPaginacaoHistorias(this.excluido, this.paginaAtual)
+        .consultarPaginacaoHistorias(this.excluido, this.paginaAtual, filtro)
         .subscribe(
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (dadosPaginaAtual: any) => {
             this.dadosDaPaginaAtual = dadosPaginaAtual.dados;
 
