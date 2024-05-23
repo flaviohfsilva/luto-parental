@@ -1,7 +1,9 @@
 export interface CarouselHome {
+  id: string;
   imgSrc: string;
   imgAlt: string;
   title: string;
+  rota?: string;
   subtitle: string;
 }
 
@@ -52,6 +54,17 @@ export interface Noticia {
   img: string;
 }
 
+export interface Direitos {
+  id: number;
+  titulo: string;
+  texto: string;
+  idTag: number;
+  idTipoInformacao: number;
+  dataHora: Date;
+  tag: Tag[];
+  img: string;
+}
+
 export interface NoticiasArtigosImg {
   id: number;
   imgSrc: string;
@@ -72,4 +85,8 @@ export interface ReceberEmail {
   email:string;
   mensagem: string;
   isChecked: boolean;
+}
+
+export interface VerificadorQrCode {
+  valid: boolean;
 }

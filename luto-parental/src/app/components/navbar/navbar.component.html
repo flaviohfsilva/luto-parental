@@ -46,17 +46,21 @@
     <!--  =================== NAVBAR MENU ===================  -->
     <div class="nav-menu">
 
-      <div class="nav-menu-content">
+
+
         <!--  =================== NAV LOGO AREA ===================  -->
         <div class="logo-area navbar-brand">
           <a>
-            <h2 style="cursor: pointer;" routerLink="/home">LOGO</h2>
-            <!-- <img src="" alt=""> -->
+            <!-- <h2 style="cursor: pointer;" routerLink="">LOGO</h2> -->
+            <img class="logo-img" src="../../../assets/logo/Logo boutique de moda elegante rose (2).svg" alt="Logo Raízes do Amor" routerLink="">
           </a>
+
           <button class="btn-toggle" *ngIf="toggleButton" (click)="toggleNavbar()">
             <i class="fa-solid fa-bars"></i>
           </button>
         </div>
+
+      <div class="nav-menu-content">
 
         <!--  =================== NAVBAR LINKS ===================  -->
         <ul class="menu-links" *ngIf="!mostrarNavbar">

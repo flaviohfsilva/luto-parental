@@ -3,6 +3,15 @@
   border-bottom: 2px solid var(--color-strong-pink);
 }
 
+.logo-area{
+  width: 40%;
+}
+
+.logo-img{
+  cursor: pointer;
+  width: 80%;
+}
+
 // =================== TOP NAV ===================
 .top-nav{
   background-color: var(--color-strong-green);
@@ -73,16 +82,18 @@
 
 // =================== NAVBAR AREA ===================
 .nav-menu{
+  align-items: center;
   display: flex;
-  justify-content: space-between;
-  margin: 0 7%;
-  padding: 3%;
+  // justify-content: center;
+  // margin: 0 5%;
+  // padding: 1%;
   list-style: none;
 }
 
 .nav-menu-content{
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
+  transform: translateX(-180px);
   gap: 3rem;
 }
 
@@ -98,6 +109,7 @@
   display: flex;
   justify-content: space-evenly;
   gap: 3.5rem;
+  margin: 5% 0;
 }
 
 .nav-links:hover{

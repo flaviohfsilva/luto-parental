@@ -1,3 +1,5 @@
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
 <!--  =================== VER NOTÍCIAS SECTION ===================  -->
 <section class="ver-direitos">
   <!--  =================== TITLE VER NOTÍCIAS ===================  -->
@@ -16,101 +18,29 @@
     </div>
 
 
-    <a href="#" class="btn-ver">Ver todos</a>
+    <a href="#" class="btn-ver" routerLink="/direitos">Ver todos</a>
   </div>
 
   <div class="container-direitos">
     <!--  =================== CARD NOTÍCIAS ===================  -->
-    <div class="card">
+    <div class="card" *ngFor="let direito of direitos">
       <div class="card-content">
 
-        <img src="../../../assets/image 2.png" alt="" class="card-img">
+        <img class="card-img" [src]="'assets/img/page-noticias/' + direito.img + '.svg'" alt="Imagem SVG" />
 
-        <div class="card-info" style="border-left: 2px solid var(--color-strong-pink); border-bottom: 2px solid var(--color-strong-pink);">
 
-          <div class="card-cabecalho">
-              <p class="data">27/11/2023</p>
-              <a href="" class="tags">Notícia</a>
-          </div>
-
-          <h3 class="title-card">Meu sonho de ser mãe e as tentativas pela maternidade</h3>
-          <p class="subtitle-card">
-            Desde sempre sonhava em ser
-            mãe, mas as tentativas frustadas
-            me deixam bastante triste. A cada
-            tentativa que dá errado é um
-            aperto em meu coração e a
-            incerteza de que meu sonho...
-          </p>
-
-          <a href="" class="btn-lerMais">
-            <p class="btn-text">Leia mais</p>
-            <span class="icon-arrow material-symbols-outlined">
-              arrow_forward_ios
-            </span>
-          </a>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-content">
-
-        <img src="../../../assets/image 2.png" alt="" class="card-img">
-
-        <div class="card-info" style="border-left: 2px solid var(--color-strong-blue); border-bottom: 2px solid var(--color-strong-blue);">
+        <div class="card-info" style="border-left: 2px solid var(--color-strong-green); border-bottom: 2px solid var(--color-strong-green);">
 
           <div class="card-cabecalho">
-              <p class="data">27/11/2023</p>
-              <a href="" class="tags" style="background-color: var(--color-strong-blue); color: #f6f6f6;">Artigo</a>
+              <p class="data">{{direito.dataHora | date: 'dd/MM/yyyy'}}</p>
+              <!-- <a href="" class="tags">Notícia</a> -->
           </div>
 
-          <h3 class="title-card">Meu sonho de ser mãe e as tentativas pela maternidade</h3>
-          <p class="subtitle-card">
-            Desde sempre sonhava em ser
-            mãe, mas as tentativas frustadas
-            me deixam bastante triste. A cada
-            tentativa que dá errado é um
-            aperto em meu coração e a
-            incerteza de que meu sonho...
-          </p>
+          <h3 class="title-card">{{direito.titulo}}</h3>
+          <p class="subtitle-card">{{direito.texto | limitarPalavras: 222}}</p>
 
-          <a href="" class="btn-lerMais">
-            <p class="btn-text">Leia mais</p>
-            <span class="icon-arrow material-symbols-outlined">
-              arrow_forward_ios
-            </span>
-          </a>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-content">
-
-        <img src="../../../assets/image 2.png" alt="" class="card-img">
-
-        <div class="card-info" >
-
-          <div class="card-cabecalho">
-              <p class="data">27/11/2023</p>
-              <a href="" class="tags">Notícia</a>
-          </div>
-
-          <h3 class="title-card">Meu sonho de ser mãe e as tentativas pela maternidade</h3>
-          <p class="subtitle-card">
-            Desde sempre sonhava em ser
-            mãe, mas as tentativas frustadas
-            me deixam bastante triste. A cada
-            tentativa que dá errado é um
-            aperto em meu coração e a
-            incerteza de que meu sonho...
-          </p>
-
-          <a href="" class="btn-lerMais">
-            <p class="btn-text">Leia mais</p>
+          <a class="btn-lerMais" (click)="selecionarInformacao(direito.id, direito.idTipoInformacao, direito.titulo, direito.texto, direito.dataHora, direito.img)">
+            <p class="btn-text" >Leia mais</p>
             <span class="icon-arrow material-symbols-outlined">
               arrow_forward_ios
             </span>

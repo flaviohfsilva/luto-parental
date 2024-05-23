@@ -45,7 +45,7 @@ title{
   background-color: var(--color-light-pink);
   margin: 5% 0;
   opacity: 66%;
-  padding: 3% 0;
+  padding: 5%;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -133,9 +133,9 @@ padding-top: 25%;
 
 }
 .nossa-equipe{
-  width: 100%;
+  width: 85%;
   height: 800px;
-  margin: 20% 10%;
+  margin: 10% 10% 25%;
   padding: 8%;
 }
 // .container-sobre{
@@ -196,6 +196,7 @@ padding-top: 25%;
 
 .carousel-container{
   display: flex;
+  padding: 20px;
 }
 
   // ===================  CAROUSEL FOTOS LATERAIS ===================
@@ -203,6 +204,7 @@ padding-top: 25%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding: 20px;
     width: 30%;
   }
 
@@ -221,7 +223,7 @@ padding-top: 25%;
     border-radius: 21px;
     cursor: pointer;
     position: relative;
-    width: 32%;
+    width: 55%;
   }
 
   .image-lateral-active{
@@ -248,7 +250,7 @@ padding-top: 25%;
 
   .carousel-selecionado img.image-active{
     display: block;
-    width: 45%;
+    width: 55%;
   }
 
   .img-area img.img-area-active{
@@ -263,19 +265,19 @@ padding-top: 25%;
   .carousel-img-selecionado{
     border-radius: 26px 0 0 26px;
     width: 35%;
-    height: 95%;
+    height: 98%;
   }
 
   .text-carousel{
     background: var(--color-white);
     border-radius: 0 26px 0 0;
     overflow: hidden;
-    width: 55%;
+    // width: 55%;
     height: 68.5%;
   }
 
   .img-padrao{
-    width: 55%;
+    width: 100%;
   }
 
   .title-carousel{

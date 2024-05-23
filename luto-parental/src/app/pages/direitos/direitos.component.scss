@@ -87,113 +87,85 @@
       }
 }
   // ======== CARD AREA ========
-  .card-shadow::after {
-    background: var(--color-strong-green);
-    border-radius: 50px;
-    border-end-end-radius: 25px;
-    bottom: 3px;
-    content: "";
-    //Medidas do card sem imagem
-    height: 290px;
-    // height: 400px;
-    margin: 0 0 6%;
-    position: absolute;
-    right: 3px;
-    top: 0;
-    width: 325px;
-    z-index: -1;
-  }
+  // =================== CARD AREA ===================
+.card{
+  border-radius: 50px;
+  border-end-end-radius: 25px;
+  height: 380px;
+  margin: 5%;
+  position: relative;
+  width: 420px;
+}
 
-  .card{
-    background: var(--color-white);
-    border-radius: 50px;
-    border-end-end-radius: 25px;
-    //Medidas do card sem imagem
-    height: 280px;
-    // height: 400px;
-    margin: 5%;
-    position: relative;
-    width: 320px;
-  }
+.card-info{
+  background-color: var(--color-white);
+  border-bottom-right-radius: 26px;
+  border-bottom-left-radius: 26px;
+  padding: 4%;
+  transform: translateY(-4px);
+  width: 90%;
+}
 
-  .card-content{
-    padding: 10px;
-  }
+.card-cabecalho{
+  display: flex;
+  font-size: 16px;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin: 2% 0 4% 0;
+}
 
-  .card-img{
-    border-top-right-radius: 50px;
-    border-top-left-radius: 50px;
-    width: 100%;
-  }
+.tags{
+  background-color: var(--color-strong-pink);
+  border-radius: 5px;
+  color: var(--color-text);
+  font-family: 500;
+  font-size: 12px;
+  padding: 2px;
+  opacity: 66%;
+  text-decoration: none;
+}
 
-  // ======== TEXT AREA CARD ========
-  .card-info{
-    //Medidas do card sem imagem
-    margin: 15% 5%;
-    // margin: 5% 0;
-  }
+.card-text{
+  text-align: justify;
+  font-family: 'Open Sans', sans-serif;
+}
 
-  .title-card{
-    font-family: "Open Sans", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    // width: 80%;
-  }
+.card-img{
+  width: 90%;
+}
 
-  .subtitle-card{
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    text-align: justify;
-    margin: 5% 0;
-    width: 95%;
-  }
+.title-card{
+  font-family: 'Sora', sans-serif;
+  font-size: 20px;
+}
 
+.subtitle-card{
+  margin: 2% 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  text-align: justify;
+}
 
-  // ======== BUTTONS CARDS ========
-  .btn{
-    overflow: hidden;
-    position: relative;
-    transition: .5 ease-in-out;
-  }
+.btn-lerMais{
+  color: var(--color-text);
+  display: flex;
+  font-size: 12px;
+  justify-content: flex-end;
+  text-decoration: underline;
+  text-transform: uppercase;
+  transition: .1s ease-in-out;
+}
 
-  .btn::before{
-    background-color: var(--color-strong-green);
-    content: "";
-    height: 0;
-    left: 0;
-    position: absolute;
-    transition: .8s ease;
-    width: 100%;
-    z-index: -1;
-  }
+.btn-lerMais:hover{
+  color: var(--color-strong-blue);
+  transform: translateY(-2px);
+  transition: .2s ease-in;
+}
 
-  .btn-lerMais{
-    background: none;
-    border: 1px solid var(--color-text);
-    border-radius: 50px 50px 25px 50px;
-    color: var(--color-text);
-    font-size: 12px;
-    height: 19px;
-    padding: 2px 15px;
-    text-decoration: none;
-    left: 70%;
-    width: 85px;
-    z-index: 0;
-  }
+.icon-arrow{
+  font-size: 12px;
+}
 
-  .btn-lerMais::before{
-    bottom: 0;
-    border-radius: 50px 50px 25px 50px;
-  }
-
-  .btn-lerMais:hover{
-    border: 1px solid var(--color-strong-green);
-    color: var(--color-white);
-  }
-
-  .btn-lerMais:hover::before{
-    height: 100%;
-  }
 
   // =================== PAGINATORS MURAL DIREITOS ===================
   .paginators{

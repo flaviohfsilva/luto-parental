@@ -58,7 +58,7 @@ h1{
     color: var(--color-white);
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
-    left: 20%;
+    // left: 20%;
     // margin: 23% 0;
     padding: 10px 40px;
     position: absolute;
@@ -295,6 +295,7 @@ h1{
     border: 1px solid var(--color-text);
     border-radius: 50px 50px 25px 50px;
     color: var(--color-text);
+    cursor: pointer;
     font-size: 12px;
     height: 19px;
     padding: 2px 15px;

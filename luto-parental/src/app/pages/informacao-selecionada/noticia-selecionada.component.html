@@ -40,7 +40,7 @@
       </div>
 
      <div class="title-noticia">
-        <p class="data">{{this.data | date: 'dd/MM/yyyy'}}</p>
+        <p class="data">{{this.data.toString() | date: 'dd/MM/yyyy'}}</p>
         <h1>{{this.titulo}}</h1>
       </div>
 
@@ -48,7 +48,7 @@
 
       <div class="img">
         <img [src]="'assets/img/page-noticias/' + this.img + '.svg'" alt="Imagem da notícia" />
-        <p class="img_detalhe">Representação do estado da saúde mental</p>
+        <!-- <p class="img_detalhe">Representação do estado da saúde mental</p> -->
       </div>
 
       <p class="detalhes-baixo">{{this.texto}}</p>

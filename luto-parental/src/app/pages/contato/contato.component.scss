@@ -225,7 +225,7 @@ img{
     opacity: 0.4;
     padding: 8px 12px;
     position: relative;
-    width: 150%;
+    width: 110%;
   }
 
   .form-input:focus-visible, .form-input-img:focus-visible, .form-input-text-area:focus-visible{
@@ -248,7 +248,7 @@ img{
     opacity: 0.4;
     padding: 8px 12px;
     position: relative;
-    width: 100%;
+    width: 105%;
   }
 
 
@@ -290,3 +290,16 @@ img{
   .border-erro{
     border: 1px solid var(--color-error);
   }
+
+    // =================== COLORS SNACKBAR AREA ===================
+
+    .green {
+      background-color: green;
+      color: var(--color-white);
+
+    }
+
+    .red {
+      background-color: red;
+      color: var(--color-white);
+    }

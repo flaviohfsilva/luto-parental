@@ -2,6 +2,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalHistoriasComponent } from '../modal-historias/modal-historias.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-compartilhar-historia',
@@ -12,7 +13,10 @@ export class CompartilharHistoriaComponent implements OnInit {
 
   btnResponsivo = false;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(
+    private dialog: MatDialog,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(){
     this.verificarTamanhoTela();
@@ -29,6 +33,15 @@ export class CompartilharHistoriaComponent implements OnInit {
     this.btnResponsivo = window.innerWidth <= 767;
   }
 
+  openSnackBar(text: string, panelClass: string) {
+    this.snackBar.open(text, '', {
+      horizontalPosition: 'end',
+      verticalPosition: 'top',
+      duration: 8 * 1000,
+      panelClass: [panelClass],
+    });
+  }
+
   enviarHistoriaFormulario(){
     const config: MatDialogConfig = {
       width: '950px',
@@ -36,5 +49,9 @@ export class CompartilharHistoriaComponent implements OnInit {
       disableClose: true
     }
     const dialog = this.dialog.open(ModalHistoriasComponent, config);
+
+    dialog.afterClosed().subscribe(() => {
+      this.openSnackBar('História enviada com sucesso!', 'green')
+    })
   }
 }

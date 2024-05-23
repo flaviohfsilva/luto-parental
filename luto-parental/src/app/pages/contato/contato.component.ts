@@ -70,13 +70,13 @@ export class ContatoComponent implements OnInit {
     this.requestService.receberEmail(emailContato).subscribe(
       (response) => {
         console.log(response)
-        this.openSnackBar('Newsletter enviada com sucesso! Muito obrigado pela sua assinatura!', 'green')
-        console.log('Newsletter enviada com sucesso!')
+        this.openSnackBar('Email enviado com sucesso!', 'green')
+        console.log('Email enviado com sucesso!')
         form.reset();
       },
       (error) => {
-        this.openSnackBar('Erro ao enviar Newsletter', 'red');
-        console.log('Erro ao enviar Newsletter', error)
+        this.openSnackBar('Erro ao enviar email', 'red');
+        console.log('Erro ao enviar email', error)
       }
     )
   }

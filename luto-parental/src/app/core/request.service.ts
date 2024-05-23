@@ -1,4 +1,4 @@
-import { ReceberEmail } from './../interfaces';
+import { Direitos, ReceberEmail, VerificadorQrCode } from './../interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -42,6 +42,10 @@ export class RequestService {
     return this.httpClient.get<Noticia[]>(`${API}/noticias/buscarTodas`)
   }
 
+  buscarNoticiasPorId(id: string): Observable<Noticia>{
+    return this.httpClient.get<Noticia>(`${API}/noticias/buscarPor${id}`)
+  }
+
   consultarPaginacaoNoticias(excluido:string, pagina:number, filtro: string) {
     return this.httpClient.get(`${API}/noticias/buscarPaginas?excluido=${excluido}&&pagina=${pagina}&&filtro=${filtro}`);
   }
@@ -52,6 +56,22 @@ export class RequestService {
 
   receberEmail(emailContato: ReceberEmail) {
     return this.httpClient.post(`${API}/newsletter/receber`, emailContato)
+  }
+
+  emailVerificador(nome: string, email: string) {
+    return this.httpClient.get(`${API}/newsletter/enviarVerificadorQrCode/${nome}/${email}`)
+  }
+
+  verificadorCodigo(codigo: number, email: string): Observable<VerificadorQrCode> {
+    return this.httpClient.get<VerificadorQrCode>(`${API}/newsletter/verificarCodigo/${codigo}/${email}`)
+  }
+
+  buscarDireitos(): Observable<Direitos[]>{
+    return this.httpClient.get<Direitos[]>(`${API}/direitos/buscarTodos`)
+  }
+
+  consultarPaginacaoDireitos(excluido:string, pagina:number, filtro: string) {
+    return this.httpClient.get(`${API}/direitos/buscarPaginas?excluido=${excluido}&&pagina=${pagina}&&filtro=${filtro}`);
   }
 
 }

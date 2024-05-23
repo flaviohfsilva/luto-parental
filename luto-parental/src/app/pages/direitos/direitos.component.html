@@ -1,3 +1,6 @@
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+
 <!--  =================== NAVBAR ===================  -->
 <app-navbar></app-navbar>
 
@@ -42,15 +45,29 @@
 
       <div class="mural-container" *ngIf="dadosDaPaginaAtual">
         <!--  =================== CARD HISTÓRIAS ===================  -->
-        <div class="card-shadow card" *ngFor="let historia of dadosDaPaginaAtual">
+        <div class="card" *ngFor="let direito of dadosDaPaginaAtual">
           <div class="card-content">
 
-            <!-- <img src="../../../assets/image 2.png" alt="" class="card-img"> -->
+            <img class="card-img" [src]="'assets/img/page-noticias/' + direito.img + '.svg'" alt="Imagem SVG" />
 
-            <div class="card-info">
-              <h3 class="title-card">{{historia.titulo}}</h3>
-              <p class="subtitle-card">{{historia.texto | limitarPalavras: 200 }}</p>
-              <a href="" class="btn btn-lerMais">Ler mais</a>
+
+            <div class="card-info" style="border-left: 2px solid var(--color-strong-green); border-bottom: 2px solid var(--color-strong-green);">
+
+              <div class="card-cabecalho">
+                  <p class="data">{{direito.dataHora | date: 'dd/MM/yyyy'}}</p>
+                  <!-- <a href="" class="tags">Notícia</a> -->
+              </div>
+
+              <h3 class="title-card">{{direito.titulo}}</h3>
+              <p class="subtitle-card">{{direito.texto | limitarPalavras: 222}}</p>
+
+              <a class="btn-lerMais" (click)="selecionarInformacao(direito.id, direito.idTipoInformacao, direito.titulo, direito.texto, direito.dataHora, direito.img)">
+                <p class="btn-text">Leia mais</p>
+                <span class="icon-arrow material-symbols-outlined">
+                  arrow_forward_ios
+                </span>
+              </a>
+
             </div>
           </div>
         </div>
