@@ -36,7 +36,7 @@ Dentro da pasta `luto-parental` você pode executar a aplicação em diferentes 
 Para rodar o ambiente de produção feito com o Nginx, execute o comando abaixo para rodar o container `Docker`:
 
 ```
-docker compose up
+docker compose up --build
 ```
 
 Assim, o site Raízes de Amor irá ser hospedado localmente pelo `Nginx` em produção. Para acessá-lo basta apenas colocar na URL do seu navegador: `localhost`.
