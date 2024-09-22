@@ -1,5 +1,5 @@
 # Raízes de Amor - Site para apoio emocional à perda perinatal
-[](./luto-parental/src/assets/logo/Logo%20boutique%20de%20moda%20elegante%20rose%20(3).svg)
+[Raízes de Amor](./luto-parental/src/assets/logo/Logo%20boutique%20de%20moda%20elegante%20rose%20(3).svg)
 
 ## Sobre o projeto
 O projeto visa abordar a significativa lacuna de assistência e compreensão da saúde mental perinatal, especialmente para mulheres que enfrentam a perda perinatal. Desenvolvemos uma aplicação web para proporcionar um ambiente acolhedor e informativo, ajudando mães e famílias a expressar seu luto, encontrar apoio emocional e validar seus sentimentos durante este difícil processo.
@@ -50,7 +50,7 @@ CTRL + C
 E depois use o comando:
 
 ```
-docker compose udown
+docker compose down
 ```
 
 ---
@@ -68,6 +68,13 @@ No arquivo `docker-compose.yaml`, procure a opção `ports`, que contém duas co
 
 A porta` 80:80 `é utilizada para rodar o `Nginx` em ambiente de produção, mas como estamos configurando o ambiente de desenvolvimento, devemos comentá-la. A porta `4300:4200` será a que utilizaremos para o desenvolvimento. Além disso, descomente a opção `command` para habilitá-la no ambiente de desenvolvimento.
 
+Por fim, após todos esses processos, para rodar o ambiente de desenvolvimento execute o comando:
+
+```
+docker compose up --build
+```
+
+Agradeço o seu tempo de leitura e interesse neste projeto! Espero que tenha gostado :D.
 
 
 
