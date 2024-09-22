@@ -1,5 +1,5 @@
 # Raízes de Amor - Site para apoio emocional à perda perinatal
-[Raízes de Amor](./luto-parental/src/assets/logo/Logo%20boutique%20de%20moda%20elegante%20rose%20(3).svg)
+![](./luto-parental/src/assets/logo/Logo%20boutique%20de%20moda%20elegante%20rose%20(3).svg)
 
 ## Sobre o projeto
 O projeto visa abordar a significativa lacuna de assistência e compreensão da saúde mental perinatal, especialmente para mulheres que enfrentam a perda perinatal. Desenvolvemos uma aplicação web para proporcionar um ambiente acolhedor e informativo, ajudando mães e famílias a expressar seu luto, encontrar apoio emocional e validar seus sentimentos durante este difícil processo.
