@@ -19,15 +19,15 @@ RUN npm install
 
 # Ambiente de produção da aplicação
 
-# RUN ng build
+RUN ng build
 
 # Imagem do nginx
-# FROM nginx:latest as nginx
+FROM nginx:latest as nginx
 
 # # Copia a saída do angular e coloca no espaço padrão do nginx
-# COPY --from=angular /usr/local/app/dist/luto-parental usr/share/nginx/html
+COPY --from=angular /usr/local/app/dist/luto-parental usr/share/nginx/html
 
-# COPY /nginx.conf /etc/nginx/conf.d/default.conf
+COPY /nginx.conf /etc/nginx/conf.d/default.conf
 
 # # Expor a porta
-# EXPOSE 80
+EXPOSE 80
